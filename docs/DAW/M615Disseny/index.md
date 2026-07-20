@@ -1,12 +1,10 @@
 # M615 - Disseny
 
-Pàgina d'entrada del mòdul **M615 Disseny**, pensada per centralitzar tots els continguts, blocs i recursos del curs.
+Pàgina d'entrada del mòdul **M615 Disseny d'Interfícies Web**, pensada per centralitzar tots els continguts, blocs i recursos del curs.
 
-## Vista general del mòdul
 
-En aquesta secció trobaràs els materials organitzats per blocs temàtics. La millor estructura per a aquest mòdul és mantenir una portada clara i utilitzar documents separats per a cada bloc o unitat.
 
-## Itinerari de continguts
+## Continguts
 
 ### Bloc 1. Fonaments de l'HTML5
 

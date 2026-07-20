@@ -1,5 +1,12 @@
 site_name: My site
 site_url: https://mydomain.org/mysite
+nav:
+  - Inici: index.md
+  - DAW:
+      - Visio general: DAW/index.md
+      - M615 Disseny:
+          - Presentacio del modul: DAW/M615Disseny/index.md
+          - Bloc 1. Fonaments: DAW/M615Disseny/1_Fonaments.md
 theme:
   name: material
   logo: assets/images/logo.png
@@ -33,7 +40,9 @@ extra:
       link: https://github.com/sllado1
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/sílvia-lladó-1bb68646
-
+  toc:
+    enabled: false
+    
 markdown_extensions:
   - attr_list
   - pymdownx.highlight:
