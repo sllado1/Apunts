@@ -1,5 +1,5 @@
-site_name: My site
-site_url: https://mydomain.org/mysite
+site_name: Apunts de Sílvia Lladó
+site_url: https://sllado1.github.io/Apunts/
 nav:
   - Inici: index.md
   - DAW:
@@ -45,6 +45,8 @@ extra:
     
 markdown_extensions:
   - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -58,4 +60,6 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - admonition
+  - pymdownx.details
 
