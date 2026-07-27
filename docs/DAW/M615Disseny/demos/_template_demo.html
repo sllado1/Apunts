@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEMPLATE - Demo bloc</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0ea5e9;
+      --border: #cbd5e1;
+      --radius: 8px;
+      --space-2: 0.5rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 2rem;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+
+    h1 { margin-top: 0; }
+
+    .index {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .index ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    section {
+      margin-bottom: var(--space-8);
+    }
+
+    .demo {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-6);
+      margin-top: var(--space-4);
+    }
+
+    .note {
+      color: var(--muted);
+      margin-top: var(--space-2);
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #075985;
+      font-size: 0.85rem;
+      margin-right: 0.35rem;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 0.55rem 0.9rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      body { margin: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>TEMPLATE - Demo bloc</h1>
+  <p class="note">Duplica aquest fitxer, canvia el títol i substitueix cada secció amb el teu exemple.</p>
+
+  <nav class="index" aria-label="Index de demos">
+    <strong>Index de demos d'aquest fitxer</strong>
+    <ul>
+      <li><a href="#exemple-1">Exemple 1</a></li>
+      <li><a href="#exemple-2">Exemple 2</a></li>
+      <li><a href="#exemple-3">Exemple 3</a></li>
+    </ul>
+  </nav>
+
+  <section id="exemple-1">
+    <h2>Exemple 1</h2>
+    <p>Descriu aci què ha d'observar l'alumnat.</p>
+    <div class="demo">
+      <span class="chip">Etiqueta</span>
+      <span class="chip">Etiqueta</span>
+      <p>Substitueix aquest bloc per la demo real.</p>
+    </div>
+  </section>
+
+  <section id="exemple-2">
+    <h2>Exemple 2</h2>
+    <p>Afig una comparativa o un cas d'error habitual.</p>
+    <div class="demo">
+      <p>Substitueix aquest bloc per la demo real.</p>
+      <a class="btn" href="#">Accio de mostra</a>
+    </div>
+  </section>
+
+  <section id="exemple-3">
+    <h2>Exemple 3</h2>
+    <p>Afig aci el cas responsive o l'últim exemple del bloc.</p>
+    <div class="demo">
+      <p>Substitueix aquest bloc per la demo real.</p>
+    </div>
+  </section>
+</body>
+</html>

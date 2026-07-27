@@ -37,7 +37,28 @@ Tot document ha de seguir aquesta jerarquia essencial :
 
 ---
 
-## 4. Elements de Bloc i Elements Inline
+## 4. Jerarquia de Continguts
+
+Una pàgina web no és només una suma d'etiquetes: és una **estructura d'informació**. L'usuari i el navegador han de poder entendre què és principal, què és secundari i quines parts estan relacionades.
+
+### Idees clau
+
+* Cada pàgina ha de tenir **un tema principal** clar.
+* Els títols (`<h1>` a `<h6>`) han de crear una jerarquia lògica, sense salts de nivell.
+* Els continguts relacionats s'han d'agrupar dins de seccions o articles.
+* L'ordre del codi també comunica estructura i significat.
+
+### Exemple de jerarquia correcta
+
+Veure demo: [Jerarquia de continguts](demos/1_exemples_html.html#jerarquia)
+
+### Error habitual
+
+Fer servir títols només perquè es veuen grans, sense respectar la jerarquia del contingut.
+
+---
+
+## 5. Elements de Bloc i Elements Inline
 
 En HTML, els elements es comporten principalment de dues maneres: com a **bloc** o com a **inline**.
 
@@ -57,20 +78,11 @@ Un element inline només ocupa l'espai del seu contingut i no força un salt de 
 
 ### Exemple ràpid
 
-```html
-<p>
-   Aquest text conté un <strong>element inline</strong> i un
-   <a href="#">enllac inline</a>.
-</p>
-
-<div>
-   Aquest bloc comenca en una nova linia i ocupa tota l'amplada disponible.
-</div>
-```
+Veure demo: [Elements de bloc i inline](demos/1_exemples_html.html#bloc-inline)
 
 ---
 
-## 5. Estructura Semàntica Principal
+## 6. Estructura Semàntica Principal
 
 L'HTML5 defineix elements per descriure les zones de la pàgina [14-16]:
 
@@ -86,19 +98,22 @@ L'HTML5 defineix elements per descriure les zones de la pàgina [14-16]:
 
 !!! success "Adeu divitis"
 
-    L'ús excessiu de `<div>` sense semàntica és desaconsellat. Els nous elements semàntics milloren l'accessibilitat, el SEO i la comprensió del contingut
----
-
-## 6. Els Encapçalaments (`<h1>` - `<h6>`)
-
-S'usen per crear una jerarquia lògica de contingut :
-
-* **`<h1>`:** Ha de ser únic i representar el tema principal.
-* **No saltis nivells:** L'estructura ha de ser seqüencial per no desorientar els usuaris de lectors de pantalla.
+L'ús excessiu de `<div>` sense semàntica és desaconsellat. Els nous elements semàntics milloren l'accessibilitat, el SEO i la comprensió del contingut.
 
 ---
 
-## 7. Accessibilitat Web (Principis WCAG)
+## 7. Checklist ràpid d'encapçalaments
+
+Per revisar la jerarquia abans de publicar:
+
+* **Un sol `h1`:** Resumeix el tema principal de la pàgina.
+* **Ordre seqüencial:** `h2` per seccions principals, `h3` per subseccions, etc.
+* **Sense ús visual:** No triïs un nivell de títol per mida o estil, sinó per estructura.
+* **Títols descriptius:** Cada encapçalament ha d'explicar què vindrà a continuació.
+
+---
+
+## 8. Accessibilitat web (Principis WCAG)
 
 L'accessibilitat garanteix que tothom pugui percebre, operar i entendre el web, independentment de les seves capacitats :
 
@@ -109,13 +124,24 @@ L'accessibilitat garanteix que tothom pugui percebre, operar i entendre el web, 
 
 ---
 
-## 8. Bones Pràctiques i Validació
+## 9. Bones pràctiques i validació
 
 * **Text alternatiu (`alt`):** Totes les imatges l'han de tenir per descriure el contingut.
 * **Etiquetes de formulari (`<label>`):** Associa sempre el text amb el seu `<input>` mitjançant els atributs `for` i `id`.
 * **Validació W3C:** Utilitza el validador oficial per corregir errors de sintaxi o anidament.
 
-## 9. Referències i Recursos de Consulta
+---
+
+## 10. Resum del Bloc 1
+
+Aquest bloc cobreix els quatre fonaments bàsics de l'HTML5:
+
+1. **Estructura HTML correcta:** esquelet bàsic del document i anatomia dels elements.
+2. **Semàntica i jerarquia de continguts:** ús correcte de títols, seccions i ordre lògic.
+3. **Etiquetes estructurals principals:** `header`, `nav`, `main`, `section`, `article`, `aside` i `footer`.
+4. **Accessibilitat bàsica des del codi:** idioma del document, textos alternatius, labels i validació.
+
+## 11. Referències i recursos de consulta
 
 1. **Semantic HTML - MDN Web Docs**
    * [HTML: HyperText Markup Language - Curriculum](https://developer.mozilla.org/en-US/curriculum/core/semantic-html/)
@@ -131,20 +157,19 @@ L'accessibilitat garanteix que tothom pugui percebre, operar i entendre el web, 
 
 4. **HTML 5 - Viquipèdia**
     * [HTML 5 - L'enciclopèdia lliure](https://ca.wikipedia.org/wiki/HTML_5)
-    * *Descripció:* Història, nous elements semàntics (nav, footer, audio, video) i novetats de l'estàndard 
-
+    * *Descripció:* Història, nous elements semàntics (nav, footer, audio, video) i novetats de l'estàndard
 
 5. **Patrons de disseny web adaptatiu - IOC**
     * [Materials IOC: Patrons i Frameworks web (PDF)](https://ioc.xtec.cat/materials/FP/Recursos/fp_smx_m08_/web/fp_smx_m08_htmlindex/index.html)
-    * *Descripció:* Estratègies de disseny (Mobile First) i implementació de graelles flexibles 
+    * *Descripció:* Estratègies de disseny (Mobile First) i implementació de graelles flexibles
 
 6. **Principis d'accessibilitat web (WCAG) - IOC**
     * [Materials IOC: Les WCAG 2.1](https://ioc.xtec.cat/materials/FP/Recursos/fp_daw_m09_/web/fp_daw_m09_htmlindex/WebContent/u5/a3/continguts.html)
-    * *Descripció:* Els quatre principis (Perceptible, Operable, Entenedor, Robust) i tècniques d'accessibilitat 
+    * *Descripció:* Els quatre principis (Perceptible, Operable, Entenedor, Robust) i tècniques d'accessibilitat
 
 7. **Flexbox Froggy - Joc educatiu**
     * [Aprendre Flexbox jugant](https://flexboxfroggy.com/#ca)
-    * *Descripció:* Eina interactiva per practicar les propietats d'alineació de Flexbox 
+    * *Descripció:* Eina interactiva per practicar les propietats d'alineació de Flexbox
 
 8. **Validator W3C: Guía de validación - Leandro Fuentes**
     * [Cómo validar tu HTML como un pro](https://leandrofuentes.com/blog/validator-w3c-guia/)

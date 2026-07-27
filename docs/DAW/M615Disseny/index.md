@@ -1,40 +1,156 @@
-# M615 - Disseny
+# M615 - Disseny d'Interfícies Web
 
-Pàgina d'entrada del mòdul **M615 Disseny d'Interfícies Web**, pensada per centralitzar tots els continguts, blocs i recursos del curs.
+Aquest mòdul està pensat per a l'alumnat de **2n de DAW** i se centra en el **20% de coneixements que expliquen el 80% dels bons resultats reals en disseny web**. L'objectiu no és fer webs ornamentals, sinó interfícies **clares, accessibles, responsives i útils**.
 
+## Visió del mòdul
 
+Un bon dissenyador o dissenyadora web ha de dominar quatre idees abans de pensar en efectes:
 
-## Continguts
+1. **Estructurar bé el contingut**.
+2. **Guiar la mirada amb jerarquia visual**.
+3. **Maquetar amb criteri responsive**.
+4. **Dissenyar per a persones reals, no només per a pantalles boniques**.
 
-### Bloc 1. Fonaments de l'HTML5
+## Competència clau
 
-- [Sintaxi, estructura i accessibilitat](1_Fonaments.md)
+En acabar el mòdul, l'alumnat hauria de ser capaç de dissenyar i construir interfícies web que:
 
-## Organització recomanada
+* comuniquin amb claredat
+* tinguin una jerarquia visual coherent
+* s'adaptin correctament a mòbil, tauleta i escriptori
+* respectin principis bàsics d'accessibilitat i usabilitat
+* siguin consistents a nivell visual i funcional
 
-Per mantenir els apunts ordenats i fàcils de navegar:
+## Estructura del mòdul
 
-1. Crea una pàgina `index.md` com aquesta per a cada assignatura o mòdul.
-2. Organitza els continguts en fitxers separats per bloc, unitat o tema.
-3. Mantén un ordre numèric al nom dels fitxers per reflectir la seqüència didàctica.
-4. Afegeix nous enllaços a aquesta portada cada vegada que incorporis contingut nou.
+### Bloc 1. Fonaments semàntics i estructura
 
-## Estructura recomanada per créixer
+* [Sintaxi, estructura i accessibilitat](1_Fonaments.md)
 
-Si el mòdul continua ampliant-se, una estructura clara pot ser aquesta:
+El primer bloc posa la base tècnica i conceptual del mòdul:
 
-- `index.md` - portada del mòdul
-- `1_Fonaments.md` - conceptes bàsics i estructura HTML
-- `2_EstructuresSemantiques.md` - etiquetes semàntiques i jerarquia
-- `3_FormularisIMultimedia.md` - formularis, imatges, audio i video
-- `4_CSSInicial.md` - introducció a l'estil visual
-- `5_ProjectesIPractiques.md` - exercicis, pràctiques i projectes
+* estructura HTML correcta
+* semàntica i jerarquia de continguts
+* etiquetes estructurals principals
+* accessibilitat bàsica des del codi
+
+### Bloc 2. CSS: espai i caixa
+
+* [CSS: espai i caixa (Box Model, cascada, especificitat, unitats)](2_Presentacio.md)
+
+Aquest bloc fixa la base tècnica del CSS:
+
+* box model i control de dimensions
+* cascada i resolució de conflictes
+* especificitat amb criteri professional
+* unitats (`rem`, `%`, `px`, `vw`, `vh`) i ritme d'espaiat
+
+### Bloc 3. Layout modern (flux, Flexbox, Grid, responsive)
+
+* [Layout web: flux, Flexbox, Grid i responsive](3_Layout.md)
+
+Aquest bloc consolida la maquetació abans de frameworks:
+
+* flux normal del document
+* Flexbox per distribucions d'una dimensió
+* Grid per distribucions de dues dimensions
+* responsive mobile first
+
+### Bloc 4. Disseny visual (CRAP, tipografia, color, espai en blanc, composició)
+
+* [Disseny visual: CRAP, tipografia, color i composició](4_DissenyVisual.md)
+
+Aquest bloc reforça la qualitat visual abans del projecte:
+
+* principis CRAP aplicats a pantalles reals
+* sistema tipogràfic i jerarquia de lectura
+* paleta de color, contrast i coherència visual
+* patrons de composició reutilitzables
+
+### Bloc 5. Components i sistemes de disseny
+
+* [Components i sistemes de disseny](5_ComponentsSistemes.md)
+
+Aquest bloc prepara l'alumnat per implementar interfaces consistents:
+
+* botons, targetes, formularis i navegació
+* variants i estats d'interacció
+* tokens i coherència de sistema
+* Bootstrap i Tailwind com a implementacions
+
+### Bloc 6. Autoaprenentatge professional
+
+* [Autoaprenentatge professional](6_AutoaprenentatgeProfessional.md)
+
+Aquest bloc consolida hàbits professionals per continuar aprenent:
+
+* lectura de documentació tècnica
+* anàlisi crítica de webs reals
+* ús de la IA amb verificació
+* criteri per incorporar eines noves
+
+## El 20% que més impacta en el resultat
+
+Si l'alumnat domina aquests punts, ja té una base molt forta:
+
+1. **HTML semàntic ben estructurat**.
+2. **Jerarquia visual clara**.
+3. **Control dels espais amb Box Model, cascada i especificitat**.
+4. **Layouts moderns amb Flexbox i Grid quan toca**.
+5. **Responsive design pensat des de l'inici**.
+6. **Accessibilitat mínima integrada en totes les decisions**.
+7. **Consistència visual en tipografia, color i components**.
+8. **Autonomia professional per continuar aprenent eines noves**.
+
+## Resultats d'aprenentatge pràctics
+
+Al final del mòdul, cada alumne o alumna hauria de poder:
+
+* convertir un esquema o wireframe en una interfície web clara
+* decidir què és principal i què és secundari dins d'una pàgina
+* construir layouts sense dependre de tècniques obsoletes
+* justificar decisions de disseny amb criteris de llegibilitat, usabilitat i accessibilitat
+* detectar errors visuals habituals i corregir-los
+
+## Pràctiques recomanades
+
+Perquè el mòdul siga realment útil, les activitats haurien de prioritzar:
+
+* redisseny de pàgines mal resoltes
+* composició de landing pages responsive
+* millora visual d'una interfície existent
+* anàlisi crítica de webs reals
+* mini projectes amb restriccions reals de contingut, espai i dispositiu
+
+## Criteri metodològic
+
+Aquest mòdul hauria d'evitar pràctiques desfasades com:
+
+* maquetacions rígides no responsives
+* abús d'efectes visuals sense funció
+* ús de taules per maquetar
+* estructures visuals sense jerarquia ni objectiu
+* disseny pensat només per a escriptori
+
+En lloc d'això, s'ha de treballar amb criteri contemporani:
+
+* mobile first
+* accessibilitat des del començament
+* components reutilitzables
+* coherència visual
+* decisions de disseny justificades
 
 ## Recursos del mòdul
 
-Aquí també pots afegir més endavant:
+Recursos ja disponibles al mòdul:
 
-- criteris d'avaluació
-- pràctiques o activitats
-- recursos externs
-- enllaços a projectes o lliuraments
+* demos funcionals per a exemples pràctics a [demos/](demos/)
+* plantilla base per crear noves demos a [demos/_template_demo.html](demos/_template_demo.html)
+
+Aquest índex pot créixer més endavant amb:
+
+* criteris d'avaluació
+* rúbriques de projectes
+* pràctiques guiades
+* galeria de referències UI
+* recursos externs i eines d'inspecció

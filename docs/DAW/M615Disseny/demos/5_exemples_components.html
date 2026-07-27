@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloc 5 - Exemples Components i Sistemes</title>
+  <style>
+    :root {
+      --space-2: 0.5rem;
+      --space-4: 1rem;
+      --radius-md: 0.5rem;
+      --color-primary: #0ea5e9;
+      --color-primary-hover: #0284c7;
+      --color-text: #0f172a;
+      --color-surface: #ffffff;
+      --color-border: #cbd5e1;
+    }
+    body { margin: 2rem; font-family: Arial, sans-serif; color: var(--color-text); background: #f8fafc; }
+    section { margin-bottom: 2.5rem; }
+    .demo { border: 1px solid var(--color-border); border-radius: 8px; padding: 1rem; background: var(--color-surface); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--color-primary); color: #ffffff; }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-primary:focus-visible { outline: 2px solid #0369a1; outline-offset: 2px; }
+
+    .card { border: 1px solid var(--color-border); border-radius: 8px; padding: 1rem; max-width: 28rem; }
+    .card h3 { margin-top: 0; }
+    .card-actions { margin-top: 1rem; }
+
+    .field { margin-bottom: 1rem; }
+    label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
+    input {
+      width: 100%;
+      max-width: 22rem;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid #94a3b8;
+      border-radius: 6px;
+    }
+    .help { color: #475569; font-size: 0.9rem; margin-top: 0.35rem; }
+
+    .nav { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .nav a { text-decoration: none; color: #0f172a; padding: 0.45rem 0.6rem; border-radius: 6px; }
+    .nav a.active { background: #e0f2fe; color: #0369a1; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Bloc 5 - Exemples Components i Sistemes</h1>
+
+  <section id="botons">
+    <h2>Botons</h2>
+    <div class="demo">
+      <button class="btn btn-primary">Accio principal</button>
+      <button class="btn btn-primary" disabled>Desactivat</button>
+    </div>
+  </section>
+
+  <section id="targetes">
+    <h2>Targetes</h2>
+    <div class="demo">
+      <article class="card">
+        <h3>Titol de targeta</h3>
+        <p>Contingut breu amb estructura clara i espai coherent.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="#">Veure mes</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="formularis">
+    <h2>Formularis</h2>
+    <div class="demo">
+      <div class="field">
+        <label for="email">Correu electronic</label>
+        <input id="email" type="email" name="email" placeholder="nom@domini.com" required>
+        <p class="help">Exemple: nom@domini.com</p>
+      </div>
+      <button class="btn btn-primary" type="button">Enviar</button>
+    </div>
+  </section>
+
+  <section id="navegacio">
+    <h2>Navegacio</h2>
+    <nav class="demo nav" aria-label="Navegacio principal">
+      <a class="active" href="#">Inici</a>
+      <a href="#">Serveis</a>
+      <a href="#">Projectes</a>
+      <a href="#">Contacte</a>
+    </nav>
+  </section>
+</body>
+</html>

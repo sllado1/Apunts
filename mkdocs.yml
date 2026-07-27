@@ -7,6 +7,11 @@ nav:
       - M615 Disseny:
           - Presentacio del modul: DAW/M615Disseny/index.md
           - Bloc 1. Fonaments: DAW/M615Disseny/1_Fonaments.md
+          - Bloc 2. CSS espai i caixa: DAW/M615Disseny/2_Presentacio.md
+          - Bloc 3. Layout: DAW/M615Disseny/3_Layout.md
+          - Bloc 4. Disseny visual: DAW/M615Disseny/4_DissenyVisual.md
+          - Bloc 5. Components i sistemes: DAW/M615Disseny/5_ComponentsSistemes.md
+          - Bloc 6. Autoaprenentatge: DAW/M615Disseny/6_AutoaprenentatgeProfessional.md
 theme:
   name: material
   logo: assets/images/logo.png

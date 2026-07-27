@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloc 2 - Exemples CSS: espai i caixa</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --muted: #64748b;
+      --primary: #0ea5e9;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 2rem; color: var(--text); background: var(--bg); }
+    section { margin-bottom: 2.5rem; }
+    .demo-wrap { border: 1px solid #cbd5e1; border-radius: 8px; padding: 1rem; background: #fff; }
+
+    .card-content-box {
+      box-sizing: content-box;
+      width: 320px;
+      padding: 16px;
+      border: 2px solid #334155;
+      margin: 12px 0;
+      background: #e2e8f0;
+    }
+    .card-border-box {
+      box-sizing: border-box;
+      width: 320px;
+      padding: 16px;
+      border: 2px solid #334155;
+      margin: 12px 0;
+      background: #bae6fd;
+    }
+
+    .cascade p { color: #475569; }
+    .cascade p { color: #0f172a; }
+
+    p { color: #334155; }
+    .text-destacat { color: #1d4ed8; }
+    #intro { color: #b91c1c; }
+
+    html { font-size: 16px; }
+    .contenidor {
+      width: min(92%, 70rem);
+      margin-inline: auto;
+      padding: 1rem;
+      border: 1px dashed #94a3b8;
+    }
+    h3 { font-size: 2rem; margin: 0 0 0.5rem 0; }
+    .seccio { margin-block: 2rem; }
+    .nota { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <h1>Bloc 2 - Exemples CSS: espai i caixa</h1>
+
+  <section id="boxmodel">
+    <h2>Box Model</h2>
+    <div class="demo-wrap">
+      <div class="card-content-box">content-box: width + padding + border</div>
+      <div class="card-border-box">border-box: width total fixa</div>
+      <p class="nota">Observa la diferencia d'amplada final entre les dues caixes.</p>
+    </div>
+  </section>
+
+  <section id="cascada">
+    <h2>Cascada</h2>
+    <div class="demo-wrap cascade">
+      <p>Aquest text queda en #0f172a per ordre d'aparicio de regles.</p>
+    </div>
+  </section>
+
+  <section id="especificitat">
+    <h2>Especificitat</h2>
+    <div class="demo-wrap">
+      <p id="intro" class="text-destacat">Guanya el selector per ID en aquest exemple.</p>
+    </div>
+  </section>
+
+  <section id="unitats">
+    <h2>Unitats</h2>
+    <div class="contenidor">
+      <h3>Titol amb rem</h3>
+      <p class="seccio">Contenidor fluid amb % i limit en rem.</p>
+    </div>
+  </section>
+</body>
+</html>
