@@ -616,7 +616,7 @@ MODEL MENTAL DEL DESPLEGAMENT (M614 - Bloc 1)
 | HTTPS | HTTP amb la comunicació protegida amb TLS. |
 | `https://exemple.test/aula/` | URL completa: indica com accedir-hi i on. |
 | `/aula/imatges/logo.png` | Ruta des de l'arrel del lloc. |
-| `imatges/logo.png` | Ruta relativa a la carpeta de la URL base. |
+| `imatges/logo.png` | Ruta relativa a la carpeta actual. |
 | `../imatges/logo.png` | Puja un nivell abans d'entrar a `imatges/`. |
 | `/var/www/html/aula/imatges/logo.png` | Ruta del disc del servidor; no és la URL pública. |
 | `?grup=2` | Consulta que s'envia al servidor. |

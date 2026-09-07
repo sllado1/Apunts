@@ -26,11 +26,11 @@ necessites una connexió remota segura.
 
 Analogia simple:
 
-- Treballar en local és com preparar una maqueta a classe.
-- Desplegar és portar-la a l'expositor oficial on la veurà tothom.
+- Treballar en local és com provar la distribució d'un aparador al taller, on pots fer canvis abans que el vegi el públic.
+- Desplegar és traslladar aquest muntatge a l'aparador de la botiga, on ja el poden veure els clients.
 
 > **Idea clau**
-> El servidor és un altre ordinador, no una extensió màgica del teu.
+> El servidor és un altre ordinador, i habitualment geogràficament lluny.
 
 ---
 
@@ -99,6 +99,59 @@ Situació real de projecte:
 
 > **Idea clau**
 > Rsync resol el problema de transferir canvis de manera eficient.
+
+### 3.1. Què és SCP i com es compara amb rsync?
+
+SCP (Secure Copy) permet copiar fitxers entre el teu ordinador i un servidor de manera segura, utilitzant SSH.
+
+La diferència principal és què passa quan repeteixes una transferència:
+
+- Amb `scp`, copies els fitxers que indiques, encara que ja existeixin iguals al destí.
+- Amb `rsync`, es comprova quins fitxers necessiten actualitzar-se i s'ometen els que es consideren iguals. Per defecte, aquesta comprovació es basa en la mida i la data de modificació.
+- En transferències remotes, rsync també pot aprofitar parts d'un fitxer que ja existeixen al destí per reduir les dades enviades.
+
+Situació real de projecte:
+
+- Vols enviar un únic fitxer puntualment: SCP és una opció senzilla.
+- Vols desplegar sovint un projecte amb molts fitxers: rsync evita tornar a transferir els que no han canviat.
+
+| Aspecte | SCP | rsync sobre SSH |
+|---|---|---|
+| Objectiu | Copiar els fitxers indicats | Sincronitzar contingut entre origen i destí |
+| Si repeteixes l'enviament | Torna a copiar els fitxers indicats | Omet els fitxers que considera iguals |
+| Connexió segura | Utilitza SSH | Utilitza SSH en els exemples d'aquesta guia |
+| Fitxers sobrants al destí | No els elimina | Pot eliminar-los amb `--delete`, però no ho fa per defecte |
+| Ús habitual | Còpies puntuals | Desplegaments repetits i còpies incrementals |
+
+> **Idea clau**
+> SCP copia; rsync sincronitza. Tots dos poden transferir fitxers de manera segura a través de SSH.
+
+### 3.2. I FTP?
+
+FTP (File Transfer Protocol) és un protocol per transferir fitxers entre un client i un servidor. És habitual trobar-lo en allotjaments web, on un client gràfic permet pujar i baixar fitxers arrossegant-los entre carpetes.
+
+Els punts essencials:
+
+- Necessita un servei FTP al servidor.
+- Permet pujar, baixar i gestionar fitxers remots, però no obre una terminal per executar ordres com SSH.
+- FTP sense xifrat transmet les credencials i les dades en clar.
+- FTP no incorpora el mecanisme de transferència de diferències de rsync. Alguns clients poden comparar carpetes i evitar pujar fitxers que no han canviat.
+
+Cal distingir tres noms que sovint es confonen:
+
+| Protocol | Com protegeix la connexió | Relació amb SSH |
+|---|---|---|
+| FTP | No xifra la connexió | És independent de SSH |
+| FTPS | Protegeix FTP amb TLS | És independent de SSH |
+| SFTP | Transfereix fitxers a través de SSH | Utilitza SSH; és un protocol diferent de FTP |
+
+Situació real de projecte:
+
+- Si l'allotjament ofereix SFTP, pots pujar fitxers amb un client gràfic i una connexió xifrada.
+- Si tens accés SSH i rsync està instal·lat als dos equips, pots fer servir rsync sobre SSH per desplegar els canvis.
+
+> **Idea clau**
+> FTP, FTPS i SFTP no són el mateix. Per transferir fitxers de manera segura, utilitza una opció amb xifrat.
 
 ---
 
@@ -192,7 +245,21 @@ Què fa:
 - Sincronitza el directori local amb el directori del servidor, enviant principalment canvis.
 
 > **Idea clau**
-> Amb dues comandes ben enteses pots fer el 80% del desplegament bàsic.
+> SSH i rsync cobreixen la connexió remota i la sincronització del desplegament bàsic.
+
+### Comanda 3: SCP per a una còpia puntual
+
+```bash
+scp ./projecte/index.html usuari@servidor:/ruta/desti/
+```
+
+Què fa:
+
+- Copia el fitxer local `index.html` al directori indicat del servidor a través de SSH.
+- Si ja hi ha un fitxer amb el mateix nom, el sobreescriu si tens permisos.
+- Si repeteixes la comanda, torna a copiar el fitxer encara que no l'hagis modificat.
+
+Per copiar una carpeta sencera amb SCP pots utilitzar `-r`. Per actualitzar repetidament un projecte, rsync acostuma a ser més eficient.
 
 ---
 
@@ -230,68 +297,7 @@ Hàbits que et faran desplegar millor des del primer dia:
 
 ---
 
-## 9. Preguntes per construir el coneixement
-
-1. Per què no podem obrir la carpeta del servidor amb l'explorador de fitxers local, com si fos local?
-2. Quina diferència hi ha entre treballar localment i treballar al servidor?
-3. Per què rsync és més eficient que copiar tota la carpeta cada vegada?
-4. Per què rsync necessita una connexió amb el servidor?
-5. En quin moment del flux intervé Apache?
-6. Què pot passar si sincronitzes sense provar abans en local?
-7. Si et connectes per SSH però no pots escriure en una carpeta, de qui és el problema?
-8. Quins errors et fan pensar en problema de ruta i quins en problema de permisos?
-9. Què guanyes separant clarament "connectar" i "sincronitzar"?
-10. Per què és perillós editar fitxers directament al servidor sense control?
-11. Quina evidència necessites per afirmar que el desplegament ha anat bé?
-12. Si la web no canvia després d'un desplegament, quines tres comprovacions faries primer?
-
----
-
-## 10. Activitat guiada (20-30 minuts)
-
-Objectiu de l'activitat:
-
-- Identificar qui fa què, quan intervé cada eina i com arriba la web a l'usuari.
-
-### Cas pràctic
-
-Teniu una web amb aquests fitxers:
-
-- index.html
-- css/styles.css
-- js/app.js
-- img/logo.png
-
-Heu canviat només styles.css i app.js.
-
-### Tasca (equips de 2)
-
-1. Dibuixeu el flux complet del desplegament del vostre cas.
-2. Marqueu en quin ordinador s'executa cada acció.
-3. Marqueu quan intervé SSH.
-4. Marqueu quan intervé rsync.
-5. Marqueu quan intervé Apache.
-6. Indiqueu quins fitxers s'han de transferir i per què.
-7. Escriviu una explicació breu (6-8 línies) de per què no cal copiar tota la carpeta.
-
-### Producte final (1 pàgina)
-
-- Esquema del procés
-- Llista d'accions classificades per actor (local/servidor)
-- Justificació de l'ús de SSH i rsync
-
-### Criteri d'avaluació ràpida
-
-- Distingeix correctament la funció de SSH i rsync.
-- Entén qui executa cada part del procés.
-- Argumenta decisions amb criteri, no amb memòria.
-
-> **Idea clau**
-> Si pots explicar el procés amb paraules teves, ja tens el model mental.
-
----
-
-## 11. Resum final
+## 9. Resum final
 
 ### Resum visual del procés
 
@@ -312,20 +318,24 @@ flowchart LR
   E --> F[Navegador usuari]
 ```
 
-### Taula comparativa: SSH vs rsync
+### Taula comparativa: SSH, SCP, rsync i FTP
 
 | Eina | Per a què serveix | Què no fa | Quan la fas servir |
 |---|---|---|---|
 | SSH | Connectar-te de forma segura al servidor i executar ordres remotes | No sincronitza per si sola tot el projecte | Quan necessites entrar al servidor o fer comprovacions remotes |
+| SCP | Copiar fitxers de manera segura a través de SSH | No evita tornar a copiar fitxers iguals | Quan vols fer una còpia puntual |
 | rsync | Sincronitzar fitxers entre local i servidor de forma eficient | No substitueix la lògica d'una sessió remota completa | Quan vols desplegar canvis de fitxers |
+| FTP | Transferir i gestionar fitxers en un servidor FTP | No xifra les dades ni ofereix una terminal remota | Quan treballes amb un allotjament que ofereix FTP; cal una alternativa amb xifrat per protegir la transferència |
+| SFTP | Transferir i gestionar fitxers de manera segura sobre SSH | No ofereix per si sol la sincronització incremental de rsync | Quan vols pujar o baixar fitxers amb un client compatible, sovint gràfic |
 
 ### Idees clau que has de recordar
 
 1. Desplegar no és pujar per pujar: és seguir un flux.
-2. SSH connecta; rsync sincronitza.
+2. SSH connecta; SCP copia; rsync sincronitza.
 3. Rsync és eficient perquè envia principalment canvis.
 4. El servidor és un altre entorn, amb usuaris i permisos propis.
 5. Apache entra en joc després de la sincronització.
 6. Si no valides en local, desplegues incertesa.
 7. Usuari, ruta i permisos expliquen molts errors inicials.
 8. L'objectiu no és memoritzar opcions: és saber deduir decisions.
+9. FTP no xifra la connexió; FTPS i SFTP sí, però són protocols diferents.
