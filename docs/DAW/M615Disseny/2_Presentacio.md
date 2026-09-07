@@ -143,6 +143,23 @@ Abans de donar per bo el CSS:
 
 ---
 
+## Recursos oficials de consulta
+
+* **MDN - Introduction to the CSS box model**
+	* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model
+* **MDN - box-sizing**
+	* https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+* **MDN - Cascade**
+	* https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade
+* **MDN - Specificity**
+	* https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+* **MDN - Values and units**
+	* https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
+* **W3C - CSS Cascading and Inheritance Level 5**
+	* https://www.w3.org/TR/css-cascade-5/
+
+---
+
 ## 10. El 20% que han de recordar sempre
 
 1. **Box Model**: tota caixa té content, padding, border i margin.

@@ -67,9 +67,20 @@ Aquest bloc reforça la qualitat visual abans del projecte:
 * paleta de color, contrast i coherència visual
 * patrons de composició reutilitzables
 
-### Bloc 5. Components i sistemes de disseny
+### Bloc 5. Responsive, mobile first, media queries i frameworks
 
-* [Components i sistemes de disseny](5_ComponentsSistemes.md)
+* [Responsive, mobile first, media queries i frameworks](5_Responsive.md)
+
+Aquest bloc concreta com adaptar la interfície a qualsevol pantalla:
+
+* enfocament mobile first
+* media queries i punts de tall
+* adaptació de layout i components
+* ús crític de Bootstrap i Tailwind
+
+### Bloc 6. Components i sistemes de disseny
+
+* [Components i sistemes de disseny](6_ComponentsSistemes.md)
 
 Aquest bloc prepara l'alumnat per implementar interfaces consistents:
 
@@ -78,9 +89,9 @@ Aquest bloc prepara l'alumnat per implementar interfaces consistents:
 * tokens i coherència de sistema
 * Bootstrap i Tailwind com a implementacions
 
-### Bloc 6. Autoaprenentatge professional
+### Bloc 7. Autoaprenentatge professional
 
-* [Autoaprenentatge professional](6_AutoaprenentatgeProfessional.md)
+* [Autoaprenentatge professional](7_AutoaprenentatgeProfessional.md)
 
 Aquest bloc consolida hàbits professionals per continuar aprenent:
 
@@ -124,7 +135,7 @@ Perquè el mòdul siga realment útil, les activitats haurien de prioritzar:
 
 ## Criteri metodològic
 
-Aquest mòdul hauria d'evitar pràctiques desfasades com:
+Què no s'hauria de fer:
 
 * maquetacions rígides no responsives
 * abús d'efectes visuals sense funció
@@ -146,11 +157,3 @@ Recursos ja disponibles al mòdul:
 
 * demos funcionals per a exemples pràctics a [demos/](demos/)
 * plantilla base per crear noves demos a [demos/_template_demo.html](demos/_template_demo.html)
-
-Aquest índex pot créixer més endavant amb:
-
-* criteris d'avaluació
-* rúbriques de projectes
-* pràctiques guiades
-* galeria de referències UI
-* recursos externs i eines d'inspecció

@@ -128,6 +128,21 @@ Abans de donar una pantalla per acabada:
 
 ---
 
+## Recursos oficials de consulta
+
+* **W3C - WCAG 2.2 (contrast, percepció i comprensió)**
+	* https://www.w3.org/TR/WCAG22/
+* **MDN - Typography and text styling**
+	* https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text
+* **Material Design 3 - Typography**
+	* https://m3.material.io/styles/typography/overview
+* **Material Design 3 - Color system**
+	* https://m3.material.io/styles/color/system/overview
+* **Material Design 3 - Layout and spacing**
+	* https://m3.material.io/foundations/layout/understanding-layout/overview
+
+---
+
 ## 9. El 20% que has de recordar sempre
 
 1. Contrast, alineació i proximitat decideixen la claredat de la pantalla.

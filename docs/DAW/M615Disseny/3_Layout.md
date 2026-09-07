@@ -141,6 +141,21 @@ Abans de tancar una pantalla:
 
 ---
 
+## Recursos oficials de consulta
+
+* **MDN - Normal flow**
+	* https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow
+* **MDN - Basic concepts of Flexbox**
+	* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox
+* **MDN - Basic concepts of Grid**
+	* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout
+* **MDN - Responsive design**
+	* https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
+* **web.dev - Responsive Web Design Basics**
+	* https://web.dev/articles/responsive-web-design-basics
+
+---
+
 ## 9. El 20% que han de recordar sempre
 
 1. El flux normal és la base de tota maquetació.

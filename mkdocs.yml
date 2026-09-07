@@ -4,14 +4,32 @@ nav:
   - Inici: index.md
   - DAW:
       - Visio general: DAW/index.md
+      - M614 Desplegament:
+          - Presentacio del modul: DAW/M614Desplegament/index.md
+          - Bloc 1. Model mental del desplegament: DAW/M614Desplegament/1_ModelMentalDesplegament.md
+          - Bloc 2. SSH i rsync: DAW/M614Desplegament/2_SSH_i_rsync.md
+          - Bloc 3. Permisos Linux: DAW/M614Desplegament/3_Permisos_Linux_Desplegament.md
+          - Bloc 4. Apache minim: DAW/M614Desplegament/4_Apache_minim.md
+          - Bloc 5. Diagnostic i resolucio: DAW/M614Desplegament/5_Diagnostic_i_Resolucio.md
       - M615 Disseny:
           - Presentacio del modul: DAW/M615Disseny/index.md
           - Bloc 1. Fonaments: DAW/M615Disseny/1_Fonaments.md
           - Bloc 2. CSS espai i caixa: DAW/M615Disseny/2_Presentacio.md
           - Bloc 3. Layout: DAW/M615Disseny/3_Layout.md
           - Bloc 4. Disseny visual: DAW/M615Disseny/4_DissenyVisual.md
-          - Bloc 5. Components i sistemes: DAW/M615Disseny/5_ComponentsSistemes.md
-          - Bloc 6. Autoaprenentatge: DAW/M615Disseny/6_AutoaprenentatgeProfessional.md
+          - Bloc 5. Responsive: DAW/M615Disseny/5_Responsive.md
+          - Bloc 6. Components i sistemes: DAW/M615Disseny/6_ComponentsSistemes.md
+          - Bloc 7. Autoaprenentatge: DAW/M615Disseny/7_AutoaprenentatgeProfessional.md
+      - 1708 Sostenibilitat:
+          - Presentacio del modul: DAW/M1708-Sostenibilitat/index.md
+          - RA1. Fonaments de la sostenibilitat i desafiaments globals: DAW/M1708-Sostenibilitat/RA1_Fonaments_Sostenibilitat_i_Desafiaments_Globals.md
+      - MOPT3 Enginyeria del Desenvolupament Intel·ligent:
+          - Presentacio del modul: DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/index.md
+          - Bloc 1. Com afrontar un projecte: DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/1_Com_afrontar_un_projecte.md
+          - Bloc 2. Organitzacio del projecte: DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/2_Organitzacio_del_projecte.md
+          - Bloc 3. Pla de desenvolupament: DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/3_Pla_de_desenvolupament.md
+          - Bloc 4. Bones practiques de programacio: DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/4_Bones_practiques_de_programacio.md
+          - Bloc 5. Debug: DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/5_Debug.md
 theme:
   name: material
   logo: assets/images/logo.png

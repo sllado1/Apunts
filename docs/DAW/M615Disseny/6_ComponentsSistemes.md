@@ -1,4 +1,4 @@
-# Bloc 5: Components i sistemes de disseny
+# Bloc 6: Components i sistemes de disseny
 
 Aquest bloc transforma els fonaments previs en peces reutilitzables. L'objectiu és crear components consistents (botons, targetes, formularis, navegació) i entendre Bootstrap i Tailwind com a implementacions d'un sistema, no com a substituts del criteri.
 
@@ -45,7 +45,7 @@ Els botons guien l'acció principal de la pantalla.
 ### Bones pràctiques
 
 * Defineix jerarquia (primari, secundari, terciari).
-* Mantín mida tàctil adequada.
+* Manté una mida tàctil adequada.
 * Garanteix contrast i llegibilitat.
 * Cuida estats d'interacció.
 
@@ -80,12 +80,12 @@ Veure demo: [Targetes](demos/5_exemples_components.html#targetes)
 
 Els formularis són punts crítics d'UX. Han de ser clars i tolerants a error.
 
-### Bones pràctiques
+!!! success "A tenir en compte"
 
-* Cada camp amb `label` visible.
-* Missatges d'error concrets i prop del camp.
-* Estats diferenciats: normal, focus, error, desactivat.
-* Agrupació lògica i ordre de lectura.
+        * Cada camp amb `label` visible.
+        * Missatges d'error concrets i prop del camp.
+        * Estats diferenciats: normal, focus, error, desactivat.
+        * Agrupació lògica i ordre de lectura.
 
 ### Exemple de camp
 
@@ -110,16 +110,64 @@ Veure demo: [Navegació](demos/5_exemples_components.html#navegacio)
 
 ## 7. Sistema de disseny (base mínima)
 
-Un sistema de disseny és el conjunt de regles i peces que manté coherència.
+Un **sistema de disseny** és el conjunt de normes i elements que serveixen perquè una aplicació o una pàgina web tingui un aspecte coherent i uniforme.
 
 ### Elements mínims del sistema
 
-* tokens: color, espai, tipografia, radi, ombres
-* components: botons, targetes, formularis, navegació
-* variants i estats
-* convencions de nom
+#### Tokens
+
+Els **tokens** són els valors bàsics del disseny que es reutilitzen a tota l'aplicació.
+
+Exemples:
+
+* **Color:** colors principals, secundaris, de fons o d'error.
+* **Espai:** marges i separacions (8 px, 16 px, 24 px...).
+* **Tipografia:** tipus de lletra, mida i pes.
+* **Radi:** arrodoniment de les cantonades (4 px, 8 px...).
+* **Ombres:** efectes d'ombra per donar profunditat als elements.
+
+### Components
+
+Els **components** són peces reutilitzables de la interfície.
+
+Exemples:
+
+* Botons
+* Targetes (cards)
+* Formularis
+* Navegació (menús)
+
+#### Variants i estats
+
+Un mateix component pot tenir diferents versions (**variants**) i diferents comportaments (**estats**).
+
+**Exemple d'un botó:**
+
+**Variants:**
+
+* Primari
+* Secundari
+
+**Estats:**
+
+* Normal
+* Hover (quan el cursor passa per sobre)
+* Active (quan es prem)
+* Disabled (desactivat)
+
+### Convencions de nom
+
+Les **convencions de nom** serveixen per identificar els elements de manera clara i coherent.
+
+Exemples:
+
+* `color-primary`
+* `spacing-md`
+* `button-primary`
 
 ### Exemple de tokens
+
+A la demo **"Tokens i sistema"** es poden veure els tokens definits i com s'utilitzen per construir els diferents components de la interfície.
 
 Veure demo: [Tokens i sistema](demos/5_exemples_components.html)
 
@@ -137,14 +185,14 @@ Veure demo: [Tokens i sistema](demos/5_exemples_components.html)
 
 * Framework utilitari basat en classes petites.
 * Molt flexible per crear sistemes propis.
-* Exigeix criteri fort de composició per evitar desordre.
+* Exigeix un gran criteri  de composició per evitar desordre.
 
 ### Criteri docent
 
 No és "Bootstrap o Tailwind"; és:
 
 1. definir sistema i components
-2. implementar-los amb l'eina que més convinga
+2. implementar-los amb l'eina que més convingui
 
 ---
 
@@ -158,19 +206,17 @@ No és "Bootstrap o Tailwind"; és:
 
 ---
 
-## 10. Checklist de revisió
+Recursos oficials de consulta:
 
-Abans de tancar un primer projecte:
-
-* Existeix inventari de components principals.
-* Cada component té estats i variants clars.
-* Formularis i navegació mantenen coherència visual.
-* Els tokens de disseny són estables i reutilitzats.
-* Bootstrap/Tailwind s'han aplicat com a implementació, no com a excusa.
+* [Bootstrap - Documentation](https://getbootstrap.com/docs/)
+* [Tailwind CSS - Documentation](https://tailwindcss.com/docs)
+* [W3C WAI-ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/)
+* [MDN - HTML forms](https://developer.mozilla.org/en-US/docs/Learn/Forms)
+* [MDN - Accessibility (guides)](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
 
 ---
 
-## 11. El 20% que han de recordar sempre
+## 10. El 20% que han de recordar sempre
 
 1. Un component és una peça funcional reutilitzable.
 2. Botons, targetes, formularis i navegació han de parlar el mateix llenguatge visual.

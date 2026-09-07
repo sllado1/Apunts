@@ -1,4 +1,4 @@
-# Bloc 6: Autoaprenentatge professional
+# Bloc 7: Autoaprenentatge professional
 
 Aquest bloc entrena una competència clau per al món real: aprendre de manera autònoma, crítica i contínua. En disseny i front-end, les eines canvien, però el criteri professional és el que perdura.
 
@@ -70,7 +70,7 @@ La IA és un accelerador, però no pot ser l'únic mecanisme de decisió.
 
 ### Límits que cal respectar
 
-* Verificar sempre en documentació oficial.
+* Verificar sempre a la documentació oficial.
 * Testejar exemples en context real.
 * Evitar copiar sense entendre.
 * Explicar amb paraules pròpies el perquè de cada decisió.
@@ -106,7 +106,7 @@ Abans d'adoptar una nova eina (framework, llibreria o plugin), valora:
 4. Qualitat de documentació i comunitat.
 5. Impacte en accessibilitat i rendiment.
 
-Regla d'or: no adoptes una eina perquè és popular; adopta-la si millora resultat i procés.
+Regla d'or: no utilitzis una eina perquè és popular; utilitza-la si millora el resultat i la mantenibilitat del projecte.
 
 ---
 
@@ -134,15 +134,22 @@ Aquest cicle consolida coneixement transferible, no només memòria a curt termi
 
 ---
 
-## 9. Checklist de revisió personal
+## 9. Recursos oficials de consulta
 
-Al final de cada setmana, comprova:
-
-* He llegit almenys una font oficial.
-* He implementat alguna cosa, no només llegit.
-* He analitzat una web real amb criteri.
-* He validat el que m'ha suggerit la IA.
-* He deixat notes útils per a futur jo.
+* **MDN Web Docs**
+  * [https://developer.mozilla.org/](https://developer.mozilla.org/)
+* **web.dev - Learn**
+  * [https://web.dev/learn](https://web.dev/learn)
+* **W3C - Standards and drafts**
+  * [https://www.w3.org/standards/](https://www.w3.org/standards/)
+* **Can I use**
+  * [https://caniuse.com/](https://caniuse.com/)
+* **Bootstrap - Documentation**
+  * [https://getbootstrap.com/docs/](https://getbootstrap.com/docs/)
+* **Tailwind CSS - Documentation**
+  * [https://tailwindcss.com/docs](https://tailwindcss.com/docs)
+* **GitHub Docs - Copilot**
+  * [https://docs.github.com/en/copilot](https://docs.github.com/en/copilot)
 
 ---
 

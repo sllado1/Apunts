@@ -8,16 +8,29 @@
     :root {
       --space-2: 0.5rem;
       --space-4: 1rem;
+      --space-6: 1.5rem;
       --radius-md: 0.5rem;
       --color-primary: #0ea5e9;
       --color-primary-hover: #0284c7;
       --color-text: #0f172a;
       --color-surface: #ffffff;
       --color-border: #cbd5e1;
+      --color-muted: #475569;
     }
     body { margin: 2rem; font-family: Arial, sans-serif; color: var(--color-text); background: #f8fafc; }
     section { margin-bottom: 2.5rem; }
     .demo { border: 1px solid var(--color-border); border-radius: 8px; padding: 1rem; background: var(--color-surface); }
+    .hint {
+      margin: 0.5rem 0 0.85rem 0;
+      color: var(--color-muted);
+      font-size: 0.95rem;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
 
     .btn {
       display: inline-flex;
@@ -34,6 +47,15 @@
     .btn-primary { background: var(--color-primary); color: #ffffff; }
     .btn-primary:hover { background: var(--color-primary-hover); }
     .btn-primary:focus-visible { outline: 2px solid #0369a1; outline-offset: 2px; }
+    .btn:disabled,
+    .btn[aria-disabled="true"] {
+      opacity: 0.45;
+      cursor: not-allowed;
+      filter: grayscale(0.25);
+    }
+    .btn:disabled {
+      pointer-events: none;
+    }
 
     .card { border: 1px solid var(--color-border); border-radius: 8px; padding: 1rem; max-width: 28rem; }
     .card h3 { margin-top: 0; }
@@ -48,32 +70,52 @@
       border: 1px solid #94a3b8;
       border-radius: 6px;
     }
+    input:focus-visible {
+      outline: 2px solid #0369a1;
+      outline-offset: 2px;
+      border-color: #0369a1;
+    }
+    .input-error {
+      border-color: #dc2626;
+      background: #fef2f2;
+    }
     .help { color: #475569; font-size: 0.9rem; margin-top: 0.35rem; }
+    .error { color: #b91c1c; font-size: 0.9rem; margin-top: 0.35rem; }
 
     .nav { display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .nav a { text-decoration: none; color: #0f172a; padding: 0.45rem 0.6rem; border-radius: 6px; }
     .nav a.active { background: #e0f2fe; color: #0369a1; font-weight: 600; }
+    .nav a:focus-visible { outline: 2px solid #0369a1; outline-offset: 2px; }
+
+    @media (max-width: 768px) {
+      body { margin: 1rem; }
+    }
   </style>
 </head>
 <body>
   <h1>Bloc 5 - Exemples Components i Sistemes</h1>
+  <p class="hint">Objectiu del demo: veure estats de components i coherència visual. Prova hover amb ratolí i focus amb tecla Tab.</p>
 
   <section id="botons">
     <h2>Botons</h2>
+    <p class="hint">Que demostra: jerarquia visual i estats d'interacció (`normal`, `focus`, `disabled`).</p>
     <div class="demo">
-      <button class="btn btn-primary">Accio principal</button>
-      <button class="btn btn-primary" disabled>Desactivat</button>
+      <div class="row">
+        <button class="btn btn-primary" type="button">Accio principal</button>
+        <button class="btn btn-primary" type="button" disabled>Accio desactivada</button>
+      </div>
     </div>
   </section>
 
   <section id="targetes">
     <h2>Targetes</h2>
+    <p class="hint">Que demostra: agrupacio de contingut, espaiat intern i CTA consistent.</p>
     <div class="demo">
       <article class="card">
         <h3>Titol de targeta</h3>
         <p>Contingut breu amb estructura clara i espai coherent.</p>
         <div class="card-actions">
-          <a class="btn btn-primary" href="#">Veure mes</a>
+          <a class="btn btn-primary" href="#" aria-label="Veure mes sobre la targeta">Veure mes</a>
         </div>
       </article>
     </div>
@@ -81,11 +123,17 @@
 
   <section id="formularis">
     <h2>Formularis</h2>
+    <p class="hint">Que demostra: estat normal, focus visible i exemple d'error.</p>
     <div class="demo">
       <div class="field">
         <label for="email">Correu electronic</label>
         <input id="email" type="email" name="email" placeholder="nom@domini.com" required>
         <p class="help">Exemple: nom@domini.com</p>
+      </div>
+      <div class="field">
+        <label for="email-error">Correu electronic (amb error)</label>
+        <input id="email-error" class="input-error" type="email" name="email-error" value="nom@" aria-invalid="true">
+        <p class="error">Introdueix un correu valid (exemple: nom@domini.com).</p>
       </div>
       <button class="btn btn-primary" type="button">Enviar</button>
     </div>
@@ -93,6 +141,7 @@
 
   <section id="navegacio">
     <h2>Navegacio</h2>
+    <p class="hint">Que demostra: estat actiu i patró de navegació consistent.</p>
     <nav class="demo nav" aria-label="Navegacio principal">
       <a class="active" href="#">Inici</a>
       <a href="#">Serveis</a>
