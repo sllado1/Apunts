@@ -83,12 +83,12 @@ Important: el significat canvia una mica si parlem d'un fitxer o d'un directori.
 |---|---|---|
 | `r` | Pots llegir el contingut | Pots veure què hi ha dins (llistar noms) |
 | `w` | Pots modificar el fitxer | Pots crear, esborrar o reanomenar elements |
-| `x` | Pots executar-lo com a programa/script | Pots entrar-hi (traversar el directori) |
+| `x` | Pots executar-lo com a programa/script | Pots entrar-hi (travessar el directori) |
 
 Exemple de raonament:
 
 - Si Apache ha de servir `index.html`, necessita llegir-lo.
-- Si Apache ha d'arribar a `css/styles.css`, necessita poder traversar els directoris del camí.
+- Si Apache ha d'arribar a `css/styles.css`, necessita poder travessar els directoris del camí.
 
 > **Idea clau**
 > En directoris, el permís `x` és tan important com el `r`.
@@ -166,7 +166,7 @@ Situació real de projecte:
 
 ## 6. Les ordres mínimes
 
-No cal un manual complet. Amb tres comandes ben enteses tens gran part del control inicial.
+No cal un manual complet. Comença per consultar permisos, ajustar la propietat i comprovar els grups de l'usuari.
 
 ### `ls -l`
 
@@ -203,6 +203,117 @@ Quina idea has de retenir:
 > **Idea clau**
 > `ls -l` diagnostica, `chmod` ajusta permisos, `chown` ajusta propietat.
 
+### `id` i `usermod`: comprovar i modificar els grups d'un usuari
+
+Canviar el grup d'un fitxer no és el mateix que afegir un usuari a un grup:
+
+- `chown usuari:grup ruta` canvia el propietari i el grup del recurs.
+- `sudo usermod -aG grup usuari` afegeix l'usuari a un grup suplementari.
+- `id usuari` mostra els grups als quals pertany aquest usuari.
+
+Per exemple, al servidor:
+
+```bash
+id devop
+sudo usermod -aG desplegament devop
+id devop
+```
+
+El grup `devop` ha d'existir. L'opció `-a` vol dir afegir: amb `-G` sense `-a` substituiries la llista de grups suplementaris. Normalment no cal canviar el grup principal de l'usuari.
+
+Després del canvi, tanca la sessió SSH i obre'n una de nova perquè incorpori els grups actualitzats. Executa `id` dins la nova sessió per comprovar els grups efectius. Si reutilitzes connexions SSH persistents, també cal renovar-les.
+
+> **Idea clau**
+> Quan executes `rsync` sobre SSH, qui escriu al servidor és l'usuari de `usuari@servidor`. Els seus grups i permisos al servidor determinen si pot desplegar.
+
+### 6.1. Exemple de configuració habitual per desplegar amb rsync
+
+No hi ha una configuració única per a totes les aplicacions. Aquesta és una base senzilla per publicar **fitxers estàtics públics**, com HTML, CSS, JavaScript i imatges, en un servidor Debian/Ubuntu amb Apache:
+
+- `devop` és un compte existent que es connecta per SSH i envia fitxers amb rsync.
+- `desplegament` és el grup que pot modificar els fitxers publicats.
+- Apache s'executa amb l'usuari `www-data` i només necessita llegir aquests fitxers.
+- `/var/www/exemple/public` és el directori publicat, dedicat a aquesta web.
+
+#### Pas 1: preparar el grup al servidor
+
+Un administrador executa aquestes ordres al servidor, creant el grup només si encara no existeix:
+
+```bash
+sudo groupadd -f desplegament
+sudo usermod -aG desplegament devop
+```
+
+No afegim Apache al grup `desplegament`, perquè aquest grup tindrà permís per modificar el codi publicat.
+
+#### Pas 2: preparar el directori i els permisos
+
+Al servidor, per a aquest directori dedicat de contingut estàtic:
+
+```bash
+sudo mkdir -p /var/www/exemple/public
+sudo chown -R devop:desplegament /var/www/exemple/public
+sudo find /var/www/exemple/public -type d -exec chmod 2775 {} +
+sudo find /var/www/exemple/public -type f -exec chmod 664 {} +
+```
+
+Què aconseguim:
+
+| Recurs | Permisos | Propietari i grup | Altres usuaris, inclòs Apache |
+|---|---|---|---|
+| Directoris | `2775` (`rwxrwsr-x`) | Poden llistar, travessar i modificar el contingut | Poden llistar i travessar |
+| Fitxers estàtics | `664` (`rw-rw-r--`) | Poden llegir i escriure | Poden llegir |
+
+El `2` inicial activa **setgid** als directoris: els elements nous hereten el grup del directori pare. Això manté el grup `desplegament` encara que no sigui el grup principal de l'usuari. Setgid no dona per si sol escriptura al grup; també cal ajustar els permisos dels elements nous.
+
+En aquest exemple `devop` pot escriure perquè és el propietari. La pertinença a `desplegament` també li permet treballar en directoris d'aquest grup que pertanyin a un altre usuari i tinguin permisos de grup adequats.
+
+Apache i l'usuari de desplegament han de poder travessar tots els directoris pare, inclosos `/var`, `/var/www` i `/var/www/exemple`. Pots inspeccionar el camí complet amb:
+
+```bash
+namei -l /var/www/exemple/public
+```
+
+Aquesta configuració permet lectura als altres usuaris locals perquè el contingut és públic. Els secrets, com `.env`, claus o credencials, han de quedar fora d'aquest directori i tenir permisos específics.
+
+#### Pas 3: desplegar des de l'ordinador local
+
+Després de renovar la connexió SSH, executa al teu ordinador:
+
+```bash
+rsync -av --no-owner --no-group --chmod=D2775,F664 ./public/ devop@servidor:/var/www/exemple/public/
+```
+
+- `./public/` indica que envies el contingut de la carpeta local de fitxers públics.
+- `--no-owner --no-group` evita intentar conservar els propietaris i grups de l'ordinador local. Al servidor, els fitxers nous pertanyen a `devop` i hereten el grup del directori amb setgid.
+- `--chmod=D2775,F664` fixa els permisos de directoris i fitxers del destí segons el model anterior. Així, els permisos locals no deixen Apache sense lectura ni el grup sense escriptura.
+
+Rsync ha d'estar instal·lat als dos equips. No cal executar-lo amb `sudo`: el compte remot ja té els permisos necessaris. Aquesta ordre no elimina fitxers sobrants al destí.
+
+#### Pas 4: comprovar el resultat al servidor
+
+En una sessió SSH nova de `devop`:
+
+```bash
+id
+ls -ld /var/www/exemple/public
+ls -l /var/www/exemple/public
+test -w /var/www/exemple/public && echo "L'usuari pot escriure al directori"
+```
+
+Un administrador pot comprovar que Apache llegeix un fitxer desplegat:
+
+```bash
+sudo -u www-data test -r /var/www/exemple/public/index.html && echo "Apache pot llegir index.html"
+```
+
+Perquè la web es mostri, el lloc d'Apache també ha de tenir el `DocumentRoot` apuntant a `/var/www/exemple/public` i permetre l'accés a aquest directori en la seva configuració. Uns permisos Linux correctes no substitueixen aquesta configuració.
+
+Si l'aplicació necessita escriure a `uploads/` o `cache/`, dona permisos a l'usuari que executa l'aplicació només en aquests directoris. Mantén aquestes dades fora de la sincronització del codi. No cal donar escriptura a Apache sobre tota la web ni afegir-lo al grup de desplegament.
+
+> **Idea clau**
+> Una base coherent combina usuari remot autoritzat, grup correcte, directoris que hereten el grup i permisos de rsync compatibles amb la lectura d'Apache.
+
 ---
 
 ## 7. Errors habituals
@@ -231,6 +342,12 @@ Quina idea has de retenir:
 - Possible causa: falta permís d'execució (`x`) al directori.
 - Primer que comprovaria: permís del directori, no només del fitxer.
 
+### Cas 5: He afegit l'usuari al grup, però rsync encara diu `Permission denied`
+
+- Possible causa: la connexió SSH encara utilitza els grups de la sessió anterior, o el directori no té el grup o els permisos esperats.
+- Primer que comprovaria: `id` en una connexió SSH nova i `ls -ld /ruta/desti` al servidor.
+- Per crear, substituir o eliminar fitxers, l'usuari necessita escriptura i execució sobre el directori corresponent. Pertànyer al grup no serveix si aquest grup no té els permisos necessaris.
+
 > **Idea clau**
 > Molts errors de desplegament no són de codi, són de permisos i propietat.
 
@@ -254,75 +371,7 @@ Quina idea has de retenir:
 
 ---
 
-## 9. Preguntes per construir el coneixement
-
-1. Si Apache només ha de llegir un fitxer, necessita permís d'escriptura?
-2. Per què un directori necessita permís d'execució per poder-hi accedir?
-3. Què passaria si tots els usuaris poguessin modificar els fitxers de la web?
-4. Qui hauria de ser el propietari dels fitxers després del desplegament?
-5. Per què donar més permisos dels necessaris és una mala pràctica?
-6. Per què pot funcionar `index.html` però fallar `styles.css`?
-7. Quina diferència hi ha entre permís insuficient en fitxer i en directori?
-8. Si tens 403, quin recorregut faries per diagnosticar-lo?
-9. Quins directoris poden requerir escriptura real en una aplicació web?
-10. Si rsync ha anat bé, per què encara pot fallar la web?
-11. Què et diu la sortida de `ls -l` sobre responsabilitat i risc?
-12. Quan és millor canviar propietari i quan és millor ajustar grup?
-13. Com afecta al teu flux de treball no tenir permisos d'escriptura al projecte remot?
-14. Quina decisió de permisos prioritzaries en un equip de 3 desenvolupadors?
-
----
-
-## 10. Activitat guiada (20-30 minuts)
-
-Objectiu:
-
-- deduir permisos necessaris des del raonament funcional, no des de la memòria.
-
-### Material (cas pràctic)
-
-Tens aquesta estructura al servidor:
-
-```text
-/var/www/projecte
-  index.html
-  css/styles.css
-  js/app.js
-  uploads/
-```
-
-I aquestes observacions:
-
-- `index.html` carrega.
-- `styles.css` dona error 403.
-- El formulari de pujada no pot guardar fitxers a `uploads/`.
-
-### Tasca per equips (2-3 alumnes)
-
-1. Identifiqueu actors: desenvolupador, Apache, altres.
-2. Deduïu quins permisos necessita cada recurs per funcionar.
-3. Determineu si hi ha problema de seguretat en algun directori.
-4. Proposeu canvis de permisos i/o propietat i justifiqueu-los.
-5. Definiu quina comprovació faríeu primer amb `ls -l`.
-
-### Producte final (1 pàgina)
-
-- Taula amb recurs -> actor -> permís necessari -> risc si és massa permissiu.
-- Hipòtesi del problema principal.
-- Canvi proposat i justificació.
-
-### Criteri d'avaluació ràpida
-
-- Distingir fitxer vs directori correctament.
-- Relacionar permisos amb funció real de cada actor.
-- Prioritzar mínim permís necessari.
-
-> **Idea clau**
-> Si pots justificar "per què" d'un permís, no depens de receptes.
-
----
-
-## 11. Resum visual
+## 9. Resum visual
 
 ### Model base
 
@@ -375,3 +424,5 @@ Què?
 8. Dona només el mínim necessari per funcionar.
 9. Molts errors de desplegament són de permisos, no de codi.
 10. Si pots justificar un permís, ja tens model mental.
+11. `usermod -aG` afegeix l'usuari a un grup; després cal renovar la sessió SSH.
+12. Setgid manté el grup dels elements nous; els permisos de rsync han de mantenir els accessos necessaris.
