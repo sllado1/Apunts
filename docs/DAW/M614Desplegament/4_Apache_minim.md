@@ -23,7 +23,7 @@ Apache és un servidor web. La seva feina principal és:
 - decidir quina web toca servir
 - retornar els fitxers adequats
 
-Sense Apache (o un altre servidor web), els fitxers poden existir al servidor, però no hi ha cap servei que els lliuri al navegador.
+Sense Apache (o un altre servidor web, per exemple Nginx), els fitxers poden existir al servidor, però no hi ha cap servei que els lliuri al navegador.
 
 Esquema:
 
@@ -64,8 +64,8 @@ Què fa cada element:
 
 - Navegador: demana una URL.
 - Apache: rep la petició i decideix quina configuració aplicar.
-- VirtualHost: defineix "aquesta URL correspon a aquesta web".
-- DocumentRoot: carpeta base de la web.
+- VirtualHost: defineix "aquesta URL correspon a aquesta web" ( nom de domini i carpeta). Permet que un mateix servidor tingui diverses webs.
+- DocumentRoot: carpeta base de la web. És on Apache busca fitxers per servir.
 - index.html (o altres recursos): fitxer concret que cal servir.
 - Resposta: codi i contingut que torna al navegador.
 
@@ -161,7 +161,27 @@ Ara sí: configuració mínima, comentada per entendre el "per què".
 
 Línia per línia:
 
-- `ServerName`: nom de la web que identifica aquest lloc.
+- `ServerName`: nom de host o adreça IP que identifica aquest lloc. Si hi ha diverses webs a la mateixa IP i port, Apache compara el nom que demana el navegador (capçalera HTTP `Host`) amb el `ServerName` i els possibles `ServerAlias` per triar el VirtualHost.
+
+  **És obligatori?** No és imprescindible per arrencar Apache, però convé indicar-lo explícitament a cada VirtualHost. Si l'ometem, Apache intenta deduir un nom a partir de la configuració i del sistema. Si no pot determinar el nom del servidor, pot mostrar l'avís `Could not reliably determine the server's fully qualified domain name`, que per si sol no impedeix l'arrencada. El `ServerName` global, fora dels blocs VirtualHost, es configura separadament dels noms de cada lloc.
+
+  **Quina web es mostra si no coincideix cap nom?** Apache serveix el primer VirtualHost carregat dels que corresponen a la IP i el port de la petició. Per això, accedir per IP pot mostrar la pàgina per defecte d'Apache en lloc del nostre projecte. Ometre `ServerName` no converteix automàticament aquell lloc en el predeterminat. Pots veure l'ordre i els llocs predeterminats amb `apachectl -S`.
+
+  **Què posem segons el cas?** En aquest exemple HTTP al port 80:
+
+  | Situació | Línia de configuració | Adreça al navegador |
+  |---|---|---|
+  | Tenim un domini que apunta al servidor | `ServerName exemple.cat` | `http://exemple.cat` |
+  | No tenim domini i accedim per la IP del servidor | `ServerName 192.168.1.50` | `http://192.168.1.50` |
+  | Fem proves al mateix ordinador on funciona Apache | `ServerName localhost` | `http://localhost` |
+  | Volem un nom de proves sense comprar un domini | `ServerName projecte.test` | `http://projecte.test` |
+
+  Substitueix `192.168.1.50` per la IP real accessible del servidor. `localhost` sempre fa referència a l'ordinador des del qual obres el navegador: no serveix per identificar un servidor remot.
+
+  Per utilitzar un nom de proves, afegeix una entrada com `192.168.1.50 projecte.test` al fitxer `hosts` de l'ordinador **on obres el navegador** (`/etc/hosts` a Linux; `C:\Windows\System32\drivers\etc\hosts` a Windows). Si Apache és al mateix ordinador, utilitza `127.0.0.1`. El nom ha de coincidir amb el `ServerName`. El `projecte.local` de l'exemple també necessita resolució de noms; per a proves manuals és preferible utilitzar `.test`, ja que `.local` s'utilitza per a mDNS.
+
+  Escriure `ServerName` no crea un domini ni configura el DNS o la IP del servidor: només indica a Apache com identificar el lloc. Referència: [selecció de VirtualHosts per nom](https://httpd.apache.org/docs/2.4/vhosts/name-based.html) i [directiva ServerName](https://httpd.apache.org/docs/2.4/mod/core.html#servername).
+
 - `DocumentRoot`: carpeta base des d'on es serviran fitxers.
 - `<Directory ...>`: regles que s'apliquen a aquella carpeta.
 - `AllowOverride`: permet o no que `.htaccess` canviï comportament.
@@ -191,8 +211,8 @@ systemctl restart apache2
 
 Què fa cadascuna:
 
-- `a2ensite`: habilita un fitxer de lloc.
-- `reload`: rellegeix configuració activa amb impacte mínim.
+- `a2ensite`: habilita un fitxer de lloc (Virtualhost).
+- `reload`: rellegeix configuració activa amb impacte mínim. Quan es fa un canvi en un fitxer de VirtualHost. s'ha de recarregar perquè Apache l'apliqui.
 - `restart`: reinicia el servei complet.
 
 Quan usar cada una:
@@ -259,8 +279,6 @@ Objectiu: tenir un mètode de diagnosi repetible.
   - Perquè: evita barreges de dominis i rutes.
 - Documentar canvis (què, quan, per què).
   - Perquè: evita repetir errors i ajuda l'equip.
-- Provar configuració abans de reiniciar.
-  - Perquè: redueix talls innecessaris.
 - No modificar fitxers sense entendre'ls.
   - Perquè: "provar a cegues" crea errors encadenats.
 
@@ -269,71 +287,7 @@ Objectiu: tenir un mètode de diagnosi repetible.
 
 ---
 
-## 10. Preguntes per construir el coneixement
-
-1. Per què Apache necessita saber on són els fitxers?
-2. Pot existir una web sense Apache (o un altre servidor web)?
-3. Què passaria si dos VirtualHost utilitzessin el mateix domini?
-4. Què passa si DocumentRoot apunta a una carpeta buida?
-5. Per què Apache necessita permisos per llegir els fitxers?
-6. Per què editar una configuració no té efecte immediat fins a recarregar/reiniciar?
-7. En quin punt del flux decideix Apache quina web servir?
-8. Quin error esperaries si la ruta de CSS és incorrecta?
-9. Si veus la pàgina per defecte, què et diu sobre el VirtualHost?
-10. Què comprovaries primer: codi de la web o estat d'Apache?
-11. Quan triaries `reload` i quan `restart`?
-12. Si `configtest` falla, per què no hauries de reiniciar?
-13. Com et poden ajudar `access.log` i `error.log` alhora?
-14. Quina part del problema és configuració i quina part és contingut?
-
----
-
-## 11. Activitat guiada (30 minuts)
-
-Objectiu:
-
-- comprendre com Apache decideix quina web servir i com diagnosticar errors bàsics.
-
-### Material inicial
-
-Teniu:
-
-- estructura de directoris:
-
-```text
-/var/www/projecteA/public/index.html
-/var/www/projecteB/public/index.html
-```
-
-- un VirtualHost incomplet (sense algun camp clau)
-- 3 errors simulats (pàgina per defecte, 403 en una ruta, 404 en un CSS)
-
-### Tasca (equips de 2)
-
-1. Deduïu quin hauria de ser el DocumentRoot de cada projecte.
-2. Deduïu quina web servirà Apache segons `ServerName`.
-3. Identifiqueu quin error correspon a cada cas i per què.
-4. Definiu quina comprovació faríeu primer en cada cas (`status`, `configtest`, `logs`, permisos).
-5. Proposeu una configuració mínima corregida i justificada.
-
-### Producte final (1 pàgina)
-
-- Esquema del recorregut de petició
-- Diagnosi de cada error
-- Proposta de correcció raonada
-
-### Criteri d'avaluació ràpida
-
-- Entén la relació VirtualHost-DocumentRoot
-- Distingeix tipus d'error i primera comprovació
-- Argumenta decisions abans de tocar configuració
-
-> **Idea clau**
-> El valor no és encertar per intuïció: és tenir mètode de diagnosi.
-
----
-
-## 12. Resum visual
+## 10. Resum visual
 
 ### Paper d'Apache en el desplegament
 
