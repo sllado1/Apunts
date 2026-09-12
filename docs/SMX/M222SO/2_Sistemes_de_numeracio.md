@@ -121,6 +121,10 @@ Per exemple, `13 ÷ 2` dona **quocient 6 i residu 1**, perquè `13 = 6 × 2 + 1`
 
 **Comprovació:** `16 + 8 + 2 = 26`.
 
+![Divisions successives de 26 entre 2. Els quocients 13, 6, 3 i 1 passen a ser el dividend següent. Els residus es llegeixen de baix a dalt: 1, 1, 0, 1, 0. Resultat: 26 en decimal és 11010 en binari.](images/decimal_a_binari_divisions.png)
+
+**Com es llegeix la imatge:** les fletxes blaves indiquen quin **quocient tornem a dividir**. Quan el quocient és 0, parem. La fletxa taronja indica l'ordre en què agafem els **residus**, numerats de l'1r al 5è: de baix a dalt. Aquests residus formen el resultat binari.
+
 !!! question "Per què llegim els residus de baix a dalt?"
     La primera divisió ens dona el bit de les unitats, que va a la dreta. La següent ens dona el bit de la posició que val 2; després, el de la posició que val 4… Obtenim els bits començant pel de més a la dreta.
 
