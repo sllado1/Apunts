@@ -9,7 +9,7 @@ git remote add origin URL_DEL_REPOSITORI
 git push -u origin main
 ```
 
->ULL: origin és un nom de referència que pots triar, però és habitual usar-lo per al repositori principal.
+>ULL: `origin` és el nom habitual del remot principal, però pots triar-ne un altre si ho decides. El nom no afecta la funcionalitat, només la referència local que usem per parlar amb el repositori.
 
 Si has fet `git clone`, el remot `origin` ja està configurat. Pots consultar-lo amb `git remote -v`. Per enviar canvis necessitaràs permisos i l'autenticació que requereixi la plataforma.
 
@@ -81,6 +81,7 @@ En projectes col·laboratius, una bona norma és:
 
 - `git fetch` descarrega informació i commits del remot sense integrar-los a la branca actual.
 - `git pull --ff-only` descarrega i actualitza la branca només si pot avançar sense crear un commit de fusió. Si les històries han divergit, s'atura: revisa la situació abans de continuar.
+- `git pull` (sense `--ff-only`) pot fer un merge i crear un commit de fusió si la branca local i el remot no estan alineats.
 - `git push` envia commits locals al remot. Si el remot té canvis que falten localment, l'enviament pot ser rebutjat; cal incorporar-los i resoldre els conflictes abans de tornar-ho a provar.
 
 

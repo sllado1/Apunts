@@ -2,10 +2,23 @@ site_name: Apunts de Sílvia Lladó
 site_url: https://sllado1.github.io/Apunts/
 nav:
   - Inici: index.md
+  - SMX:
+      - Visió general: SMX/index.md
+      - M222 Sistemes operatius monolloc:
+          - Presentació del mòdul: SMX/M222SO/index.md
+          - Bloc 1. Informació i dades: SMX/M222SO/1_Informacio_i_dades.md
   - DAW:
       - Visio general: DAW/index.md
       - M614 Desplegament:
           - Presentacio del modul: DAW/M614Desplegament/index.md
+          - Git i control de versions:
+              - Bloc 1. Model mental de Git: DAW/M614Desplegament/1_Git_ModelMental.md
+              - Bloc 2. Repositori i gitignore: DAW/M614Desplegament/2_Git_Repositori_i_Gitignore.md
+              - Bloc 3. Cicle diari i commits: DAW/M614Desplegament/3_Git_CicleDiari_i_Commits.md
+              - Bloc 4. Branques i conflictes: DAW/M614Desplegament/4_Git_Branques_i_Conflictes.md
+              - Bloc 5. Remots i col·laboració: DAW/M614Desplegament/5_Git_Remots_i_Collaboracio.md
+              - Bloc 6. Recuperació d'errors: DAW/M614Desplegament/6_Git_Recuperacio_Errors.md
+              - Bloc 7. Git Flow i col·laboració: DAW/M614Desplegament/7_Git_Flow_i_Collaboracio.md
           - Bloc 1. Model mental del desplegament: DAW/M614Desplegament/1_ModelMentalDesplegament.md
           - Bloc 2. SSH i rsync: DAW/M614Desplegament/2_SSH_i_rsync.md
           - Bloc 3. Permisos Linux: DAW/M614Desplegament/3_Permisos_Linux_Desplegament.md
@@ -22,7 +35,7 @@ nav:
           - Bloc 7. Autoaprenentatge: DAW/M615Disseny/7_AutoaprenentatgeProfessional.md
       - 1708 Sostenibilitat:
           - Presentacio del modul: DAW/M1708-Sostenibilitat/index.md
-          - RA1. Fonaments de la sostenibilitat i desafiaments globals: DAW/M1708-Sostenibilitat/RA1_Fonaments_Sostenibilitat_i_Desafiaments_Globals.md
+          - RA1. Fonaments de la sostenibilitat i desafiaments globals: DAW/M1708-Sostenibilitat/1_Sostenibilitat.md
       - MOPT3 Enginyeria del Desenvolupament Intel·ligent:
           - Presentacio del modul: DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/index.md
           - Bloc 1. Com afrontar un projecte: DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/1_Com_afrontar_un_projecte.md

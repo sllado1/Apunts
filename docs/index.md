@@ -5,6 +5,7 @@ Benvingut/da a l'espai principal dels materials del curs. Aquesta portada ha de 
 ## Cicles
 
 - [DAW](DAW/index.md)
+- [SMX](SMX/index.md)
 
 
 

@@ -9,7 +9,7 @@ Aquest espai agrupa els materials del cicle **Desenvolupament d'Aplicacions Web 
 - [M1708 - Sostenibilitat](M1708-Sostenibilitat/index.md)
 - [MOPT3 - Enginyeria del Desenvolupament Intel·ligent](MOPT3-EnginyeriaDesenvolupamentInteligent/index.md)
 
-## Organització del cicle
+<!-- ## Organització del cicle
 
 La millor manera d'organitzar el contingut és mantenir una jerarquia clara:
 
@@ -33,3 +33,4 @@ docs/
       index.md
       1_Fonaments.md
 ```
+-->

@@ -155,5 +155,10 @@ En lloc d'això, s'ha de treballar amb criteri contemporani:
 
 Recursos ja disponibles al mòdul:
 
-* demos funcionals per a exemples pràctics a [demos/](demos/)
+* [Exemples d'HTML](demos/1_exemples_html.html)
+* [Box model](demos/2_boxmodel.html)
+* [Exemples de CSS: espai i caixa](demos/2_exemples_css_espai_caixa.html)
+* [Exemples de layout](demos/3_exemples_layout.html)
+* [Exemples de disseny visual](demos/4_exemples_disseny_visual.html)
+* [Exemples de components](demos/5_exemples_components.html)
 * plantilla base per crear noves demos a [demos/_template_demo.html](demos/_template_demo.html)

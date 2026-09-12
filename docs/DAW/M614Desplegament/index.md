@@ -2,6 +2,7 @@
 
 
 ## Gestor de versió i control de codi
+
 Aquesta secció treballa el gestor de versions i control de codi amb una idea central: entendre el procés abans de memoritzar eines.
 
 Aplicarem el principi de Pareto com a criteri de priorització: aprendre les poques operacions que resolen la majoria de situacions quotidianes. L'objectiu és poder **registrar canvis, recuperar versions i col·laborar sense perdre feina**. Treballarem amb Git; GitHub, GitLab o altres plataformes ens serviran per allotjar i compartir repositoris.
@@ -12,6 +13,7 @@ Aplicarem el principi de Pareto com a criteri de priorització: aprendre les poq
 - [Bloc 4. Treballar amb branques i integrar canvis](4_Git_Branques_i_Conflictes.md)
 - [Bloc 5. Compartir codi i col·laborar amb un remot](5_Git_Remots_i_Collaboracio.md)
 - [Bloc 6. Corregir errors i recuperar-se amb criteri](6_Git_Recuperacio_Errors.md)
+- [Bloc 7. Git Flow i col·laboració entre equips](7_Git_Flow_i_Collaboracio.md)
 
 ### Repte final: una millora web revisada i compartida
 

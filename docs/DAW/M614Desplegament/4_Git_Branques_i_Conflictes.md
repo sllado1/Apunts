@@ -27,6 +27,8 @@ git merge millora-menu
 
 `switch` canvia de branca; `switch -c` crea una branca i s'hi situa. `merge` integra la branca indicada **a la branca on ets**. En aquest exemple, integrem `millora-menu` a `main`.
 
+La fusió crea un commit de integració si cal, i la branca original continua existent. Si el projecte té un historial lineal, també es poden fer rebase, però això reescriu la història i s'ha d'usar amb precaució en branques compartides.
+
 Un conflicte apareix quan Git no pot combinar automàticament els canvis, per exemple perquè dues branques han modificat la mateixa línia de manera incompatible. No significa que s'hagi perdut la feina.
 
 1. Executa `git status` per identificar els fitxers en conflicte.
