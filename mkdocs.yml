@@ -7,6 +7,7 @@ nav:
       - M222 Sistemes operatius monolloc:
           - Presentació del mòdul: SMX/M222SO/index.md
           - Bloc 1. Informació i dades: SMX/M222SO/1_Informacio_i_dades.md
+          - Bloc 2. Sistemes de numeració i conversions: SMX/M222SO/2_Sistemes_de_numeracio.md
   - DAW:
       - Visio general: DAW/index.md
       - M614 Desplegament:

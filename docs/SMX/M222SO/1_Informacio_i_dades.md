@@ -151,8 +151,8 @@ Cal distingir dues famílies d'unitats:
 | Múltiples decimals: salts de 1.000 | Múltiples binaris: salts de 1.024 |
 | --- | --- |
 | 1 kB = 1.000 B | 1 KiB = 1.024 B |
-| 1 MB = 1.000.000 B | 1 MiB = 1.048.576 B |
-| 1 GB = 1.000.000.000 B | 1 GiB = 1.073.741.824 B |
+| 1 MB = 1.000 × 1.000 B | 1 MiB = 1.024 × 1.024 B |
+| 1 GB = 1.000 × 1.000 × 1.000 B | 1 GiB = 1.024 × 1.024 × 1.024 B |
 
 **Exemple resolt:** un fitxer de 2 KiB ocupa `2 × 1.024 = 2.048 bytes`. En bits són `2.048 × 8 = 16.384 bits`.
 
@@ -177,8 +177,36 @@ Per tant, **els bits per si sols no ens indiquen com els hem d'interpretar**. Ne
 ### Com representem el text?
 
 - **ASCII** és un codi de 7 bits amb 128 valors, que inclou lletres llatines sense accent, dígits, signes i caràcters de control. Els seus valors es poden guardar en bytes.
-- **Unicode** assigna punts de codi als caràcters de molts sistemes d'escriptura i a altres símbols.
-- **UTF-8** és una manera de codificar Unicode en bytes. Utilitza entre 1 i 4 bytes per punt de codi.
+
+**Unicode: un número per identificar cada caràcter**
+
+Imagina Unicode com un gran catàleg de lletres, signes i altres símbols de molts sistemes d'escriptura. Cada element del catàleg té un número que l'identifica. Aquest número s'anomena **punt de codi**.
+
+Per exemple:
+
+| Caràcter | Número que li assigna Unicode, escrit en decimal |
+| --- | --- |
+| `A` | 65 |
+| `à` | 224 |
+| `€` | 8.364 |
+
+El número **65 identifica la lletra `A`** dins d'aquest catàleg. No vol dir que la lletra ocupi 65 bytes: és el seu identificador, com el número de carnet identifica un alumne.
+
+Pots trobar aquests identificadors escrits com `U+0041` per a `A`. El prefix `U+` indica que és un punt de codi Unicode i el número que el segueix està escrit en hexadecimal. De moment, només cal entendre que **és una altra manera d'escriure el seu número identificador**.
+
+**UTF-8: com desem aquests identificadors en bytes**
+
+Quan desem text en un fitxer, necessitem representar aquests identificadors amb bytes. **UTF-8 estableix les regles per fer aquesta conversió**. Segons el punt de codi, utilitza entre 1 i 4 bytes.
+
+| Caràcter | Identificador Unicode en decimal | Representació en UTF-8: cada grup de 8 bits és un byte | Espai |
+| --- | --- | --- | --- |
+| `A` | 65 | `01000001` | 1 byte |
+| `à` | 224 | `11000011 10100000` | 2 bytes |
+| `€` | 8.364 | `11100010 10000010 10101100` | 3 bytes |
+
+No cal memoritzar aquestes seqüències. Observa que **Unicode ens diu quin caràcter és i UTF-8 com el representem en bytes**.
+
+Quan tornem a obrir el fitxer, el programa fa el camí invers: interpreta els bytes segons les regles d'UTF-8, recupera els identificadors Unicode i mostra el text.
 
 Per exemple, en UTF-8, `A` ocupa 1 byte i `à` ocupa 2 bytes. Per això **comptar les lletres d'un text no és suficient per saber quants bytes ocupa**.
 
@@ -209,7 +237,7 @@ Intenta respondre abans d'obrir les solucions.
 
 1. Trobes la dada `92`. Quin context hi afegiries perquè aportés informació?
 2. Un full conté les notes `5`, `7` i `9`, totes amb el mateix pes. Identifica les dades, el processament i la informació que obtenim calculant-ne la mitjana.
-3. Classifica `Marta`, una quantitat de `24` ordinadors, `Carrer Nou, 7` i el codi postal `08001`.
+3. Classifica el tipus de dades de: `Marta`, una quantitat de `24` ordinadors, `Carrer Nou, 7` i el codi postal `08001`.
 4. Quants bits hi ha en 6 bytes? Quants bytes són 32 bits?
 5. Quantes combinacions es poden representar amb 4 bits?
 6. Quin valor decimal té `00001010` si representa un enter sense signe?
@@ -228,24 +256,7 @@ Intenta respondre abans d'obrir les solucions.
     8. Depèn de la codificació i del caràcter. En UTF-8, `A` ocupa 1 byte i `à`, 2 bytes.
     9. L'aplicació calcula la mitjana i demana desar el resultat. El sistema operatiu gestiona recursos com la memòria i proporciona els serveis per escriure el fitxer.
 
-## 10. Activitat d'aula: de les dades a una decisió
-
-En parelles, imagineu que heu de preparar una aula per a una classe:
-
-| Dada recollida | Valor |
-| --- | --- |
-| Alumnes que necessitaran un ordinador | 28 |
-| Ordinadors instal·lats | 30 |
-| Ordinadors avariats | 4 |
-
-1. Calculeu quants ordinadors es poden utilitzar.
-2. Escriviu una frase amb la informació que obteniu en comparar-los amb el nombre d'alumnes.
-3. Proposeu una decisió justificada amb aquestes dades.
-4. Expliqueu com podríeu introduir, processar, mostrar i desar les dades amb un ordinador.
-
-??? success "Possible resposta"
-    Hi ha `30 − 4 = 26` ordinadors disponibles. Perquè cadascun dels 28 alumnes en tingui un, en falten 2. Podríem aconseguir dos equips addicionals o organitzar dues parelles de treball. Podríem introduir les dades en un full de càlcul, calcular-hi la disponibilitat, mostrar el resultat i desar el document.
 
 ## Material de referència
 
-Adaptació didàctica de *Sistemes operatius monolloc. Introducció als sistemes operatius*, apartat **1.2**, especialment els subapartats **1.2.1–1.2.4 i 1.2.11–1.2.12**, del document facilitat `fp_smx_m02_u1_pdfindex.pdf`. Els exemples i les activitats d'aquest bloc són propis; s'han precisat les explicacions sobre unitats i codificació de text.
+Adaptació didàctica de *Sistemes operatius monolloc. Introducció als sistemes operatius*, apartat **1.2**, especialment els subapartats **1.2.1–1.2.4 i 1.2.11–1.2.12**, del document facilitat `fp_smx_m02_u1_pdfindex.pdf`.
