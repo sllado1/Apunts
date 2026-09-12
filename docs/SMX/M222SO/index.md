@@ -8,3 +8,4 @@ Començarem amb una pregunta bàsica: **què són les dades amb què treballa un
 
 - [Bloc 1. Informació i dades: què tracta un ordinador?](1_Informacio_i_dades.md): dades i informació, tipus de dades, representació binària, bits i bytes, codificació i activitats pràctiques.
 - [Bloc 2. Sistemes de numeració i conversions](2_Sistemes_de_numeracio.md): conversions entre decimal, binari, octal i hexadecimal, amb exemples pas a pas i exercicis resolts.
+- [Bloc 3. Operacions en binari](3_Operacions_en_binari.md): sumes, restes, multiplicacions i divisions, amb imatges, exemples guiats i activitats amb solucions.
