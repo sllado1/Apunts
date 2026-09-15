@@ -108,7 +108,7 @@ Exemples concrets:
 
 - **ODS 9 (innovació i infraestructura)**: dissenyar una arquitectura web robusta, mantenible i escalable.
 - **ODS 12 (producció i consum responsables)**: reduir pes de pàgina, eliminar dependències innecessàries i optimitzar recursos multimèdia.
-- **ODS 13 (acció climàtica)**: triar proveïdors cloud amb energia renovable i monitorar consum de recursos del servei.
+- **ODS 13 (acció climàtica)**: triar proveïdors cloud amb energia renovable i monitoritzar el consum de recursos del servei.
 - **ODS 16 (institucions sòlides)**: aplicar bones pràctiques de seguretat, transparència en l'ús de dades i política de privacitat clara.
 
 Indicador docent simple:

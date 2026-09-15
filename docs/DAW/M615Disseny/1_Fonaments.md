@@ -98,7 +98,7 @@ L'HTML5 defineix elements per descriure les zones de la pàgina [14-16]:
 
 !!! success "Adeu divitis"
 
-L'ús excessiu de `<div>` sense semàntica és desaconsellat. Els nous elements semàntics milloren l'accessibilitat, el SEO i la comprensió del contingut.
+    L'ús excessiu de `<div>` sense semàntica és desaconsellat. Els nous elements semàntics milloren l'accessibilitat, el SEO i la comprensió del contingut.
 
 ---
 
