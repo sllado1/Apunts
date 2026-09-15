@@ -111,9 +111,9 @@ La IA és un accelerador, no un substitut del criteri tècnic.
 
 Ús deficient de la IA:
 
-- copiar pegats sense entendre,
+- copiar tall de codi sense entendre el que fa,
 - aplicar molts canvis alhora,
-- no verificar regressions.
+- no verificar regressions, no comprovar l'impacte dels canvis fets.
 
 > **Idea clau**
 > Amb IA, el valor professional no és trobar una resposta; és validar-la i decidir bé.
@@ -130,28 +130,7 @@ A més de saber programar, cal dominar:
 4. **Capacitat d'experimentació**: provar hipòtesis de manera controlada.
 5. **Comunicació tècnica**: explicar què falla, per què i com s'ha resolt.
 6. **Validació de resultats d'IA**: filtrar propostes i comprovar impacte real.
-7. **Disciplina de qualitat**: evitar correccions ràpides que generin deute tècnic.
-
----
-
-## 8. Activitat guiada (20-30 minuts)
-
-Objectiu:
-
-- entrenar una metodologia de debug replicable.
-
-Tasca:
-
-1. Reproduir un bug real del projecte.
-2. Escriure l'error exacte i la zona afectada.
-3. Formular dues hipòtesis possibles.
-4. Fer comprovacions mínimes per validar-ne una.
-5. Aplicar una correcció i verificar regressions.
-6. Redactar una nota breu "causa -> solució -> verificació".
-
-Evidència de sortida:
-
-- fitxa de diagnosi i resolució en 1 pàgina.
+7. **Disciplina de qualitat**: evitar arreglar un error amb un pedaç que resol el problema immediat però dificulta mantenir el codi més endavant.
 
 ---
 
@@ -172,7 +151,6 @@ Evidència de sortida:
 - [MDN - Debugging HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools)
 - [MDN - JavaScript debugging reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors)
 - [Chrome DevTools - Debug JavaScript](https://developer.chrome.com/docs/devtools/javascript/)
-- [PHP Manual - Error handling](https://www.php.net/manual/en/book.errorfunc.php)
 - [VS Code - Debugging](https://code.visualstudio.com/docs/editor/debugging)
 
 ---

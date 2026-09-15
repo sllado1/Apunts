@@ -23,10 +23,7 @@ Abans de crear cap fitxer, cal entendre:
 2. Separar requisits no funcionals (rendiment, usabilitat, seguretat, mantenibilitat).
 3. Detectar ambigüitats i formular preguntes concretes.
 
-### Evidència mínima
 
-- llista de requisits prioritzats,
-- dubtes resolts abans d'implementar.
 
 ---
 
@@ -36,9 +33,9 @@ Un projecte complex s'ha de dividir en parts petites i verificables.
 
 ### Estratègia
 
-- transformar requisits en tasques,
-- definir dependències,
-- ordenar per valor i risc.
+- transformar requisits en tasques: convertir allò que ha de fer el projecte en accions petites, clares i realitzables.
+- definir dependències: identificar quines tasques necessiten que una altra estigui acabada abans de poder començar.
+- ordenar per valor i risc: decidir què convé fer primer. Es prioritzen les funcionalitats més importants per al projecte i també aquelles que presenten més dificultat o incertesa, per detectar els problemes com més aviat millor.
 
 ### Patró útil de descomposició
 
@@ -46,11 +43,6 @@ Un projecte complex s'ha de dividir en parts petites i verificables.
 2. Lògica del joc (JavaScript).
 3. Gestió d'estat.
 4. Validació i proves.
-
-### Evidència mínima
-
-- backlog curt de tasques,
-- ordre d'execució justificat.
 
 ---
 
@@ -66,14 +58,11 @@ L'MVP és la versió més simple que ja resol l'objectiu principal.
 
 Exemple en un joc web:
 
-- pantalla inicial,
-- una partida funcional,
-- condició de final clara.
+- una pantalla inicial;
+- una partida que es pugui jugar de principi a fi;
+- un criteri clar que determini quan acaba la partida (guanyar, perdre, arribar a una puntuació, esgotar el temps, etc.).
 
-### Evidència mínima
-
-- demo funcional mínima,
-- llista d'allò que encara no entra en aquesta fase.
+En aquesta primera versió no calen menús complexos ni animacions. L'objectiu és tenir un producte que funcioni i que es pugui provar.
 
 ---
 
@@ -85,7 +74,7 @@ Un cop l'MVP funciona, s'afegeixen millores de forma incremental.
 
 1. Triar una funcionalitat.
 2. Implementar-la.
-3. Provar regressions.
+3. Provar regressions; Provar que no trenca funcionalitats existents.
 4. Integrar i documentar canvi.
 
 ### Bones pràctiques
@@ -94,10 +83,6 @@ Un cop l'MVP funciona, s'afegeixen millores de forma incremental.
 - commits descriptius,
 - validació contínua del comportament existent.
 
-### Evidència mínima
-
-- historial d'iteracions,
-- proves bàsiques per cada increment.
 
 ---
 
@@ -117,10 +102,6 @@ Refactoritzar és millorar estructura interna sense canviar comportament extern.
 
 Si el cost de seguir afegint funcionalitats és més alt que ordenar el codi, toca refactoritzar.
 
-### Evidència mínima
-
-- abans/després del codi,
-- explicació breu del guany en claredat i mantenibilitat.
 
 ---
 
@@ -134,7 +115,7 @@ Si el cost de seguir afegint funcionalitats és més alt que ordenar el codi, to
 - Detecto moments de refactorització i els justifico.
 
 ---
-
+<!-- 
 ## 7. Recursos oficials de consulta
 
 - [Atlassian - Agile project management](https://www.atlassian.com/agile/project-management)
@@ -146,7 +127,7 @@ Si el cost de seguir afegint funcionalitats és més alt que ordenar el codi, to
 - [Google Testing Blog - Test sizes and practical testing](https://testing.googleblog.com/2010/12/test-sizes.html)
 
 ---
-
-## 8. Resum del bloc
+-->
+## 7. Resum del bloc
 
 Aquest bloc defineix una metodologia professional per afrontar projectes: entendre requisits, dividir bé el problema, construir un MVP, iterar amb control i refactoritzar quan toca. Aquesta seqüència redueix errors, millora qualitat i facilita el treball en equip.
