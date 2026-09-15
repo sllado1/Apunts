@@ -125,6 +125,172 @@ Si la columna immediata de l'esquerra té un 1:
 
 **Comprovació en decimal:** `13 − 6 = 7`.
 
+### Exemple pas a pas: 10010₂ − 11₂
+
+Alineem els nombres per la dreta i afegim zeros a l'esquerra del segon: **11₂ = 00011₂**.
+
+```text
+    10010
+  − 00011
+  -------
+    01111
+```
+
+![Resta en columna de 10010₂ menys 00011₂, amb els valors antics ratllats, els nous valors al damunt i fletxes que indiquen els préstecs. Resultat: 01111₂.](images/resta_binaria_10010_11.png){ width="780" }
+
+#### Seguim els préstecs, un canvi cada vegada
+
+La segona columna començant per la dreta és la de **valor 2**, no la de les desenes. Les columnes en binari valen **1, 2, 4, 8, 16…**.
+
+En els esquemes següents, cada casella és una columna. **`10` dins d'una casella vol dir dues unitats d'aquella columna**, escrites en binari. Els punts del resultat indiquen bits pendents de calcular.
+
+**1. Comencem per les unitats: tenim 0 − 1.**
+
+```text
+Valor:      |  16 |   8 |   4 |   2 |   1 |
+            |   1 |   0 |   0 |   1 |   0 |
+          − |   0 |   0 |   0 |   1 |   1 |
+            -------------------------------
+Resultat:   |   · |   · |   · |   · |   · |
+```
+
+No tenim unitats per treure'n una. Canviem el **1 de la columna de valor 2 per dues unitats**. És com canviar una moneda de 2 € per dues monedes d'1 €.
+
+**2. El 1 que presta queda en 0; les unitats reben 10₂.**
+
+Al paper, ratlla el `1` de la columna de valor 2 i escriu `0` al damunt. Ratlla el `0` de les unitats i escriu `10` al damunt, dins de la mateixa columna.
+
+```text
+Valor:      |  16 |   8 |   4 |   2 |   1 |
+                                └────►
+            |   1 |   0 |   0 |   0 |  10 |
+          − |   0 |   0 |   0 |   1 |   1 |
+            -------------------------------
+Resultat:   |   · |   · |   · |   · |   1 |
+```
+
+A les unitats fem **`10₂ − 1₂ = 1₂`** i escrivim **1 sota la ratlla**. Aquesta columna ja està resolta.
+
+!!! warning "A la columna de valor 2, per què no fem 1 − 1?"
+    Al principi hi havia `1 − 1`, però **el 1 de dalt ja ha prestat a les unitats i ara és 0**. El de sota no canvia. Per tant, ara tenim **0 − 1** i necessitem un altre préstec. No podem utilitzar dues vegades el mateix 1.
+
+**3. Busquem un 1 disponible a l'esquerra.**
+
+La columna de valor 4 té 0 i la de valor 8 també. Arribem fins al **1 de la columna de valor 16**.
+
+Un zero no pot prestar tot sol: **primer ha de rebre de l'esquerra i després pot passar una part a la dreta**. Ho farem en tres canvis.
+
+**4. De 16 a 8: canviem una unitat de 16 per dues de 8.**
+
+En decimal, `16 = 8 + 8`. Ratlla el `1` de la columna de 16 i anota-hi `0`. Ratlla el `0` de la columna de 8 i anota-hi `10`.
+
+```text
+Valor:      |  16 |   8 |   4 |   2 |   1 |
+              └────►
+            |   0 |  10 |   0 |   0 |  10 |
+          − |   0 |   0 |   0 |   1 |   1 |
+            -------------------------------
+Resultat:   |   · |   · |   · |   · |   1 |
+```
+
+Encara no hem arribat a la columna de valor 2. Continuem passant el préstec.
+
+!!! note "Les unitats ja estan fetes"
+    El `10` de la columna d'1 conserva l'anotació del primer préstec. El seu resultat, **1**, ja és sota la ratlla. **No tornem a restar aquesta columna.**
+
+**5. De 8 a 4: ens quedem una unitat de 8 i canviem l'altra.**
+
+La columna de 8 ha rebut **dues unitats de 8**. Se'n queda una i canvia l'altra per **dues unitats de 4**: `8 = 4 + 4` en decimal.
+
+Ratlla el `10` que acabes d'anotar a la columna de 8 i escriu-hi `1`. Ratlla el `0` de la columna de 4 i escriu-hi `10`.
+
+```text
+Valor:      |  16 |   8 |   4 |   2 |   1 |
+                    └────►
+            |   0 |   1 |  10 |   0 |  10 |
+          − |   0 |   0 |   0 |   1 |   1 |
+            -------------------------------
+Resultat:   |   · |   · |   · |   · |   1 |
+```
+
+**El zero original de la columna de 8 acaba en 1:** ha rebut dues unitats i n'ha prestat una.
+
+**6. De 4 a 2: ens quedem una unitat de 4 i canviem l'altra.**
+
+La columna de 4 també té dues unitats. Se'n queda una i canvia l'altra per **dues unitats de 2**: `4 = 2 + 2` en decimal.
+
+Ratlla el `10` de la columna de 4 i escriu-hi `1`. A la columna de 2, ratlla el **0 que havia quedat després del primer préstec** i escriu-hi `10`.
+
+```text
+Valor:      |  16 |   8 |   4 |   2 |   1 |
+                          └────►
+            |   0 |   1 |   1 |  10 |  10 |
+          − |   0 |   0 |   0 |   1 |   1 |
+            -------------------------------
+Resultat:   |   · |   · |   · |   1 |   1 |
+```
+
+Ja hem arribat on calia! A la columna de valor 2 fem **`10₂ − 1₂ = 1₂`** i escrivim el segon **1** del resultat.
+
+!!! tip "Per què els zeros intermedis queden en 1?"
+    Cada columna intermèdia **rep dues unitats, se'n queda una i canvia l'altra per dues de la columna de la dreta**. Per això les columnes de valor 8 i 4 acaben amb un 1 cadascuna.
+
+**7. Acabem amb els valors que han quedat després dels préstecs.**
+
+- Columna de valor **4**: queda `1`; fem `1 − 0 = 1`.
+- Columna de valor **8**: queda `1`; fem `1 − 0 = 1`.
+- Columna de valor **16**: queda `0`; fem `0 − 0 = 0`.
+
+```text
+Valor:      |  16 |   8 |   4 |   2 |   1 |
+            |   0 |   1 |   1 |  10 |  10 |
+          − |   0 |   0 |   0 |   1 |   1 |
+            -------------------------------
+Resultat:   |   0 |   1 |   1 |   1 |   1 |
+```
+
+Llegim el resultat d'esquerra a dreta: **01111₂**, és a dir, **1111₂**.
+
+#### Resum: com escrivim els préstecs al paper?
+
+Escrivim **10010 a dalt i 00011 a sota**, amb els bits alineats per la dreta. Les anotacions dels préstecs es fan **damunt del nombre de dalt**:
+
+- **Ratlla el valor que canvia** i escriu el nou just al damunt, dins de la mateixa columna. El nombre de sota no canvia.
+- En el primer préstec, ratlla el **1 de la columna de valor 2** i posa-hi **0** al damunt. Ratlla el **0 de les unitats** i posa-hi **10** al damunt: són dues unitats en binari. Resta `10₂ − 1₂` i escriu **1 sota la ratlla**.
+- A la columna de valor 2 ara tens **0**, perquè ja ha prestat. Per poder restar-hi 1, busca el primer 1 disponible cap a l'esquerra, a la columna de valor 16. Ratlla'l i posa-hi **0**.
+- Fes passar el préstec per les columnes de valor 8 i 4: cadascuna rep **10₂**, en presta una unitat a la dreta i es queda amb **1**. Ratlla els zeros originals i escriu **1** al damunt de cadascun.
+- A la columna de valor 2, ratlla el **0 que havies anotat** i escriu-hi **10** al damunt. Ja pots fer `10₂ − 1₂ = 1₂`.
+
+El segon dibuix resumeix les anotacions finals: **0, 1, 1, 10, 10**, cadascuna damunt de la seva columna. El `10` de les unitats conserva l'anotació del primer pas; **aquella resta ja està feta**.
+
+Calculem **de dreta a esquerra**, actualitzant les columnes que presten:
+
+1. **Columna de valor 1:** tenim `0 − 1`. Demanem un préstec a la columna de valor 2: el seu 1 queda en 0 i les unitats reben `10₂`. Fem `10₂ − 1₂ = 1₂`.
+2. **Columna de valor 2:** ara hi queda 0 i hem de restar 1. Les columnes de valor 4 i 8 també tenen 0, així que anem fins al **1 de la columna de valor 16**. El préstec es reparteix així:
+    - La columna de 16 queda en 0 i la de 8 rep dues unitats.
+    - La de 8 en conserva una i canvia l'altra per dues unitats de 4.
+    - La de 4 en conserva una i canvia l'altra per dues unitats de 2.
+    - A la columna de 2 fem `10₂ − 1₂ = 1₂`.
+3. **Columna de valor 4:** després del repartiment queda 1. Fem `1 − 0 = 1`.
+4. **Columna de valor 8:** també queda 1. Fem `1 − 0 = 1`.
+5. **Columna de valor 16:** ha prestat la seva unitat i queda 0. Fem `0 − 0 = 0`.
+
+!!! note "Com llegim la imatge?"
+    Els nombres blaus substitueixen els valors ratllats. Cada `10` blau vol dir **dues unitats d'aquella columna**, no dos bits en columnes diferents. Les fletxes mostren cap on passa el préstec. El resultat s'escriu sota la ratlla, un bit per columna.
+
+**Resultat:** `10010₂ − 11₂ = 01111₂ = 1111₂`. El zero inicial es pot ometre.
+
+**Comprovació en decimal:** `18 − 3 = 15`.
+
+**Prova amb la suma:** sumem el resultat i el nombre que hem restat; hem de recuperar el nombre inicial.
+
+```text
+    01111
+  + 00011
+  -------
+    10010
+```
+
 ### Quan hi ha zeros entremig: 1000₂ − 0001₂
 
 La columna de les unitats necessita un préstec, però les dues columnes següents tenen 0. Hem d'arribar fins al primer 1 de l'esquerra i passar el préstec per les columnes intermèdies.

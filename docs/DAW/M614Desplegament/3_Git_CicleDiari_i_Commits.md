@@ -26,4 +26,18 @@ Els fitxers nous no seguits apareixen a `status`, però el seu contingut no apar
 
 Si tornes a editar un fitxer després de `git add`, has de preparar-lo de nou per incloure també els últims canvis. Fes commits petits amb missatges concrets, com ara `Update the menu link`, i evita missatges com `canvis` o `final`.
 
+!!! tip "Canviar només les majúscules i minúscules del nom d'un fitxer"
+
+    A Windows i en molts sistemes macOS, canviar `Index.html` per `index.html` des de l'explorador pot passar desapercebut per a Git. Per registrar el canvi d'un fitxer que Git ja segueix, fes servir `git mv` en dos passos, amb un nom temporal que no existeixi:
+
+    ```bash
+    git mv Index.html temporal-index.html
+    git mv temporal-index.html index.html
+    git status
+    git diff --staged --summary
+    git commit -m "Canvia Index.html a index.html"
+    ```
+
+    `git mv` ja deixa el canvi preparat per al commit; no cal fer `git add` per al canvi de nom. Per passar de minúscules a majúscules, segueix el mateix procediment amb el nom final desitjat. Revisa també els enllaços i les referències al fitxer: en un servidor Linux, habitualment `Index.html` i `index.html` són noms diferents. Si actualitzes aquestes referències, prepara els fitxers modificats amb `git add` abans del commit.
+
 **Pràctica:** fes dos commits amb millores diferents. Modifica un fitxer després d'haver-lo preparat amb `git add` i compara la sortida de `git diff` amb la de `git diff --staged`.
