@@ -187,7 +187,6 @@ Utilitza'l per a menús, barres d'accions, grups de botons, icones amb text i al
 2. Canvia `row` per `column` i identifica de nou els dos eixos.
 3. Amb `column`, canvia `align-items: center` per `flex-start`.
 4. Torna a `row`, estreny la finestra i compara el resultat amb `wrap` i amb `nowrap`.
-
 Veure demo: [Flexbox](demos/3_exemples_layout.html#flexbox)
 
 #### Practica
@@ -237,7 +236,7 @@ En aquesta graella hi ha tres columnes, dues files i sis cel·les. Les dues file
 ```css
 .galeria {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -245,7 +244,7 @@ En aquesta graella hi ha tres columnes, dues files i sis cel·les. Les dues file
   padding: 1rem;
   background: #e8eef8;
   border: 1px solid #9aacc8;
-  overflow-wrap: anywhere;
+
 }
 ```
 
