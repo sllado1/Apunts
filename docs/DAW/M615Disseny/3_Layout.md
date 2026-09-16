@@ -190,6 +190,9 @@ Utilitza'l per a menús, barres d'accions, grups de botons, icones amb text i al
 
 Veure demo: [Flexbox](demos/3_exemples_layout.html#flexbox)
 
+#### Practica
+Practica el flexbox amb el joc de les granotes: [Exercici Flexbox](https://flexboxfroggy.com/)
+
 ---
 
 ## 4. Grid: layout de dues dimensions
