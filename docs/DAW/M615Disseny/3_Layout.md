@@ -194,25 +194,235 @@ Veure demo: [Flexbox](demos/3_exemples_layout.html#flexbox)
 
 ## 4. Grid: layout de dues dimensions
 
-Grid és ideal quan necessites controlar files i columnes al mateix temps.
+CSS Grid permet **organitzar els elements en una graella de files i columnes**. Imagina un full quadriculat: pots posar un element en una casella o fer que n'ocupi diverses.
 
-### Conceptes essencials
+Treballa en **dues dimensions** perquè pots definir les files i les columnes al mateix temps. És útil per crear una galeria amb columnes alineades o una pàgina amb capçalera, menú lateral, contingut i peu.
 
-* **Contenidor grid**: element pare amb `display: grid;`
-* **Columnes**: `grid-template-columns`
-* **Files**: `grid-template-rows`
-* **Separació**: `gap`
+### 4.1. El contenidor i les caselles
 
-### Exemple bàsic
+* **Contenidor grid**: element pare al qual apliquem `display: grid`.
+* **Elements grid** (*grid items*): fills directes que es distribueixen dins de la graella.
+* **Files i columnes**: franges horitzontals i verticals, també anomenades *pistes*.
+* **Cel·la**: espai on es creuen una fila i una columna.
+* **Línies**: límits que separen les files i les columnes. Serveixen per indicar on comença i acaba un element.
+* **Àrea**: rectangle format per una o més cel·les que pot ocupar un element.
+
+```text
+             Columna 1    Columna 2    Columna 3
+           ┌────────────┬────────────┬────────────┐
+Fila 1     │     A      │     B      │     C      │
+           ├────────────┼────────────┼────────────┤
+Fila 2     │     D      │     E      │     F      │
+           └────────────┴────────────┴────────────┘
+```
+
+En aquesta graella hi ha tres columnes, dues files i sis cel·les. Les dues files comparteixen les mateixes columnes: per això els elements queden alineats verticalment.
+
+### 4.2. Primer exemple: una galeria de tres columnes
+
+```html
+<div class="galeria">
+  <article class="targeta">Projecte A</article>
+  <article class="targeta">Projecte B</article>
+  <article class="targeta">Projecte C</article>
+  <article class="targeta">Projecte D</article>
+  <article class="targeta">Projecte E</article>
+  <article class="targeta">Projecte F</article>
+</div>
+```
+
+```css
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.targeta {
+  padding: 1rem;
+  background: #e8eef8;
+  border: 1px solid #9aacc8;
+  overflow-wrap: anywhere;
+}
+```
+
+**Què fa el navegador?**
+
+1. Converteix `.galeria` en un contenidor grid.
+2. Crea tres columnes iguals amb `grid-template-columns`.
+3. Col·loca els fills per ordre: A, B i C a la primera fila; D, E i F a la segona, en una pàgina amb escriptura d'esquerra a dreta.
+4. Crea les files necessàries automàticament, perquè no les hem definit explícitament.
+5. Deixa `1rem` de separació entre files i entre columnes.
+
+`display: grid` tot sol no crea tres columnes: cal indicar la distribució que volem. Tampoc converteix els descendents interiors de cada targeta en elements d'aquesta graella; actua sobre els fills directes.
+
+### 4.3. Com es defineixen les mides?
+
+Amb `grid-template-columns` escrivim una mida per a cada columna. Amb `grid-template-rows` podem fer el mateix per a les files.
+
+| Exemple | Què significa? |
+| --- | --- |
+| `grid-template-columns: 12rem 1fr;` | Una columna de `12rem` i una altra que aprofita l'espai restant. |
+| `grid-template-columns: 1fr 2fr;` | Dues columnes flexibles amb proporció 1:2, sempre que els mínims del contingut ho permetin. |
+| `grid-template-columns: repeat(3, 1fr);` | Tres columnes flexibles amb el mateix factor de repartiment. |
+| `grid-template-rows: auto 1fr auto;` | Primera i última fila dimensionades segons el contingut; la central pot aprofitar l'espai disponible. |
+| `gap: 1rem 2rem;` | `1rem` entre files i `2rem` entre columnes. |
+
+La unitat **`fr`** representa una fracció de l'espai que es reparteix entre pistes flexibles. Per exemple, si queden 600 píxels després de descomptar separacions i pistes fixes, `1fr 2fr` reparteix aquest espai en 200 i 400 píxels, si els mínims del contingut no ho impedeixen.
+
+`repeat(3, ...)` evita escriure tres vegades la mateixa definició. `minmax(mínim, màxim)` estableix els límits d'una pista: **`minmax(0, 1fr)`** permet que la columna es redueixi fins a zero i participi en el repartiment de l'espai. Així, un contingut llarg no força per si sol una columna a ser més ampla que les altres; el contingut encara necessita regles adequades perquè no desbordi.
+
+!!! tip "Evita sumar percentatges i separacions sense tenir-los en compte"
+
+    Tres columnes de `33.33%` ja ocupen pràcticament tota l'amplada. Si hi afegeixes `gap`, la graella pot desbordar. Amb `repeat(3, minmax(0, 1fr))`, Grid descompta les separacions abans de repartir l'espai entre les columnes.
+
+### 4.4. Files explícites i files automàtiques
+
+La **graella explícita** és la que defineixes amb `grid-template-columns` i `grid-template-rows`. Quan calen més pistes per col·locar els elements, el navegador crea la **graella implícita**.
+
+En la galeria anterior hem definit tres columnes, però cap fila. Si afegim una setena targeta, apareix una tercera fila automàticament.
+
+Per controlar les files creades automàticament podem afegir:
+
+```css
+.galeria {
+  grid-auto-rows: minmax(8rem, auto);
+}
+```
+
+Cada fila automàtica tindrà una alçada mínima de `8rem` i podrà créixer si el contingut ho necessita. Això és útil per evitar files massa baixes sense fixar una alçada que pugui tallar el text.
+
+### 4.5. Fer que un element ocupi diverses cel·les
+
+Les línies de la graella es numeren. **Tres columnes tenen quatre línies verticals**: una a cada extrem i dues interiors.
+
+```text
+Línia 1        Línia 2        Línia 3        Línia 4
+   │ Columna 1    │ Columna 2    │ Columna 3    │
+```
+
+Podem afegir la classe `destacada` a la primera targeta:
+
+```html
+<article class="targeta destacada">Projecte A</article>
+```
+
+```css
+.destacada {
+  grid-column: 1 / 3;
+}
+```
+
+`grid-column: 1 / 3` significa que comença a la línia 1 i acaba a la línia 3: **ocupa dues columnes**, no tres. Els altres elements es col·loquen als espais disponibles seguint el comportament automàtic de Grid.
+
+Altres opcions:
+
+* `grid-column: span 2`: ocupa dues columnes sense fixar-ne la línia inicial.
+* `grid-column: 1 / -1`: ocupa totes les columnes de la graella explícita; `-1` identifica la seva última línia.
+* `grid-row: span 2`: ocupa dues files.
+
+### 4.6. Organitzar una pàgina amb àrees
+
+Quan la pàgina té zones clares, podem donar-los noms amb `grid-template-areas`. Això permet dibuixar-ne la distribució amb text dins del CSS.
+
+```html
+<div class="pagina">
+  <header class="capcalera">Capçalera</header>
+  <nav class="menu" aria-label="Principal">Menú de navegació</nav>
+  <main class="contingut">Contingut principal</main>
+  <footer class="peu">Peu de pàgina</footer>
+</div>
+```
+
+```css
+.pagina {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "capcalera"
+    "menu"
+    "contingut"
+    "peu";
+  gap: 1rem;
+}
+
+.capcalera { grid-area: capcalera; }
+.menu { grid-area: menu; }
+.contingut { grid-area: contingut; }
+.peu { grid-area: peu; }
+
+@media (min-width: 48rem) {
+  .pagina {
+    grid-template-columns: 12rem minmax(0, 1fr);
+    grid-template-areas:
+      "capcalera capcalera"
+      "menu      contingut"
+      "peu       peu";
+  }
+}
+```
+
+En una pantalla petita, totes les zones apareixen en una columna. A partir de `48rem`, el menú ocupa la columna lateral i el contingut ocupa la resta. La capçalera i el peu s'estenen per les dues columnes perquè repetim el seu nom a les dues posicions de la fila.
+
+Cada cadena entre cometes representa una fila. Totes han de tenir el mateix nombre de cel·les, i les cel·les d'una mateixa àrea han de formar un rectangle. Un punt (`.`) representa una cel·la sense àrea assignada.
+
+### 4.7. Una galeria que adapta el nombre de columnes
+
+En lloc de fixar sempre tres columnes, podem deixar que Grid calculi quantes hi caben. Per provar-ho, substitueix la definició de columnes del primer exemple:
+
+```css
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+}
+```
+
+Llegeix l'expressió de dins cap enfora:
+
+1. `min(100%, 15rem)` tria el valor més petit entre l'amplada del contenidor i `15rem`. Així, el mínim de la columna no supera el contenidor en pantalles molt estretes.
+2. `minmax(..., 1fr)` defineix aquest mínim i permet que la columna creixi amb l'espai disponible.
+3. `repeat(auto-fit, ...)` crea les columnes que hi caben i col·lapsa les que queden buides, perquè les ocupades puguin aprofitar l'espai.
+
+El resultat passa d'una columna a diverses segons l'amplada disponible, sense haver de definir una consulta de mitjans per a cada nombre de columnes.
+
+### 4.8. Alinear el contingut dins de la graella
+
+En una pàgina amb escriptura horitzontal, aquestes propietats del contenidor controlen els elements dins de les seves àrees:
+
+| Propietat | Efecte |
+| --- | --- |
+| `justify-items: center` | Centra cada element horitzontalment dins de la seva àrea. |
+| `align-items: center` | Centra cada element verticalment dins de la seva àrea. |
+| `place-items: center` | Combina els dos centraments anteriors. |
+
+Molts elements s'estiren per defecte per omplir la seva àrea. Si els centres, poden deixar d'ocupar-ne tota l'amplada o alçada. Per canviar només un fill, utilitza `justify-self` o `align-self`.
+
+`justify-content` i `align-content` tenen una altra funció: distribueixen **el conjunt de les pistes** dins del contenidor quan hi ha espai lliure. Per exemple, unes columnes d'amplada fixa es poden centrar amb `justify-content: center` si no ocupen tota l'amplada.
+
+### 4.9. Errors habituals
+
+* **Aplicar Grid al fill en lloc del pare:** el contenidor és qui organitza els seus fills directes.
+* **Confondre números de columna amb números de línia:** `1 / 3` ocupa dues columnes.
+* **Fixar alçades massa petites:** deixa que les files creixin amb el contingut o utilitza un mínim amb `minmax`.
+* **Crear columnes fora de les previstes:** col·locar un element més enllà de la graella definida pot generar pistes implícites inesperades.
+* **Forçar elements massa amples:** revisa els mínims de les columnes i adapta imatges i textos perquè no desbordin.
+* **Canviar l'ordre visual sense revisar l'HTML:** moure un element amb Grid no canvia l'ordre de lectura del document ni, habitualment, el recorregut del teclat. Mantén un ordre HTML coherent.
+
+### 4.10. Quan usar Grid i què practicar
+
+Utilitza Grid per a galeries de targetes, panells d'informació i pàgines amb diverses zones que necessiten compartir files i columnes. Pots utilitzar Flexbox dins d'una targeta per alinear-ne els botons.
+
+**Pràctica guiada:**
+
+1. Copia l'exemple de la galeria i canvia les tres columnes per dues.
+2. Afegeix una setena targeta i observa com es crea una fila nova.
+3. Fes que la primera targeta ocupi dues columnes amb `grid-column: span 2`.
+4. Retira aquesta regla i prova les columnes automàtiques de l'apartat 4.7 mentre canvies l'amplada de la finestra.
+5. Copia l'exemple d'àrees i comprova com canvia la posició del menú en una pantalla ampla.
+6. Activa la visualització de la graella a les eines de desenvolupador del navegador per identificar les línies, les pistes i les separacions.
 
 Veure demo: [Grid](demos/3_exemples_layout.html#grid)
-
-### Quan usar Grid
-
-* galeries de targetes
-* maquetació de pàgines
-* dashboards
-* estructures amb múltiples zones
 
 ---
 
