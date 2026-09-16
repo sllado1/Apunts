@@ -294,6 +294,10 @@ Cada fila automàtica tindrà una alçada mínima de `8rem` i podrà créixer si
 
 ### 4.5. Fer que un element ocupi diverses cel·les
 
+#### Línies, pistes i cel·les: què numeram?
+
+Les **línies** són les fronteres de la graella, no les columnes ni les files. Una **pista** és l'espai entre dues línies consecutives. Una **cel·la** és la intersecció d'una pista de fila i una de columna.
+
 Les línies de la graella es numeren. **Tres columnes tenen quatre línies verticals**: una a cada extrem i dues interiors.
 
 ```text
@@ -320,6 +324,129 @@ Altres opcions:
 * `grid-column: span 2`: ocupa dues columnes sense fixar-ne la línia inicial.
 * `grid-column: 1 / -1`: ocupa totes les columnes de la graella explícita; `-1` identifica la seva última línia.
 * `grid-row: span 2`: ocupa dues files.
+
+#### Exemple complet: situar un element amb quatre límits
+
+**Codi HTML:**
+
+```html
+<div class="graella-linies">
+  <article class="bloc-a">A</article>
+  <article class="bloc-b">B</article>
+  <article class="bloc-c">C</article>
+</div>
+```
+
+**Codi CSS:**
+
+```css
+.graella-linies {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(6rem, auto));
+  gap: 1rem;
+}
+.graella-linies > article {
+  padding: 1rem;
+  background: #e8eef8;
+  border: 1px solid #9aacc8;
+}
+.bloc-a {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+.bloc-b {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+.bloc-c {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+```
+
+**Resultat** (esquema sense representar el `gap`):
+
+```text
+                    Línies de columna
+                1           2           3           4
+Línia de fila 1  ┌───────────────────────┬───────────┐
+                │                       │     B     │
+Línia de fila 2  │           A           ├───────────┤
+                │                       │     C     │
+Línia de fila 3  └───────────────────────┴───────────┘
+```
+
+**Per què passa?**
+
+1. El contenidor defineix tres columnes i dues files: hi ha **quatre línies de columna i tres línies de fila**.
+2. `grid-column: 1 / 3` situa A entre les línies verticals 1 i 3: ocupa les columnes 1 i 2.
+3. `grid-row: 1 / 3` situa A entre les línies horitzontals 1 i 3: ocupa les dues files. La seva àrea és un rectangle de quatre cel·les.
+4. B i C comparteixen els límits de columna `3 / 4`, però tenen límits de fila diferents. Per això queden un damunt de l'altre.
+5. `gap` separa pistes, però **no afegeix números de línia**. A s'estén també per l'espai de les separacions interiors de l'àrea que ocupa.
+
+La notació sempre és **inici / final**. Aquestes declaracions són equivalents:
+
+```css
+.bloc-a {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+```
+
+També podem escriure tota la posició amb una sola propietat:
+
+```css
+.bloc-a {
+  grid-area: 1 / 1 / 3 / 3;
+  /* fila inicial / columna inicial / fila final / columna final */
+}
+```
+
+Aquí `grid-area` utilitza **quatre límits**, no un nom d'àrea. El resultat és el mateix que amb les dues propietats anteriors.
+
+#### Comptar des del final i utilitzar `span`
+
+En aquests apunts, amb escriptura horitzontal d'esquerra a dreta, les línies de columna positives es compten des de l'esquerra i les de fila des de dalt. Els números negatius es compten des del final de la **graella explícita**:
+
+```text
+Línies positives:     1       2       3       4
+Línies negatives:   -4      -3      -2      -1
+                     │       │       │       │
+                     columna columna columna
+                        1       2       3
+```
+
+| Declaració | Resultat en aquesta graella de tres columnes |
+| --- | --- |
+| `grid-column: 1 / -1` | Ocupa les tres columnes explícites. |
+| `grid-column: 2 / -1` | Ocupa les columnes 2 i 3. |
+| `grid-column: 1 / span 2` | Comença a la línia 1 i ocupa dues columnes; equival a `1 / 3`. |
+| `grid-column: span 2` | Ocupa dues columnes i deixa que la col·locació automàtica decideixi on comença. |
+
+**Per què passa?** Un número identifica una línia; `span 2` indica quantes pistes volem ocupar. No existeix la línia `0`. `-1` no es desplaça fins al final de les pistes implícites que es puguin crear després.
+
+#### Donar noms a les línies
+
+Els números es poden substituir per noms declarats entre claudàtors:
+
+```css
+.graella-linies {
+  grid-template-columns:
+    [inici] minmax(0, 1fr)
+    [centre] minmax(0, 1fr)
+    [lateral] minmax(0, 1fr) [final];
+}
+.bloc-a { grid-column: inici / lateral; }
+.bloc-b { grid-column: lateral / final; }
+.bloc-c { grid-column: lateral / final; }
+```
+
+**Resultat:** si substituïm la definició de columnes i les posicions horitzontals de l'exemple anterior per aquestes regles, obtenim la mateixa distribució.
+
+**Per què passa?** `[inici]`, `[centre]`, `[lateral]` i `[final]` anomenen les quatre línies; no creen columnes addicionals. Les mides entre els noms continuen definint les tres pistes. Un **nom de línia** identifica una frontera; un **nom d'àrea** identifica una zona rectangular.
 
 ### 4.6. Organitzar una pàgina amb àrees
 
@@ -365,6 +492,66 @@ Quan la pàgina té zones clares, podem donar-los noms amb `grid-template-areas`
 En una pantalla petita, totes les zones apareixen en una columna. A partir de `48rem`, el menú ocupa la columna lateral i el contingut ocupa la resta. La capçalera i el peu s'estenen per les dues columnes perquè repetim el seu nom a les dues posicions de la fila.
 
 Cada cadena entre cometes representa una fila. Totes han de tenir el mateix nombre de cel·les, i les cel·les d'una mateixa àrea han de formar un rectangle. Un punt (`.`) representa una cel·la sense àrea assignada.
+
+#### Resultat visual i lectura del codi
+
+```text
+Pantalla petita              A partir de 48rem
+┌─────────────────┐          ┌─────────────┬──────────────────┐
+│    capcalera    │          │           capcalera            │
+├─────────────────┤          ├─────────────┼──────────────────┤
+│      menu       │          │    menu     │    contingut     │
+├─────────────────┤          ├─────────────┴──────────────────┤
+│    contingut    │          │              peu               │
+├─────────────────┤          └────────────────────────────────┘
+│       peu       │
+└─────────────────┘
+```
+
+**Per què passa?**
+
+1. `grid-template-columns` defineix les **amplades**. `grid-template-areas` defineix el **mapa de zones**, no les seves amplades.
+2. A la versió ampla, cada cadena té dos noms perquè hi ha dues columnes. Les tres cadenes defineixen tres files.
+3. Repetir `capcalera` a dues cel·les contigües crea **una única àrea** que les abasta. No duplica l'element HTML.
+4. `.capcalera { grid-area: capcalera; }` assigna aquell element a l'àrea. El nom de classe i el nom d'àrea no es vinculen automàticament: cal aquesta declaració.
+5. La consulta de mitjans canvia el mapa i les columnes; les assignacions dels fills continuen sent les mateixes.
+
+En la versió ampla, l'àrea `capcalera` va de la línia de columna **1 a la 3** i de la línia de fila **1 a la 2**. Per tant, línies i àrees descriuen la mateixa graella de dues maneres diferents.
+
+#### Exemple: una àrea de dues files i una cel·la buida
+
+Amb el mateix HTML, podem substituir el mapa de la versió ampla per:
+
+```css
+@media (min-width: 48rem) {
+  .pagina {
+    grid-template-areas:
+      "capcalera capcalera"
+      "menu      contingut"
+      "menu      ."
+      "peu       peu";
+  }
+}
+```
+
+**Resultat:** el menú ocupa dues files. El contingut ocupa la cel·la superior de la dreta, i la inferior no té cap àrea assignada. El peu ocupa tota la darrera fila.
+
+**Per què passa?** Les dues aparicions verticals de `menu` formen un rectangle d'una columna i dues files. El punt deixa una cel·la sense nom: no crea un element invisible ni impedeix que la col·locació automàtica hi situï un fill addicional. La fila amb el punt no té una alçada mínima fixada, de manera que l'espai buit visible dependrà del dimensionament de les files i del contingut.
+
+#### Exemple incorrecte: una àrea en forma de L
+
+```css
+/* Incorrecte: la zona anomenada menu no forma un rectangle. */
+.pagina {
+  grid-template-areas:
+    "menu menu"
+    "menu contingut";
+}
+```
+
+**Resultat:** el navegador descarta aquesta declaració de `grid-template-areas` perquè és invàlida.
+
+**Per què passa?** Un mateix nom ha d'ocupar un rectangle complet, sense forats ni formes de L. També seria invàlid escriure files amb nombres diferents de cel·les. Si hi ha una altra declaració vàlida aplicable, la cascada determinarà quin mapa s'utilitza.
 
 ### 4.7. Una galeria que adapta el nombre de columnes
 
