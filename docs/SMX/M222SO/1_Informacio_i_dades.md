@@ -153,6 +153,44 @@ Cal distingir dues famílies d'unitats:
 | 1 kB = 1.000 B | 1 KiB = 1.024 B |
 | 1 MB = 1.000 × 1.000 B | 1 MiB = 1.024 × 1.024 B |
 | 1 GB = 1.000 × 1.000 × 1.000 B | 1 GiB = 1.024 × 1.024 × 1.024 B |
+| 1 TB = 1.000⁴ B | 1 TiB = 1.024⁴ B |
+| 1 PB = 1.000⁵ B | 1 PiB = 1.024⁵ B |
+
+**Per què conviuen les dues famílies?**
+
+- Els fabricants de discs i les **velocitats de transmissió** (xarxa, internet) solen anunciar-se en múltiples **decimals** (kB, MB, GB, Mb/s...), perquè és el sistema mètric habitual i els càlculs es fan de 1.000 en 1.000.
+- El **sistema operatiu**, quan mostra la mida real d'un fitxer o l'espai ocupat al disc, sol calcular-la en múltiples **binaris** (KiB, MiB, GiB...), perquè la memòria s'organitza en potències de 2.
+
+Aquesta diferència explica per què un disc etiquetat com "1 TB" mostra menys espai del que esperaves quan el sistema operatiu l'expressa en TiB: el mateix nombre de bytes es converteix amb un divisor diferent.
+
+**Com saber si cal multiplicar o dividir?**
+
+- Per passar d'una unitat **gran a una de petita** (per exemple, de MB a kB), **multipliquem**.
+- Per passar d'una unitat **petita a una de gran** (per exemple, de kB a MB), **dividim**.
+
+Múltiples decimals (factor 1.000):
+
+```mermaid
+flowchart LR
+    B[Bytes] <-->|"÷1.000 →<br/>← ×1.000"| KB[kB]
+    KB <-->|"÷1.000 →<br/>← ×1.000"| MB[MB]
+    MB <-->|"÷1.000 →<br/>← ×1.000"| GB[GB]
+    GB <-->|"÷1.000 →<br/>← ×1.000"| TB[TB]
+    TB <-->|"÷1.000 →<br/>← ×1.000"| PB[PB]
+```
+
+Múltiples binaris (factor 1.024):
+
+```mermaid
+flowchart LR
+    B2[Bytes] <-->|"÷1.024 →<br/>← ×1.024"| KiB[KiB]
+    KiB <-->|"÷1.024 →<br/>← ×1.024"| MiB[MiB]
+    MiB <-->|"÷1.024 →<br/>← ×1.024"| GiB[GiB]
+    GiB <-->|"÷1.024 →<br/>← ×1.024"| TiB[TiB]
+    TiB <-->|"÷1.024 →<br/>← ×1.024"| PiB[PiB]
+```
+
+En els dos diagrames, **anar cap a la dreta** (unitat més gran) és **dividir** i **anar cap a l'esquerra** (unitat més petita) és **multiplicar**.
 
 **Exemple resolt:** un fitxer de 2 KiB ocupa `2 × 1.024 = 2.048 bytes`. En bits són `2.048 × 8 = 16.384 bits`.
 
