@@ -172,22 +172,32 @@ Múltiples decimals (factor 1.000):
 
 ```mermaid
 flowchart LR
-    B[Bytes] <-->|"÷1.000 →<br/>← ×1.000"| KB[kB]
-    KB <-->|"÷1.000 →<br/>← ×1.000"| MB[MB]
-    MB <-->|"÷1.000 →<br/>← ×1.000"| GB[GB]
-    GB <-->|"÷1.000 →<br/>← ×1.000"| TB[TB]
-    TB <-->|"÷1.000 →<br/>← ×1.000"| PB[PB]
+    B[Bytes] -->|"÷ 1.000"| KB[kB]
+    KB -->|"÷ 1.000"| MB[MB]
+    MB -->|"÷ 1.000"| GB[GB]
+    GB -->|"÷ 1.000"| TB[TB]
+    TB -->|"÷ 1.000"| PB[PB]
+    PB -->|"× 1.000"| TB
+    TB -->|"× 1.000"| GB
+    GB -->|"× 1.000"| MB
+    MB -->|"× 1.000"| KB
+    KB -->|"× 1.000"| B
 ```
 
 Múltiples binaris (factor 1.024):
 
 ```mermaid
 flowchart LR
-    B2[Bytes] <-->|"÷1.024 →<br/>← ×1.024"| KiB[KiB]
-    KiB <-->|"÷1.024 →<br/>← ×1.024"| MiB[MiB]
-    MiB <-->|"÷1.024 →<br/>← ×1.024"| GiB[GiB]
-    GiB <-->|"÷1.024 →<br/>← ×1.024"| TiB[TiB]
-    TiB <-->|"÷1.024 →<br/>← ×1.024"| PiB[PiB]
+    B2[Bytes] -->|"÷ 1.024"| KiB[KiB]
+    KiB -->|"÷ 1.024"| MiB[MiB]
+    MiB -->|"÷ 1.024"| GiB[GiB]
+    GiB -->|"÷ 1.024"| TiB[TiB]
+    TiB -->|"÷ 1.024"| PiB[PiB]
+    PiB -->|"× 1.024"| TiB
+    TiB -->|"× 1.024"| GiB
+    GiB -->|"× 1.024"| MiB
+    MiB -->|"× 1.024"| KiB
+    KiB -->|"× 1.024"| B2
 ```
 
 En els dos diagrames, **anar cap a la dreta** (unitat més gran) és **dividir** i **anar cap a l'esquerra** (unitat més petita) és **multiplicar**.
