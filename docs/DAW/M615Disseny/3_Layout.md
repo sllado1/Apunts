@@ -680,6 +680,8 @@ Abans de tancar una pantalla:
 	* https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
 * **web.dev - Responsive Web Design Basics**
 	* https://web.dev/articles/responsive-web-design-basics
+* **Exemples de Flex i Grid**
+  * https://github.com/ABP-2n-DAW-26-27/615-Flex-Grid.git
 
 ---
 
