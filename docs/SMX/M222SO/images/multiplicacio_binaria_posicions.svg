@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="470" viewBox="0 0 780 470" role="img" aria-labelledby="title desc">
+<title id="title">Multiplicació binària: 101 × 11 = 1111</title>
+<desc id="desc">Bits alineats en les columnes de valor 8, 4, 2 i 1. Productes parcials 0101 i 1010. El segon es desplaça una columna a l'esquerra.</desc>
+<rect width="780" height="470" rx="16" fill="#f8fafc"/>
+<g font-family="Arial, sans-serif" fill="#0f172a">
+<text x="30" y="38" font-size="24" font-weight="bold">101₂ × 11₂</text>
+<text x="30" y="69" font-size="16">Cada bit ocupa la seva columna. Tots els nombres són binaris.</text>
+<text x="30" y="111" font-size="16">Valor de la posició:</text>
+<g text-anchor="middle" font-size="18" fill="#64748b">
+<text x="225" y="111">8</text><text x="280" y="111">4</text><text x="335" y="111">2</text><text x="390" y="111">1</text>
+</g>
+<g stroke="#cbd5e1" stroke-dasharray="4 4">
+<path d="M225 122V411 M280 122V411 M335 122V411 M390 122V411"/>
+</g>
+<g font-family="Consolas, monospace" font-size="30" text-anchor="middle">
+<text x="280" y="157">1</text><text x="335" y="157">0</text><text x="390" y="157">1</text>
+<text x="170" y="204">×</text><text x="335" y="204">1</text><text x="390" y="204">1</text>
+<g fill="#2563eb"><text x="225" y="273">0</text><text x="280" y="273">1</text><text x="335" y="273">0</text><text x="390" y="273">1</text></g>
+<text x="170" y="324">+</text>
+<g fill="#0f766e"><text x="225" y="324">1</text><text x="280" y="324">0</text><text x="335" y="324">1</text><text x="390" y="324">0</text></g>
+<g font-weight="bold"><text x="225" y="392">1</text><text x="280" y="392">1</text><text x="335" y="392">1</text><text x="390" y="392">1</text></g>
+</g>
+<g stroke="#0f172a" stroke-width="2"><path d="M195 225H420 M195 346H420"/></g>
+<g font-size="17">
+<text x="450" y="157">Nombre que multipliquem</text>
+<text x="450" y="204">Multiplicador</text>
+<text x="450" y="272" fill="#2563eb">1 de la dreta → copiem 101</text>
+<text x="450" y="319" fill="#0f766e">1 de l'esquerra → copiem 101</text>
+<text x="450" y="341" fill="#0f766e">una columna a l'esquerra</text>
+<text x="450" y="392">Sumem: 0101 + 1010 = 1111</text>
+</g>
+<text x="30" y="447" font-size="17">El zero final de 1010 ocupa la columna d'1 i manté el desplaçament.</text>
+</g>
+</svg>

@@ -85,357 +85,91 @@ Les tres columnes produeixen un 0 i passen una portada a l'esquerra. L'última p
 
 ## 3. Resta binària: demanar un préstec
 
-### Les regles bàsiques
-
 | Resta | Resultat |
 | --- | --- |
 | 0 − 0 | 0 |
 | 1 − 0 | 1 |
 | 1 − 1 | 0 |
-| 0 − 1 | Cal demanar un préstec a l'esquerra. |
+| 0 − 1 | Demanem un préstec a l'esquerra: 10₂ − 1₂ = 1₂. |
 
-Quan a la columna actual tenim 0 i n'hem de restar 1, necessitem **descompondre una unitat d'una columna situada a l'esquerra**.
+### Per què el préstec aporta dues unitats?
 
-Si la columna immediata de l'esquerra té un 1:
+**Cada columna val el doble que la de la dreta.** Quan una columna presta un **1** a la seva veïna de la dreta, aquesta rep **dues unitats**, escrites **10₂**. Per exemple: **4 = 2 + 2**. La columna que presta perd aquella unitat: el seu **1 passa a 0**.
 
-- Aquell 1 es converteix en 0 perquè ha prestat una unitat.
-- La columna actual rep **dues unitats**, escrites `10₂`.
-- Ara podem fer `10₂ − 1₂ = 1₂`.
+El `10₂` del préstec s'anota **dins de la mateixa columna**: representa dues unitats d'aquella posició.
 
-!!! tip "Imagina un canvi de monedes"
-    Una unitat de la columna que val 4 es pot canviar per dues unitats de la columna que val 2. El valor total es conserva: **4 = 2 + 2**.
-
-### Exemple guiat: 1101₂ − 0110₂
-
-```text
-    1101
-  − 0110
-  ------
-    0111
-```
-
-| Pas | Columna que val… | Què passa? | Bit del resultat |
-| --- | --- | --- | --- |
-| 1 | 1 | Fem 1 − 0. | 1 |
-| 2 | 2 | Cal fer 0 − 1. Demanem al 1 de la columna que val 4; aquell 1 queda en 0. Aquí fem 10₂ − 1₂. | 1 |
-| 3 | 4 | Ara aquí queda 0, però hem de restar 1. Demanem al 1 de la columna que val 8; aquell 1 queda en 0. Fem 10₂ − 1₂. | 1 |
-| 4 | 8 | Després del préstec queda 0. Fem 0 − 0. | 0 |
-
-**Resultat:** `0111₂`, que també podem escriure `111₂`.
-
-**Comprovació en decimal:** `13 − 6 = 7`.
-
-### Exemple pas a pas: 10010₂ − 11₂
-
-Alineem els nombres per la dreta i afegim zeros a l'esquerra del segon: **11₂ = 00011₂**.
-
-```text
-    10010
-  − 00011
-  -------
-    01111
-```
+### Exemple visual: 10010₂ − 00011₂
 
 ![Resta en columna de 10010₂ menys 00011₂, amb els valors antics ratllats, els nous valors al damunt i fletxes que indiquen els préstecs. Resultat: 01111₂.](images/resta_binaria_10010_11.png){ width="780" }
 
-#### Seguim els préstecs, un canvi cada vegada
-
-La segona columna començant per la dreta és la de **valor 2**, no la de les desenes. Les columnes en binari valen **1, 2, 4, 8, 16…**.
-
-En els esquemes següents, cada casella és una columna. **`10` dins d'una casella vol dir dues unitats d'aquella columna**, escrites en binari. Els punts del resultat indiquen bits pendents de calcular.
-
-**1. Comencem per les unitats: tenim 0 − 1.**
-
-```text
-Valor:      |  16 |   8 |   4 |   2 |   1 |
-            |   1 |   0 |   0 |   1 |   0 |
-          − |   0 |   0 |   0 |   1 |   1 |
-            -------------------------------
-Resultat:   |   · |   · |   · |   · |   · |
-```
-
-No tenim unitats per treure'n una. Canviem el **1 de la columna de valor 2 per dues unitats**. És com canviar una moneda de 2 € per dues monedes d'1 €.
-
-**2. El 1 que presta queda en 0; les unitats reben 10₂.**
-
-Al paper, ratlla el `1` de la columna de valor 2 i escriu `0` al damunt. Ratlla el `0` de les unitats i escriu `10` al damunt, dins de la mateixa columna.
-
-```text
-Valor:      |  16 |   8 |   4 |   2 |   1 |
-                                └────►
-            |   1 |   0 |   0 |   0 |  10 |
-          − |   0 |   0 |   0 |   1 |   1 |
-            -------------------------------
-Resultat:   |   · |   · |   · |   · |   1 |
-```
-
-A les unitats fem **`10₂ − 1₂ = 1₂`** i escrivim **1 sota la ratlla**. Aquesta columna ja està resolta.
-
-!!! warning "A la columna de valor 2, per què no fem 1 − 1?"
-    Al principi hi havia `1 − 1`, però **el 1 de dalt ja ha prestat a les unitats i ara és 0**. El de sota no canvia. Per tant, ara tenim **0 − 1** i necessitem un altre préstec. No podem utilitzar dues vegades el mateix 1.
-
-**3. Busquem un 1 disponible a l'esquerra.**
-
-La columna de valor 4 té 0 i la de valor 8 també. Arribem fins al **1 de la columna de valor 16**.
-
-Un zero no pot prestar tot sol: **primer ha de rebre de l'esquerra i després pot passar una part a la dreta**. Ho farem en tres canvis.
-
-**4. De 16 a 8: canviem una unitat de 16 per dues de 8.**
-
-En decimal, `16 = 8 + 8`. Ratlla el `1` de la columna de 16 i anota-hi `0`. Ratlla el `0` de la columna de 8 i anota-hi `10`.
-
-```text
-Valor:      |  16 |   8 |   4 |   2 |   1 |
-              └────►
-            |   0 |  10 |   0 |   0 |  10 |
-          − |   0 |   0 |   0 |   1 |   1 |
-            -------------------------------
-Resultat:   |   · |   · |   · |   · |   1 |
-```
-
-Encara no hem arribat a la columna de valor 2. Continuem passant el préstec.
-
-!!! note "Les unitats ja estan fetes"
-    El `10` de la columna d'1 conserva l'anotació del primer préstec. El seu resultat, **1**, ja és sota la ratlla. **No tornem a restar aquesta columna.**
-
-**5. De 8 a 4: ens quedem una unitat de 8 i canviem l'altra.**
-
-La columna de 8 ha rebut **dues unitats de 8**. Se'n queda una i canvia l'altra per **dues unitats de 4**: `8 = 4 + 4` en decimal.
-
-Ratlla el `10` que acabes d'anotar a la columna de 8 i escriu-hi `1`. Ratlla el `0` de la columna de 4 i escriu-hi `10`.
-
-```text
-Valor:      |  16 |   8 |   4 |   2 |   1 |
-                    └────►
-            |   0 |   1 |  10 |   0 |  10 |
-          − |   0 |   0 |   0 |   1 |   1 |
-            -------------------------------
-Resultat:   |   · |   · |   · |   · |   1 |
-```
-
-**El zero original de la columna de 8 acaba en 1:** ha rebut dues unitats i n'ha prestat una.
-
-**6. De 4 a 2: ens quedem una unitat de 4 i canviem l'altra.**
-
-La columna de 4 també té dues unitats. Se'n queda una i canvia l'altra per **dues unitats de 2**: `4 = 2 + 2` en decimal.
-
-Ratlla el `10` de la columna de 4 i escriu-hi `1`. A la columna de 2, ratlla el **0 que havia quedat després del primer préstec** i escriu-hi `10`.
-
-```text
-Valor:      |  16 |   8 |   4 |   2 |   1 |
-                          └────►
-            |   0 |   1 |   1 |  10 |  10 |
-          − |   0 |   0 |   0 |   1 |   1 |
-            -------------------------------
-Resultat:   |   · |   · |   · |   1 |   1 |
-```
-
-Ja hem arribat on calia! A la columna de valor 2 fem **`10₂ − 1₂ = 1₂`** i escrivim el segon **1** del resultat.
-
-!!! tip "Per què els zeros intermedis queden en 1?"
-    Cada columna intermèdia **rep dues unitats, se'n queda una i canvia l'altra per dues de la columna de la dreta**. Per això les columnes de valor 8 i 4 acaben amb un 1 cadascuna.
-
-**7. Acabem amb els valors que han quedat després dels préstecs.**
-
-- Columna de valor **4**: queda `1`; fem `1 − 0 = 1`.
-- Columna de valor **8**: queda `1`; fem `1 − 0 = 1`.
-- Columna de valor **16**: queda `0`; fem `0 − 0 = 0`.
-
-```text
-Valor:      |  16 |   8 |   4 |   2 |   1 |
-            |   0 |   1 |   1 |  10 |  10 |
-          − |   0 |   0 |   0 |   1 |   1 |
-            -------------------------------
-Resultat:   |   0 |   1 |   1 |   1 |   1 |
-```
-
-Llegim el resultat d'esquerra a dreta: **01111₂**, és a dir, **1111₂**.
-
-#### Resum: com escrivim els préstecs al paper?
-
-Escrivim **10010 a dalt i 00011 a sota**, amb els bits alineats per la dreta. Les anotacions dels préstecs es fan **damunt del nombre de dalt**:
-
-- **Ratlla el valor que canvia** i escriu el nou just al damunt, dins de la mateixa columna. El nombre de sota no canvia.
-- En el primer préstec, ratlla el **1 de la columna de valor 2** i posa-hi **0** al damunt. Ratlla el **0 de les unitats** i posa-hi **10** al damunt: són dues unitats en binari. Resta `10₂ − 1₂` i escriu **1 sota la ratlla**.
-- A la columna de valor 2 ara tens **0**, perquè ja ha prestat. Per poder restar-hi 1, busca el primer 1 disponible cap a l'esquerra, a la columna de valor 16. Ratlla'l i posa-hi **0**.
-- Fes passar el préstec per les columnes de valor 8 i 4: cadascuna rep **10₂**, en presta una unitat a la dreta i es queda amb **1**. Ratlla els zeros originals i escriu **1** al damunt de cadascun.
-- A la columna de valor 2, ratlla el **0 que havies anotat** i escriu-hi **10** al damunt. Ja pots fer `10₂ − 1₂ = 1₂`.
-
-El segon dibuix resumeix les anotacions finals: **0, 1, 1, 10, 10**, cadascuna damunt de la seva columna. El `10` de les unitats conserva l'anotació del primer pas; **aquella resta ja està feta**.
-
-Calculem **de dreta a esquerra**, actualitzant les columnes que presten:
-
-1. **Columna de valor 1:** tenim `0 − 1`. Demanem un préstec a la columna de valor 2: el seu 1 queda en 0 i les unitats reben `10₂`. Fem `10₂ − 1₂ = 1₂`.
-2. **Columna de valor 2:** ara hi queda 0 i hem de restar 1. Les columnes de valor 4 i 8 també tenen 0, així que anem fins al **1 de la columna de valor 16**. El préstec es reparteix així:
-    - La columna de 16 queda en 0 i la de 8 rep dues unitats.
-    - La de 8 en conserva una i canvia l'altra per dues unitats de 4.
-    - La de 4 en conserva una i canvia l'altra per dues unitats de 2.
-    - A la columna de 2 fem `10₂ − 1₂ = 1₂`.
-3. **Columna de valor 4:** després del repartiment queda 1. Fem `1 − 0 = 1`.
-4. **Columna de valor 8:** també queda 1. Fem `1 − 0 = 1`.
-5. **Columna de valor 16:** ha prestat la seva unitat i queda 0. Fem `0 − 0 = 0`.
-
-!!! note "Com llegim la imatge?"
-    Els nombres blaus substitueixen els valors ratllats. Cada `10` blau vol dir **dues unitats d'aquella columna**, no dos bits en columnes diferents. Les fletxes mostren cap on passa el préstec. El resultat s'escriu sota la ratlla, un bit per columna.
-
-**Resultat:** `10010₂ − 11₂ = 01111₂ = 1111₂`. El zero inicial es pot ometre.
-
 **Comprovació en decimal:** `18 − 3 = 15`.
 
-**Prova amb la suma:** sumem el resultat i el nombre que hem restat; hem de recuperar el nombre inicial.
+### Quan el préstec travessa diverses columnes: 1000₂ − 0001₂
 
-```text
-    01111
-  + 00011
-  -------
-    10010
-```
+Si la columna del costat té **0**, busquem el primer **1 a l'esquerra**. El préstec passa de columna en columna: cada columna intermèdia rep dues unitats, **se'n queda una i en presta una a la dreta**.
 
-### Quan hi ha zeros entremig: 1000₂ − 0001₂
+![Préstec de la columna de valor 8 a la de valor 4, després a la de valor 2 i finalment a les unitats. Les quantitats temporals queden 0, 1, 1 i 10. En restar 0001, el resultat és 0111.](images/resta_binaria_prestec_zeros.svg){ width="780" }
 
-La columna de les unitats necessita un préstec, però les dues columnes següents tenen 0. Hem d'arribar fins al primer 1 de l'esquerra i passar el préstec per les columnes intermèdies.
-
-La taula mostra **quantitats temporals en cada columna**, no dígits d'un nombre binari. El valor 2 vol dir dues unitats d'aquella columna.
-
-| Estat del repartiment | Columna de 8 | Columna de 4 | Columna de 2 | Columna d'1 |
-| --- | --- | --- | --- | --- |
-| Situació inicial | 1 | 0 | 0 | 0 |
-| Canviem una unitat de 8 per dues de 4 | 0 | 2 | 0 | 0 |
-| Una de les dues unitats de 4 es canvia per dues de 2 | 0 | 1 | 2 | 0 |
-| Una de les dues unitats de 2 es canvia per dues d'1 | 0 | 1 | 1 | 2 |
-| Restem una unitat a la columna d'1 | 0 | 1 | 1 | 1 |
-
-```text
-    1000
-  − 0001
-  ------
-    0111
-```
-
-**Comprovació en decimal:** `8 − 1 = 7`.
+**Resultat:** `1000₂ − 0001₂ = 0111₂`. En decimal: `8 − 1 = 7`.
 
 !!! warning "Actualitza la columna que ha prestat"
-    No pots tornar a utilitzar el seu valor original. Si un 1 ha prestat la seva unitat, ara és un 0.
+    Fes servir els valors nous anotats al damunt, perquè els originals ja han canviat.
 
-## 4. Multiplicació binària: copiar, desplaçar i sumar
+## 4. Multiplicació binària
 
-### Només quatre regles
+### Taula de multiplicació
 
-| Multiplicació | Resultat |
-| --- | --- |
-| 0 × 0 | 0 |
-| 0 × 1 | 0 |
-| 1 × 0 | 0 |
-| 1 × 1 | 1 |
+| × | 0 | 1 |
+| --- | --- | --- |
+| **0** | 0 | 0 |
+| **1** | 0 | 1 |
 
-Per multiplicar per un sol bit:
+Multipliquem pels bits del multiplicador **de dreta a esquerra**: amb un **1**, copiem el nombre; amb un **0**, escrivim zeros. Cada fila es desplaça **una posició més a l'esquerra**. Al final, sumem les files.
 
-- Si el bit és **1**, copiem el nombre.
-- Si el bit és **0**, el producte és zero.
+### Exemple visual: 101₂ × 11₂
 
-Quan el multiplicador té més bits, obtenim una fila per a cada bit, començant per la dreta. Cada nova fila es desplaça una posició a l'esquerra perquè correspon a una posició que val el doble.
-
-### Exemple guiat: 101₂ × 11₂
-
-```text
-      101
-  ×    11
-  -------
-     0101   ← primer 1: copiem 101
-  +  1010   ← segon 1: copiem 101 i desplacem una posició
-  -------
-     1111
-```
-
-| Pas | Bit del multiplicador | Què representa? | Producte parcial |
-| --- | --- | --- | --- |
-| 1 | 1 de la dreta | Multiplicar per 1₂. | 0101 |
-| 2 | 1 de l'esquerra | Multiplicar per 10₂, és a dir, per dos. | 1010 |
-| 3 | Sumem les files | 0101 + 1010. | **1111** |
+![Multiplicació en columnes de 101 per 11. Les columnes valen 8, 4, 2 i 1. El primer producte parcial és 0101 i el segon és 1010, desplaçat una columna a l'esquerra. La suma és 1111.](images/multiplicacio_binaria_posicions.svg){ width="780" }
 
 **Comprovació en decimal:** `5 × 3 = 15`.
 
-### Exemple amb un zero: 101₂ × 101₂
+## 5. Divisió binària
 
-```text
-       101
-  ×    101
-  --------
-     00101   ← bit de les unitats: 1
-     00000   ← bit de la posició que val 2: 0
-  +  10100   ← bit de la posició que val 4: 1
-  --------
-     11001
-```
+El **dividend** és el nombre que dividim i el **divisor** és el nombre pel qual dividim, que no pot ser zero. Obtenim un **quocient** i un **residu**.
 
-La fila del mig val zero, però **la seva posició continua comptant**. L'últim 1 està dues posicions a l'esquerra del primer; per això afegim dos zeros a `101`.
+1. Comença per l'esquerra i agafa els primers bits on càpiga el divisor.
+2. Escriu **1 al quocient** si hi cap i resta el divisor; si no hi cap, escriu **0**.
+3. Baixa el bit següent a la dreta del residu parcial i repeteix fins al final. **No et saltis els zeros del quocient.**
 
-**Comprovació en decimal:** `5 × 5 = 25`.
+Si el dividend és més petit que el divisor, el quocient és **0** i el residu és el dividend.
 
-!!! tip "Multiplicar per 10₂, 100₂ o 1000₂"
-    Amb prou bits per guardar el resultat, afegir un zero a la dreta multiplica per 2; afegir-ne dos multiplica per 4; afegir-ne tres multiplica per 8. Exemple: **101₂ × 100₂ = 10100₂**, és a dir, `5 × 4 = 20` en decimal.
+### Exemple visual: 1101₂ ÷ 11₂
 
-## 5. Divisió binària: comparar, restar i baixar un bit
+![Divisió feta a mà de 1101₂ entre 11₂, amb les restes i els bits baixats alineats sota el dividend. Divisor i quocient a la dreta; residu 1₂ encerclat.](images/divisio_binaria_ma.svg){ width="680" }
 
-En una divisió entera tenim quatre elements:
+**Per què baixem els bits i no restem?** Després de fer `11₂ − 11₂`, queda **0**, però encara falten bits del dividend per utilitzar. Els baixem **un a un, en ordre**, per continuar la divisió. Baixar un bit equival a multiplicar el residu parcial per dos i afegir-hi aquell bit.
 
-| Element | Què significa? |
-| --- | --- |
-| **Dividend** | El nombre que dividim. |
-| **Divisor** | El nombre pel qual dividim. Ha de ser diferent de zero. |
-| **Quocient** | El nombre de vegades que el divisor cap sencer en el dividend. |
-| **Residu** | La quantitat que sobra. |
+- Baixem el **0**: tenim `00₂ = 0₂`. És més petit que `11₂`: el divisor hi cap **zero vegades**, així que escrivim **0 al quocient** i no restem.
+- Baixem l'**1**: tenim `01₂ = 1₂`. També és més petit que `11₂`: escrivim un altre **0 al quocient** i no restem.
 
-Sempre ha de complir-se:
+**Escriure el 0 al quocient és el resultat d'aquell pas.** Si restéssim `11₂`, obtindríem un valor negatiu. Com que ja no queden bits per baixar, l'**1** final és el residu.
 
-> **Dividend = divisor × quocient + residu**
+**Resultat:** quocient **100₂**, residu **1₂**.
 
-El residu ha de ser **més petit que el divisor** i no negatiu.
+**Comprovació en decimal:** `13 = 3 × 4 + 1`.
 
-!!! note "Aquesta divisió té un objectiu diferent del bloc anterior"
-    Al bloc 2 dividíem nombres decimals entre 2 per trobar-ne els bits. Ara **el dividend i el divisor ja estan escrits en binari** i calculem un quocient i un residu també en binari.
+### Un altre dibuix: 1111₂ ÷ 11₂ (només baixem uns)
 
-### El procediment
+![Divisió feta a mà de 1111₂ entre 11₂: restem els primers 11, baixem un 1 i després un altre 1, i restem 11 de nou. Quocient 101₂ i residu 0₂.](images/divisio_binaria_1111_ma.svg){ width="680" }
 
-1. Comença per l'**esquerra del dividend** i agafa els primers bits necessaris perquè el divisor hi càpiga.
-2. Escriu **1 al quocient** si hi cap i resta el divisor. Si no hi cap, escriu **0** i no restis.
-3. Baixa el bit següent del dividend, col·locant-lo a la dreta del residu parcial.
-4. Repeteix la comparació fins que no quedin bits per baixar.
+- Restem els primers `11₂ − 11₂`: queda **0** i escrivim **1 al quocient**.
+- Baixem el primer **1**: tenim `01₂ = 1₂`. No hi cap `11₂`, així que escrivim **0 al quocient**.
+- Baixem el segon **1**: ara tenim `11₂`. El divisor hi cap una vegada: escrivim **1 al quocient** i fem `11₂ − 11₂ = 0₂`.
 
-En cada pas només decidim entre **0 i 1**. Un cop iniciat el quocient, cada bit que baixem produeix un nou bit del quocient, encara que sigui zero.
-
-Si el dividend complet és més petit que el divisor, el quocient és **0** i el residu és el mateix dividend.
-
-### Exemple guiat: 1101₂ ÷ 11₂
-
-![Divisió de 1101 entre 11: primer 11 menys 11 dona 0 i escrivim 1; baixem 0 i escrivim 0; baixem 1 i escrivim 0. Quocient 100 i residu 1.](images/divisio_binaria.png){ width="680" }
-
-| Pas | Quantitat parcial | Comparació i operació | Bit que afegim al quocient | Quocient construït | Residu parcial |
-| --- | --- | --- | --- | --- | --- |
-| 1 | Agafem els primers `11` de `1101`. | 11₂ cap en 11₂. Restem 11₂ − 11₂. | 1 | 1 | 0 |
-| 2 | Baixem el següent bit, `0`: tenim `00`, que val 0. | 0₂ és més petit que 11₂. No restem. | 0 | 10 | 0 |
-| 3 | Baixem l'últim bit, `1`: tenim `01`, que val 1. | 1₂ és més petit que 11₂. No restem. | 0 | 100 | 1 |
-
-Ja no queden bits per baixar: **quocient 100₂ i residu 1₂**.
-
-**Comprovació en binari:** `11₂ × 100₂ + 1₂ = 1100₂ + 1₂ = 1101₂`.
-
-**Comprovació en decimal:** `13 = 3 × 4 + 1`. El residu 1 és més petit que el divisor 3.
-
-!!! warning "Els zeros del quocient són necessaris"
-    El resultat és **100₂**, no `1₂`. Encara que no puguem restar el divisor en un pas, hem d'escriure el 0 que ocupa aquella posició.
-
-### Un altre exemple: divisió exacta de 1111₂ entre 11₂
-
-| Pas | Quantitat parcial | Acció | Quocient construït | Residu parcial |
-| --- | --- | --- | --- | --- |
-| 1 | 11 | Restem 11 − 11 i escrivim 1. | 1 | 0 |
-| 2 | Baixem 1: tenim 1. | No hi cap 11; escrivim 0. | 10 | 1 |
-| 3 | Baixem l'últim 1: tenim 11. | Restem 11 − 11 i escrivim 1. | 101 | 0 |
-
-**Resultat:** quocient `101₂` i residu `0₂`. És una divisió **exacta** perquè no sobra res.
+**Resultat:** quocient **101₂**, residu **0₂**. És una divisió exacta.
 
 **Comprovació en decimal:** `15 = 3 × 5 + 0`.
+
+Recorda: **dividend = divisor × quocient + residu**, amb el residu no negatiu i més petit que el divisor.
 
 ## 6. Errors que podem evitar
 
@@ -523,7 +257,7 @@ Per a cada fila:
 
 ## 9. Què has de saber explicar sense mirar els apunts?
 
-- Per què `1 + 1` s'escriu `10₂` i què és una portada.
+- Per què `1 + 1` s'escriu `10₂` i què és el llevat.
 - Per què un préstec aporta dues unitats a la columna immediata de la dreta.
 - Per què desplacem els productes parcials en una multiplicació.
 - Quan escrivim 0 o 1 al quocient d'una divisió.

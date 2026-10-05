@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="460" viewBox="0 0 680 460" role="img" aria-labelledby="title">
+<title id="title">Divisió feta a mà: 1111 entre 11, quocient 101 i residu 0</title>
+<rect width="680" height="460" rx="12" fill="#fffdf7"/>
+<path d="M25 110H655 M25 165H655 M25 220H655 M25 275H655 M25 330H655" stroke="#e2e8f0" fill="none"/>
+<g font-family="Segoe Print, Comic Sans MS, cursive" font-size="38" fill="#1e293b" text-anchor="middle">
+<text x="150" y="100">1</text><text x="200" y="100">1</text><text x="250" y="100">1</text><text x="300" y="100">1</text>
+<text x="395" y="100">1</text><text x="445" y="100">1</text>
+<text x="395" y="158">1</text><text x="445" y="158">0</text><text x="495" y="158">1</text>
+<text x="105" y="155">−</text><text x="150" y="155">1</text><text x="200" y="155">1</text>
+<text x="200" y="216">0</text><text x="250" y="216">1</text>
+<text x="250" y="276">1</text><text x="300" y="276">1</text>
+<text x="205" y="332">−</text><text x="250" y="332">1</text><text x="300" y="332">1</text><text x="300" y="393">0</text></g>
+<g fill="none" stroke="#1e293b" stroke-width="2.7" stroke-linecap="round">
+<path d="M350 62L351 179 M351 115L527 114 M129 172L218 171"/>
+<path d="M225 344L321 343"/><ellipse cx="301" cy="377" rx="24" ry="30"/>
+</g>
+<g fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round">
+<path d="M250 113V180 M244 173L250 180L256 173 M300 113V238 M294 231L300 238L306 231"/>
+</g>
+<g font-family="Segoe Print, Comic Sans MS, cursive" font-size="19" fill="#64748b">
+<text x="133" y="43">dividend</text><text x="387" y="43">divisor</text>
+<text x="390" y="199">quocient</text><text x="337" y="393">residu</text>
+<text x="130" y="443">1111₂ ÷ 11₂ = 101₂, residu 0₂</text>
+</g>
+</svg>
