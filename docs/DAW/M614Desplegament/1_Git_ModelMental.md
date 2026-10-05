@@ -80,3 +80,88 @@ La idea clau és aquesta:
 Un bon model mental és pensar que Git és un sistema que guarda “instantànies del projecte” en lloc de registrar només canvis puntuals sense context.
 
 **Pràctica:** explica on es troba un canvi després de desar-lo, després de fer `git add` i després de fer `git commit`.
+
+## 9. Resum presentació
+
+### Diapositiva 1. Què fa Git?
+
+- Guarda **versions del projecte** i el seu historial.
+- Permet recuperar versions anteriors i treballar en equip.
+- Funciona **localment**, també sense connexió.
+
+---
+
+### Diapositiva 2. On són els meus canvis?
+
+| Espai | Què hi fem? |
+| --- | --- |
+| **Directori de treball** | Editem i desem els fitxers. |
+| **Staging** | Preparem el contingut del proper commit. |
+| **Historial local** | Guardem versions amb commits. |
+| **Remot** | Compartim els commits amb l'equip. |
+
+---
+
+### Diapositiva 3. El recorregut d'un canvi
+
+```text
+  EDITAR          PREPARAR         GUARDAR VERSIÓ       COMPARTIR
+    │                │                  │                  │
+    ▼                ▼                  ▼                  ▼
+ Treball ───────► Staging ───────► Historial local ───────► Remot
+         git add         git commit              git push
+```
+
+**Desar ≠ fer un commit ≠ publicar al remot.**
+
+---
+
+### Diapositiva 4. Què és un commit?
+
+- Una **instantània del contingut preparat** del projecte.
+- Té identificador, autor, data i un **missatge descriptiu**.
+- Ha de representar un canvi coherent: per exemple, «Corregeix el formulari de registre».
+
+**Si editem un fitxer després de `git add`, cal tornar-lo a preparar per incloure la nova edició.**
+
+---
+
+### Diapositiva 5. Branques: línies de treball
+
+- `main` pot ser la branca principal.
+- Una altra branca permet desenvolupar una millora per separat.
+- Una branca **apunta a un commit**; podem integrar-ne el treball més endavant.
+
+```text
+main:       A ── B ── C
+                 ╲
+millora:          D ── E
+```
+
+---
+
+### Diapositiva 6. El repositori remot
+
+- És un repositori compartit, per exemple a **GitHub o GitLab**.
+- `origin` és un nom habitual per referir-nos a un remot.
+- **`push`** envia commits; **`fetch`** obté informació i commits del remot; **`pull`** els obté i els integra a la branca actual.
+
+**Git és l'eina de control de versions; GitHub és una plataforma on podem allotjar repositoris.**
+
+---
+
+### Diapositiva 7. Exemple i pregunta final
+
+Editem `index.html`:
+
+| Acció | Què passa? |
+| --- | --- |
+| Desem el fitxer | El canvi és al directori de treball. |
+| `git add index.html` | Preparem el contingut actual del fitxer. |
+| `git commit -m "Actualitza la portada"` | Creem una versió a l'historial local. |
+| `git push` | Enviem els commits al remot configurat. |
+
+**Si només he fet un commit, l'equip ja pot veure el canvi al remot?**
+
+??? success "Resposta"
+    **No.** El commit és local. Encara cal enviar-lo amb `git push`.
