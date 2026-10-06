@@ -244,6 +244,22 @@ Què fa:
 
 - Sincronitza el directori local amb el directori del servidor, enviant principalment canvis.
 
+Per fer una sincronització comprimida i eliminar del destí els fitxers que ja no existeixen a l'origen:
+
+```bash
+rsync -avz --delete ./projecte/ usuari@servidor:/ruta/desti/
+```
+
+- `-z`: comprimeix les dades durant la transferència.
+- `--delete`: elimina del destí els fitxers que no existeixen a `./projecte/`.
+
+> **Atenció**
+> `--delete` pot esborrar dades del servidor. Comprova bé les rutes i, abans d'executar la sincronització, simula-la amb `--dry-run`:
+>
+> ```bash
+> rsync -avz --delete --dry-run ./projecte/ usuari@servidor:/ruta/desti/
+> ```
+
 > **Idea clau**
 > SSH i rsync cobreixen la connexió remota i la sincronització del desplegament bàsic.
 

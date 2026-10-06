@@ -34,7 +34,47 @@ El Pacte Mundial és la principal iniciativa internacional de sostenibilitat cor
 3. Medi ambient.
 4. Lluita contra la corrupció.
 
-Aplicació en empreses TIC:
+Els deu principis es distribueixen així:
+
+### 3.1. Drets humans
+
+Les empreses han de:
+
+1. Donar suport i respectar la protecció dels drets humans reconeguts internacionalment.
+2. Assegurar-se que no són còmplices de vulneracions d'aquests drets.
+
+En una empresa TIC, això implica, per exemple, protegir la privacitat i les dades personals, dissenyar serveis accessibles i evitar que els productes s'utilitzin per vigilar o discriminar persones.
+
+### 3.2. Relacions laborals
+
+Les empreses han de:
+
+3. Respectar la llibertat d'associació i el dret a la negociació col·lectiva.
+4. Eliminar qualsevol forma de treball forçós o obligatori.
+5. Abolir el treball infantil.
+6. Eliminar la discriminació en l'ocupació i la professió.
+
+En el sector digital, cal vetllar per unes condicions laborals dignes tant dins l'empresa com en la cadena de proveïdors: salaris i horaris justos, igualtat d'oportunitats i absència d'assetjament o discriminació. Això també inclou revisar les condicions de les persones que moderen continguts o etiqueten dades per entrenar sistemes d'intel·ligència artificial.
+
+### 3.3. Medi ambient
+
+Les empreses han de:
+
+7. Adoptar un enfocament preventiu davant els reptes ambientals.
+8. Promoure una responsabilitat ambiental més gran.
+9. Afavorir el desenvolupament i la difusió de tecnologies respectuoses amb el medi ambient.
+
+En una empresa TIC, això es pot concretar en mesurar i reduir el consum energètic dels serveis, optimitzar el programari i les transferències de dades, allargar la vida útil dels equips i gestionar correctament els residus electrònics.
+
+### 3.4. Lluita contra la corrupció
+
+Les empreses han de:
+
+10. Treballar contra totes les formes de corrupció, incloses l'extorsió i el suborn.
+
+En projectes tecnològics, cal prendre decisions transparents en la contractació de proveïdors, evitar pagaments o favors indeguts i prevenir conflictes d'interès. També és important mantenir registres fiables de les decisions i establir canals per comunicar irregularitats.
+
+Aplicació general en empreses TIC:
 
 - privacitat i drets digitals,
 - condicions laborals justes,
@@ -56,8 +96,6 @@ Relació amb projectes digitals:
 
 [Global Risks Report 2026](https://www.weforum.org/reports/global-risks-report-2026/)
 
-> **Idea clau**
-> L'alumnat ha de saber llegir els riscos globals com a context de disseny i de presa de decisions tècniques.
 
 ---
 
