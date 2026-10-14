@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloc 2 - Exemples CSS: espai i caixa</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --muted: #64748b;
+      --primary: #0ea5e9;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 2rem; color: var(--text); background: var(--bg); }
+    section { margin-bottom: 2.5rem; }
+    pre { overflow-x: auto; padding: 1rem; background: #e2e8f0; border-radius: 8px; }
+    code { font-family: Consolas, monospace; }
+    .demo-wrap { border: 1px solid #cbd5e1; border-radius: 8px; padding: 1rem; background: #fff; }
+
+    .card-content-box {
+      box-sizing: content-box;
+      width: 320px;
+      padding: 16px;
+      border: 2px solid #334155;
+      margin: 12px 0;
+      background: #e2e8f0;
+    }
+    .card-border-box {
+      box-sizing: border-box;
+      width: 320px;
+      padding: 16px;
+      border: 2px solid #334155;
+      margin: 12px 0;
+      background: #bae6fd;
+    }
+
+    .cascade p { color: #475569; }
+    .cascade p { color: #0f172a; }
+
+    p { color: #334155; }
+    .text-destacat { color: #1d4ed8; }
+    #intro { color: #b91c1c; }
+
+    html { font-size: 16px; }
+    .contenidor {
+      width: min(92%, 70rem);
+      margin-inline: auto;
+      padding: 1rem;
+      border: 1px dashed #94a3b8;
+    }
+    h3 { font-size: 2rem; margin: 0 0 0.5rem 0; }
+    .seccio { margin-block: 2rem; }
+    .nota { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <h1>Bloc 2 - Exemples CSS: espai i caixa</h1>
+
+  <section id="boxmodel">
+    <h2>Box Model</h2>
+    <h4>Resultat visible</h4>
+    <div class="demo-wrap">
+      <div class="card-content-box">content-box: width + padding + border</div>
+      <div class="card-border-box">border-box: width total fixa</div>
+      <p class="nota">Observa la diferència d'amplada final entre les dues caixes.</p>
+    </div>
+
+    <h4>Codi HTML</h4>
+    <pre><code>&lt;div class=&quot;card-content-box&quot;&gt;content-box: width + padding + border&lt;/div&gt;
+&lt;div class=&quot;card-border-box&quot;&gt;border-box: width total fixa&lt;/div&gt;</code></pre>
+    <h4>Codi CSS</h4>
+    <pre><code>.card-content-box {
+  box-sizing: content-box;
+  width: 320px;
+  padding: 16px;
+  border: 2px solid #334155;
+  margin: 12px 0;
+  background: #e2e8f0;
+}
+.card-border-box {
+  box-sizing: border-box;
+  width: 320px;
+  padding: 16px;
+  border: 2px solid #334155;
+  margin: 12px 0;
+  background: #bae6fd;
+}</code></pre>
+    <p><strong>Resultat:</strong> La primera caixa fa <strong>356px</strong> d'amplada visible (320 + 32 de padding + 4 de vora); la segona fa <strong>320px</strong>.</p>
+    <p><strong>Per què passa?</strong> <code>content-box</code> aplica width només al contingut. <code>border-box</code> inclou padding i vora dins de width i deixa 284px per al contingut. Els marges queden fora de totes dues caixes.</p>
+  </section>
+
+  <section id="cascada">
+    <h2>Cascada</h2>
+    <h4>Resultat visible</h4>
+    <div class="demo-wrap cascade">
+      <p>Aquest text queda en #0f172a per ordre d'aparició de regles.</p>
+    </div>
+
+    <h4>Codi HTML</h4>
+    <pre><code>&lt;div class=&quot;cascade&quot;&gt;
+  &lt;p&gt;Aquest text queda en #0f172a.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    <h4>Codi CSS</h4>
+    <pre><code>.cascade p { color: #475569; }
+.cascade p { color: #0f172a; }</code></pre>
+    <p><strong>Resultat:</strong> El text és gairebé negre: <strong>#0f172a</strong>.</p>
+    <p><strong>Per què passa?</strong> Les dues regles tenen la mateixa importància i especificitat: guanya la darrera. Si afegeixes <code>!important</code> a la primera declaració, guanyarà el gris #475569.</p>
+  </section>
+
+  <section id="especificitat">
+    <h2>Especificitat</h2>
+    <h4>Resultat visible</h4>
+    <div class="demo-wrap">
+      <p id="intro" class="text-destacat">Guanya el selector per ID en aquest exemple.</p>
+    </div>
+
+    <h4>Codi HTML</h4>
+    <pre><code>&lt;p id=&quot;intro&quot; class=&quot;text-destacat&quot;&gt;Guanya el selector per ID en aquest exemple.&lt;/p&gt;</code></pre>
+    <h4>Codi CSS</h4>
+    <pre><code>p { color: #334155; }
+.text-destacat { color: #1d4ed8; }
+#intro { color: #b91c1c; }</code></pre>
+    <p><strong>Resultat:</strong> El text és <strong>vermell (#b91c1c)</strong>.</p>
+    <p><strong>Per què passa?</strong> Amb la mateixa importància, l'ID té més especificitat que la classe i l'etiqueta. Si lleves l'ID, guanya la classe (blau); si lleves també la classe, guanya l'etiqueta (gris).</p>
+  </section>
+
+  <section id="unitats">
+    <h2>Unitats</h2>
+    <h4>Resultat visible</h4>
+    <div class="contenidor">
+      <h3>Títol amb rem</h3>
+      <p class="seccio">Contenidor fluid amb % i límit en rem.</p>
+    </div>
+
+    <h4>Codi HTML</h4>
+    <pre><code>&lt;div class=&quot;contenidor&quot;&gt;
+  &lt;h3&gt;Títol amb rem&lt;/h3&gt;
+  &lt;p class=&quot;seccio&quot;&gt;Contenidor fluid amb % i límit en rem.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    <h4>Codi CSS</h4>
+    <pre><code>html { font-size: 16px; }
+* { box-sizing: border-box; }
+.contenidor {
+  width: min(92%, 70rem);
+  margin-inline: auto;
+  padding: 1rem;
+  border: 1px dashed #94a3b8;
+}
+h3 { font-size: 2rem; margin: 0 0 0.5rem 0; }
+.seccio { margin-block: 2rem; }</code></pre>
+    <p><strong>Resultat:</strong> El títol té una mida de lletra de <strong>32px</strong> i el contenidor té <strong>16px</strong> de padding. Si el pare ofereix 1000px, el contenidor fa 920px; si ofereix 1400px, fa 1120px.</p>
+    <p><strong>Per què passa?</strong> <code>rem</code> depèn dels 16px de l'arrel. El percentatge depèn de l'amplada disponible del pare i <code>min()</code> tria el menor valor entre 92% i 1120px. Els marges automàtics centren la caixa. Els marges verticals del títol (8px) i el paràgraf (32px) col·lapsen: la separació és de 32px, no de 40px.</p>
+  </section>
+</body>
+</html>

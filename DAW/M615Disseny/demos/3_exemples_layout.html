@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloc 3 - Exemples Layout</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; color: #0f172a; }
+    section { margin-bottom: 2.5rem; }
+    .demo { border: 1px solid #cbd5e1; border-radius: 8px; padding: 1rem; background: #f8fafc; }
+    .item { background: #bae6fd; border: 1px solid #7dd3fc; padding: 0.75rem; border-radius: 6px; }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .llistat {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .llistat {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .llistat {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Bloc 3 - Exemples Layout</h1>
+
+  <section id="flexbox">
+    <h2>Flexbox</h2>
+    <div class="demo menu">
+      <div class="item">Logo</div>
+      <div class="item">Menu</div>
+      <div class="item">Perfil</div>
+    </div>
+  </section>
+
+  <section id="grid">
+    <h2>Grid</h2>
+    <div class="demo galeria">
+      <div class="item">Targeta 1</div>
+      <div class="item">Targeta 2</div>
+      <div class="item">Targeta 3</div>
+      <div class="item">Targeta 4</div>
+      <div class="item">Targeta 5</div>
+      <div class="item">Targeta 6</div>
+    </div>
+  </section>
+
+  <section id="responsive-grid">
+    <h2>Responsive amb Grid</h2>
+    <div class="demo llistat">
+      <div class="item">Bloc A</div>
+      <div class="item">Bloc B</div>
+      <div class="item">Bloc C</div>
+      <div class="item">Bloc D</div>
+      <div class="item">Bloc E</div>
+      <div class="item">Bloc F</div>
+    </div>
+  </section>
+</body>
+</html>

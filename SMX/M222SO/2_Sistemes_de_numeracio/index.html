@@ -1,0 +1,3456 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sllado1.github.io/Apunts/SMX/M222SO/2_Sistemes_de_numeracio/">
+      
+      
+        <link rel="prev" href="../1_Informacio_i_dades/">
+      
+      
+        <link rel="next" href="../3_Operacions_en_binari/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Bloc 2. Sistemes de numeració i conversions - Apunts de Sílvia Lladó</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bloc-2-sistemes-de-numeracio-i-conversions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Apunts de Sílvia Lladó" class="md-header__button md-logo" aria-label="Apunts de Sílvia Lladó" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apunts de Sílvia Lladó
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bloc 2. Sistemes de numeració i conversions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  SMX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../DAW/" class="md-tabs__link">
+          
+  
+  
+  DAW
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Apunts de Sílvia Lladó" class="md-nav__button md-logo" aria-label="Apunts de Sílvia Lladó" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Apunts de Sílvia Lladó
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inici
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SMX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SMX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visió general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M222 Sistemes operatius monolloc
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M222 Sistemes operatius monolloc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentació del mòdul
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_Informacio_i_dades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 1. Informació i dades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 2. Sistemes de numeració i conversions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 2. Sistemes de numeració i conversions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-aprendras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Què aprendràs?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-una-mateixa-quantitat-diferents-maneres-descriure-la" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Una mateixa quantitat, diferents maneres d'escriure-la
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-el-valor-de-cada-posicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. El valor de cada posició
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-de-binari-a-decimal-sumar-els-valors-de-les-posicions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. De binari a decimal: sumar els valors de les posicions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. De binari a decimal: sumar els valors de les posicions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-110102-a-decimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 11010₂ a decimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-altre-exemple-101001012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un altre exemple: 10100101₂
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-de-decimal-a-binari-divisions-successives-entre-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. De decimal a binari: divisions successives entre 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. De decimal a binari: divisions successives entre 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-2610-a-binari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 26₁₀ a binari
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-de-decimal-a-octal-divisions-entre-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. De decimal a octal: divisions entre 8
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. De decimal a octal: divisions entre 8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-15610-a-octal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 156₁₀ a octal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doctal-a-decimal-el-cami-invers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'octal a decimal: el camí invers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-de-decimal-a-hexadecimal-divisions-entre-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. De decimal a hexadecimal: divisions entre 16
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. De decimal a hexadecimal: divisions entre 16">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-25410-a-hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 254₁₀ a hexadecimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhexadecimal-a-decimal-el-cami-invers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'hexadecimal a decimal: el camí invers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-de-binari-a-hexadecimal-grups-de-4-bits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. De binari a hexadecimal: grups de 4 bits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. De binari a hexadecimal: grups de 4 bits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-110101102-a-hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 11010110₂ a hexadecimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhexadecimal-a-binari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'hexadecimal a binari
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-de-binari-a-octal-grups-de-3-bits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. De binari a octal: grups de 3 bits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. De binari a octal: grups de 3 bits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-110101102-a-octal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 11010110₂ a octal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doctal-a-binari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'octal a binari
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-doctal-a-hexadecimal-i-a-linreves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. D'octal a hexadecimal i a l'inrevés
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. D&#39;octal a hexadecimal i a l&#39;inrevés">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doctal-a-hexadecimal-578" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'octal a hexadecimal: 57₈
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhexadecimal-a-octal-2f16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'hexadecimal a octal: 2F₁₆
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-quin-procediment-he-de-triar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Quin procediment he de triar?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-per-a-que-ens-serveix-en-sistemes-operatius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Per a què ens serveix en sistemes operatius?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-practica-pas-a-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Practica pas a pas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Practica pas a pas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-decimal-i-binari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Decimal i binari
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-decimal-octal-i-hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Decimal, octal i hexadecimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-agrupacions-de-bits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Agrupacions de bits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-detecta-lerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Detecta l'error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-repte-final-una-quantitat-en-quatre-bases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Repte final: una quantitat en quatre bases
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_Operacions_en_binari/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 3. Operacions en binari
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_Codificacio_de_caracters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 4. Codificació de caràcters: ASCII i Unicode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAW
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DAW
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visio general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M614 Desplegament
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M614 Desplegament
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentacio del modul
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git i control de versions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Git i control de versions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/1_Git_ModelMental/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 1. Model mental de Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/2_Git_Repositori_i_Gitignore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 2. Repositori i gitignore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/3_Git_CicleDiari_i_Commits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 3. Cicle diari i commits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/4_Git_Branques_i_Conflictes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 4. Branques i conflictes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/5_Git_Remots_i_Collaboracio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 5. Remots i col·laboració
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/6_Git_Recuperacio_Errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 6. Recuperació d'errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/7_Git_Flow_i_Collaboracio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 7. Git Flow i col·laboració
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/1_ModelMentalDesplegament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 1. Model mental del desplegament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/2_SSH_i_rsync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 2. SSH i rsync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/3_Permisos_Linux_Desplegament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 3. Permisos Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/4_Apache_minim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 4. Apache minim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M614Desplegament/5_Diagnostic_i_Resolucio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 5. Diagnostic i resolucio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M615 Disseny
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    M615 Disseny
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M615Disseny/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentacio del modul
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M615Disseny/1_Fonaments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 1. Fonaments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M615Disseny/2_Presentacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 2. CSS espai i caixa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M615Disseny/3_Layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 3. Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M615Disseny/4_DissenyVisual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 4. Disseny visual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M615Disseny/5_Responsive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 5. Responsive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M615Disseny/6_ComponentsSistemes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 6. Components i sistemes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M615Disseny/7_AutoaprenentatgeProfessional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 7. Autoaprenentatge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1708 Sostenibilitat
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1708 Sostenibilitat
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M1708-Sostenibilitat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentacio del modul
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/M1708-Sostenibilitat/1_Sostenibilitat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RA1. Fonaments de la sostenibilitat i desafiaments globals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOPT3 Enginyeria del Desenvolupament Intel·ligent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MOPT3 Enginyeria del Desenvolupament Intel·ligent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentacio del modul
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/1_Com_afrontar_un_projecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 1. Com afrontar un projecte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/2_Organitzacio_del_projecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 2. Organitzacio del projecte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/3_Pla_de_desenvolupament/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 3. Pla de desenvolupament
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/4_Bones_practiques_de_programacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 4. Bones practiques de programacio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DAW/MOPT3-EnginyeriaDesenvolupamentInteligent/5_Debug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloc 5. Debug
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-aprendras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Què aprendràs?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-una-mateixa-quantitat-diferents-maneres-descriure-la" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Una mateixa quantitat, diferents maneres d'escriure-la
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-el-valor-de-cada-posicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. El valor de cada posició
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-de-binari-a-decimal-sumar-els-valors-de-les-posicions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. De binari a decimal: sumar els valors de les posicions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. De binari a decimal: sumar els valors de les posicions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-110102-a-decimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 11010₂ a decimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-altre-exemple-101001012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un altre exemple: 10100101₂
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-de-decimal-a-binari-divisions-successives-entre-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. De decimal a binari: divisions successives entre 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. De decimal a binari: divisions successives entre 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-2610-a-binari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 26₁₀ a binari
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-de-decimal-a-octal-divisions-entre-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. De decimal a octal: divisions entre 8
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. De decimal a octal: divisions entre 8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-15610-a-octal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 156₁₀ a octal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doctal-a-decimal-el-cami-invers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'octal a decimal: el camí invers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-de-decimal-a-hexadecimal-divisions-entre-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. De decimal a hexadecimal: divisions entre 16
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. De decimal a hexadecimal: divisions entre 16">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-25410-a-hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 254₁₀ a hexadecimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhexadecimal-a-decimal-el-cami-invers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'hexadecimal a decimal: el camí invers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-de-binari-a-hexadecimal-grups-de-4-bits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. De binari a hexadecimal: grups de 4 bits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. De binari a hexadecimal: grups de 4 bits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-110101102-a-hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 11010110₂ a hexadecimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhexadecimal-a-binari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'hexadecimal a binari
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-de-binari-a-octal-grups-de-3-bits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. De binari a octal: grups de 3 bits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. De binari a octal: grups de 3 bits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-resolt-110101102-a-octal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemple resolt: 11010110₂ a octal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#doctal-a-binari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'octal a binari
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-doctal-a-hexadecimal-i-a-linreves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. D'octal a hexadecimal i a l'inrevés
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. D&#39;octal a hexadecimal i a l&#39;inrevés">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doctal-a-hexadecimal-578" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'octal a hexadecimal: 57₈
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhexadecimal-a-octal-2f16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D'hexadecimal a octal: 2F₁₆
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-quin-procediment-he-de-triar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Quin procediment he de triar?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-per-a-que-ens-serveix-en-sistemes-operatius" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Per a què ens serveix en sistemes operatius?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-practica-pas-a-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Practica pas a pas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Practica pas a pas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-decimal-i-binari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Decimal i binari
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-decimal-octal-i-hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Decimal, octal i hexadecimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-agrupacions-de-bits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Agrupacions de bits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-detecta-lerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Detecta l'error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-repte-final-una-quantitat-en-quatre-bases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Repte final: una quantitat en quatre bases
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bloc-2-sistemes-de-numeracio-i-conversions">Bloc 2. Sistemes de numeració i conversions</h1>
+<p><strong>Pregunta clau:</strong> com podem escriure una mateixa quantitat en decimal, binari, octal i hexadecimal?</p>
+<p>Al bloc anterior hem vist que els ordinadors representen les dades amb bits. Ara aprendrem a interpretar nombres binaris i a convertir-los a altres sistemes de numeració.</p>
+<p>Treballarem amb <strong>nombres enters no negatius</strong>: 0, 1, 2, 3… Les fraccions i la representació de nombres negatius es treballaran més endavant.</p>
+<div class="admonition note">
+<p class="admonition-title">Com es diu cada sistema?</p>
+<p><strong>Octal</strong> és el nom del sistema de base 8. <strong>Hexadecimal</strong> és el de base 16. En aquest context, el terme correcte és octal, no «octadecimal».</p>
+</div>
+<h2 id="1-que-aprendras">1. Què aprendràs?</h2>
+<ul>
+<li>Entendre què és la base d'un sistema de numeració.</li>
+<li>Convertir de decimal a binari i de binari a decimal.</li>
+<li>Convertir de decimal a octal i hexadecimal, i fer el camí invers.</li>
+<li>Passar de binari a octal o hexadecimal agrupant bits.</li>
+<li>Comprovar els resultats fent la conversió inversa.</li>
+</ul>
+<h2 id="2-una-mateixa-quantitat-diferents-maneres-descriure-la">2. Una mateixa quantitat, diferents maneres d'escriure-la</h2>
+<p>La <strong>base</strong> indica quants dígits diferents utilitza un sistema de numeració.</p>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Base</th>
+<th>Dígits que podem utilitzar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decimal</td>
+<td>10</td>
+<td><code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code>, <code>9</code></td>
+</tr>
+<tr>
+<td>Binari</td>
+<td>2</td>
+<td><code>0</code>, <code>1</code></td>
+</tr>
+<tr>
+<td>Octal</td>
+<td>8</td>
+<td><code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code></td>
+</tr>
+<tr>
+<td>Hexadecimal</td>
+<td>16</td>
+<td><code>0</code>–<code>9</code> i <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code></td>
+</tr>
+</tbody>
+</table>
+<p>En hexadecimal, les lletres representen aquests valors:</p>
+<table>
+<thead>
+<tr>
+<th>Dígit</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valor decimal</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<p>Quan s'acaben els dígits disponibles, afegim una posició. En decimal, després del 9 ve el 10; en binari, després de l'1 ve el 10; en octal, després del 7 ve el 10; en hexadecimal, després de la F ve el 10.</p>
+<div class="admonition warning">
+<p class="admonition-title">Cal indicar la base</p>
+<p><code>10</code> no representa la mateixa quantitat en tots els sistemes. <strong>10₂ = 2₁₀</strong>, <strong>10₈ = 8₁₀</strong> i <strong>10₁₆ = 16₁₀</strong>. El número petit de sota indica la base. També podem escriure «10 en base 2».</p>
+</div>
+<p>Per exemple, aquestes quatre expressions representen <strong>la mateixa quantitat</strong>:</p>
+<blockquote>
+<p><strong>26₁₀ = 11010₂ = 32₈ = 1A₁₆</strong></p>
+</blockquote>
+<p>Convertir un nombre consisteix a canviar-ne la representació mantenint el valor.</p>
+<h2 id="3-el-valor-de-cada-posicio">3. El valor de cada posició</h2>
+<p>En aquests sistemes, el valor d'un dígit depèn de la seva posició. Les posicions es compten <strong>de dreta a esquerra</strong>, començant per la posició <strong>0</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Posició 3</th>
+<th>Posició 2</th>
+<th>Posició 1</th>
+<th>Posició 0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decimal</td>
+<td>10³ = 1.000</td>
+<td>10² = 100</td>
+<td>10¹ = 10</td>
+<td>10⁰ = 1</td>
+</tr>
+<tr>
+<td>Binari</td>
+<td>2³ = 8</td>
+<td>2² = 4</td>
+<td>2¹ = 2</td>
+<td>2⁰ = 1</td>
+</tr>
+<tr>
+<td>Octal</td>
+<td>8³ = 512</td>
+<td>8² = 64</td>
+<td>8¹ = 8</td>
+<td>8⁰ = 1</td>
+</tr>
+<tr>
+<td>Hexadecimal</td>
+<td>16³ = 4.096</td>
+<td>16² = 256</td>
+<td>16¹ = 16</td>
+<td>16⁰ = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Una potència indica una multiplicació repetida: <strong>2³ = 2 × 2 × 2 = 8</strong>. Per a les bases que fem servir, la potència amb exponent zero val 1.</p>
+<p>Ja utilitzes aquesta idea quan llegeixes un nombre decimal:</p>
+<blockquote>
+<p><strong>347₁₀ = 3 × 100 + 4 × 10 + 7 × 1</strong></p>
+</blockquote>
+<p>Per interpretar les altres bases farem el mateix, canviant el valor de les posicions.</p>
+<h2 id="4-de-binari-a-decimal-sumar-els-valors-de-les-posicions">4. De binari a decimal: sumar els valors de les posicions</h2>
+<h3 id="exemple-resolt-110102-a-decimal">Exemple resolt: 11010₂ a decimal</h3>
+<p><strong>Pas 1.</strong> Escriu els valors de les posicions. Comença amb 1 a la dreta i duplica el valor cap a l'esquerra.</p>
+<table>
+<thead>
+<tr>
+<th>Valor de la posició</th>
+<th>16</th>
+<th>8</th>
+<th>4</th>
+<th>2</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bit del nombre</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pas 2.</strong> Multiplica cada bit pel valor de la seva posició:</p>
+<blockquote>
+<p>1 × 16 + 1 × 8 + 0 × 4 + 1 × 2 + 0 × 1</p>
+</blockquote>
+<p><strong>Pas 3.</strong> Suma els resultats:</p>
+<blockquote>
+<p>16 + 8 + 2 = <strong>26</strong></p>
+</blockquote>
+<p>Per tant, <strong>11010₂ = 26₁₀</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Una manera ràpida de fer-ho</p>
+<p>Només cal sumar les posicions que tenen un <strong>1</strong>. Les que tenen un <strong>0</strong> aporten zero.</p>
+</div>
+<h3 id="un-altre-exemple-101001012">Un altre exemple: 10100101₂</h3>
+<table>
+<thead>
+<tr>
+<th>Valor de la posició</th>
+<th>128</th>
+<th>64</th>
+<th>32</th>
+<th>16</th>
+<th>8</th>
+<th>4</th>
+<th>2</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bit</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>10100101₂ = 128 + 32 + 4 + 1 = 165₁₀</strong></p>
+</blockquote>
+<h2 id="5-de-decimal-a-binari-divisions-successives-entre-2">5. De decimal a binari: divisions successives entre 2</h2>
+<p>Utilitzarem <strong>divisions enteres</strong>: de cada divisió ens quedem amb el quocient i el residu, sense calcular decimals.</p>
+<p>Per exemple, <code>13 ÷ 2</code> dona <strong>quocient 6 i residu 1</strong>, perquè <code>13 = 6 × 2 + 1</code>.</p>
+<h3 id="exemple-resolt-2610-a-binari">Exemple resolt: 26₁₀ a binari</h3>
+<p><strong>Pas 1.</strong> Divideix el nombre entre 2.</p>
+<p><strong>Pas 2.</strong> Torna a dividir el quocient entre 2. Repeteix fins que el quocient sigui 0.</p>
+<table>
+<thead>
+<tr>
+<th>Nombre que dividim</th>
+<th>Divisor</th>
+<th>Quocient</th>
+<th>Residu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>26</td>
+<td>2</td>
+<td>13</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>13</td>
+<td>2</td>
+<td>6</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>3</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pas 3.</strong> Llegeix els residus <strong>de baix a dalt</strong>: <code>1</code>, <code>1</code>, <code>0</code>, <code>1</code>, <code>0</code>.</p>
+<blockquote>
+<p><strong>26₁₀ = 11010₂</strong></p>
+</blockquote>
+<p><strong>Comprovació:</strong> <code>16 + 8 + 2 = 26</code>.</p>
+<p><img alt="Divisions successives de 26 entre 2. Els quocients 13, 6, 3 i 1 passen a ser el dividend següent. Els residus es llegeixen de baix a dalt: 1, 1, 0, 1, 0. Resultat: 26 en decimal és 11010 en binari." src="../images/decimal_a_binari_divisions.png" /></p>
+<p><strong>Com es llegeix la imatge:</strong> les fletxes blaves indiquen quin <strong>quocient tornem a dividir</strong>. Quan el quocient és 0, parem. La fletxa taronja indica l'ordre en què agafem els <strong>residus</strong>, numerats de l'1r al 5è: de baix a dalt. Aquests residus formen el resultat binari.</p>
+<div class="admonition question">
+<p class="admonition-title">Per què llegim els residus de baix a dalt?</p>
+<p>La primera divisió ens dona el bit de les unitats, que va a la dreta. La següent ens dona el bit de la posició que val 2; després, el de la posició que val 4… Obtenim els bits començant pel de més a la dreta.</p>
+</div>
+<p>Si ens demanen escriure el resultat amb <strong>8 bits</strong>, afegim zeros a l'esquerra:</p>
+<blockquote>
+<p><strong>11010₂ = 00011010₂</strong></p>
+</blockquote>
+<p>Els zeros inicials no canvien el valor. Si el nombre ja necessita més de 8 bits, no podem representar-lo amb 8 bits sense perdre informació.</p>
+<p><strong>Cas especial:</strong> el nombre decimal 0 es representa directament com a <code>0</code> en binari.</p>
+<h2 id="6-de-decimal-a-octal-divisions-entre-8">6. De decimal a octal: divisions entre 8</h2>
+<p>Fem el mateix procediment que amb el binari, però <strong>dividim entre 8</strong>. Els residus poden anar del 0 al 7.</p>
+<h3 id="exemple-resolt-15610-a-octal">Exemple resolt: 156₁₀ a octal</h3>
+<table>
+<thead>
+<tr>
+<th>Nombre que dividim</th>
+<th>Divisor</th>
+<th>Quocient</th>
+<th>Residu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>156</td>
+<td>8</td>
+<td>19</td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>19</td>
+<td>8</td>
+<td>2</td>
+<td><strong>3</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>8</td>
+<td>0</td>
+<td><strong>2</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Llegim els residus de baix a dalt:</p>
+<blockquote>
+<p><strong>156₁₀ = 234₈</strong></p>
+</blockquote>
+<h3 id="doctal-a-decimal-el-cami-invers">D'octal a decimal: el camí invers</h3>
+<p>Multipliquem cada dígit pel valor de la seva posició:</p>
+<blockquote>
+<p>234₈ = 2 × 8² + 3 × 8¹ + 4 × 8⁰</p>
+<p>= 2 × 64 + 3 × 8 + 4 × 1</p>
+<p>= 128 + 24 + 4 = <strong>156₁₀</strong></p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">En octal no hi ha ni 8 ni 9</p>
+<p><code>128</code> no pot ser un nombre escrit en base 8, perquè conté el dígit <code>8</code>.</p>
+</div>
+<h2 id="7-de-decimal-a-hexadecimal-divisions-entre-16">7. De decimal a hexadecimal: divisions entre 16</h2>
+<p>Ara <strong>dividim entre 16</strong>. Els residus poden anar del 0 al 15. Si el residu és del 10 al 15, l'escrivim amb la lletra corresponent: A, B, C, D, E o F.</p>
+<h3 id="exemple-resolt-25410-a-hexadecimal">Exemple resolt: 254₁₀ a hexadecimal</h3>
+<table>
+<thead>
+<tr>
+<th>Nombre que dividim</th>
+<th>Divisor</th>
+<th>Quocient</th>
+<th>Residu decimal</th>
+<th>Dígit hexadecimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>254</td>
+<td>16</td>
+<td>15</td>
+<td>14</td>
+<td><strong>E</strong></td>
+</tr>
+<tr>
+<td>15</td>
+<td>16</td>
+<td>0</td>
+<td>15</td>
+<td><strong>F</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Llegim els dígits de baix a dalt:</p>
+<blockquote>
+<p><strong>254₁₀ = FE₁₆</strong></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Cada residu ha d'ocupar un sol dígit</p>
+<p>El residu 14 s'escriu <strong>E</strong>. Escriure <code>14</code> introduiria dues posicions hexadecimals i canviaria el resultat.</p>
+</div>
+<h3 id="dhexadecimal-a-decimal-el-cami-invers">D'hexadecimal a decimal: el camí invers</h3>
+<p>Primer substituïm les lletres pels seus valors decimals:</p>
+<blockquote>
+<p>FE₁₆ = 15 × 16¹ + 14 × 16⁰</p>
+<p>= 15 × 16 + 14 × 1</p>
+<p>= 240 + 14 = <strong>254₁₀</strong></p>
+</blockquote>
+<p>Amb tres dígits, apareix la posició que val 16²:</p>
+<blockquote>
+<p><strong>1A3₁₆ = 1 × 256 + 10 × 16 + 3 × 1 = 419₁₀</strong></p>
+</blockquote>
+<h2 id="8-de-binari-a-hexadecimal-grups-de-4-bits">8. De binari a hexadecimal: grups de 4 bits</h2>
+<p>Hi ha una drecera perquè <strong>2⁴ = 16</strong>: quatre bits tenen exactament les combinacions necessàries per representar un dígit hexadecimal.</p>
+<table>
+<thead>
+<tr>
+<th>Decimal</th>
+<th>Binari amb 4 bits</th>
+<th>Hexadecimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>0000</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>0001</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>0010</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>0011</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>0100</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>0101</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>0110</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>0111</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>1000</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>1001</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>1010</code></td>
+<td>A</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>1011</code></td>
+<td>B</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>1100</code></td>
+<td>C</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>1101</code></td>
+<td>D</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>1110</code></td>
+<td>E</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>1111</code></td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exemple-resolt-110101102-a-hexadecimal">Exemple resolt: 11010110₂ a hexadecimal</h3>
+<ol>
+<li>Forma grups de <strong>4 bits començant per la dreta</strong>: <code>1101 0110</code>.</li>
+<li>Converteix cada grup: <code>1101</code> és D i <code>0110</code> és 6.</li>
+<li>Conserva l'ordre dels grups: <strong>11010110₂ = D6₁₆</strong>.</li>
+</ol>
+<p>Si al grup de l'esquerra li falten bits, afegeix-hi zeros <strong>a l'esquerra</strong>:</p>
+<blockquote>
+<p>11010₂ → <code>1 1010</code> → <code>0001 1010</code> → <strong>1A₁₆</strong></p>
+</blockquote>
+<h3 id="dhexadecimal-a-binari">D'hexadecimal a binari</h3>
+<p>Substitueix <strong>cada dígit hexadecimal per 4 bits</strong>, conservant l'ordre:</p>
+<blockquote>
+<p>A3₁₆ → <code>A → 1010</code> i <code>3 → 0011</code> → <strong>10100011₂</strong></p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Conserva els quatre bits de cada grup</p>
+<p>El dígit <code>3</code> s'ha d'escriure <code>0011</code> dins del grup. Si escrivíssim <code>1010 11</code> per a A3, obtindríem un valor diferent. Només es poden eliminar els zeros inicials del nombre complet.</p>
+</div>
+<h2 id="9-de-binari-a-octal-grups-de-3-bits">9. De binari a octal: grups de 3 bits</h2>
+<p>Com que <strong>2³ = 8</strong>, cada grup de tres bits correspon a un dígit octal.</p>
+<table>
+<thead>
+<tr>
+<th>Binari amb 3 bits</th>
+<th>Octal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>000</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>001</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>010</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>011</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>100</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>101</code></td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>110</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>111</code></td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exemple-resolt-110101102-a-octal">Exemple resolt: 11010110₂ a octal</h3>
+<ol>
+<li>Forma grups de <strong>3 bits començant per la dreta</strong>: <code>11 010 110</code>.</li>
+<li>Completa el grup de l'esquerra: <code>011 010 110</code>.</li>
+<li>Converteix els grups, mantenint-ne l'ordre: <code>011 → 3</code>, <code>010 → 2</code>, <code>110 → 6</code>.</li>
+</ol>
+<blockquote>
+<p><strong>11010110₂ = 326₈</strong></p>
+</blockquote>
+<h3 id="doctal-a-binari">D'octal a binari</h3>
+<p>Substitueix <strong>cada dígit octal per 3 bits</strong>:</p>
+<blockquote>
+<p>57₈ → <code>5 → 101</code> i <code>7 → 111</code> → <strong>101111₂</strong></p>
+</blockquote>
+<h2 id="10-doctal-a-hexadecimal-i-a-linreves">10. D'octal a hexadecimal i a l'inrevés</h2>
+<p>Podem utilitzar el binari com a pas intermedi: desfem els grups d'una base i els tornem a agrupar per a l'altra.</p>
+<h3 id="doctal-a-hexadecimal-578">D'octal a hexadecimal: 57₈</h3>
+<ol>
+<li>Passem cada dígit octal a 3 bits: <code>57₈ → 101 111₂</code>.</li>
+<li>Reagrupem de 4 en 4 des de la dreta: <code>10 1111</code>.</li>
+<li>Completem amb zeros a l'esquerra: <code>0010 1111</code>.</li>
+<li>Convertim cada grup a hexadecimal: <strong>57₈ = 2F₁₆</strong>.</li>
+</ol>
+<h3 id="dhexadecimal-a-octal-2f16">D'hexadecimal a octal: 2F₁₆</h3>
+<ol>
+<li>Passem cada dígit hexadecimal a 4 bits: <code>2F₁₆ → 0010 1111₂</code>.</li>
+<li>Reagrupem de 3 en 3 des de la dreta: <code>00 101 111</code>.</li>
+<li>Completem el primer grup: <code>000 101 111</code>.</li>
+<li>Convertim a octal: <code>057₈</code>, que podem escriure <strong>57₈</strong>.</li>
+</ol>
+<h2 id="11-quin-procediment-he-de-triar">11. Quin procediment he de triar?</h2>
+<table>
+<thead>
+<tr>
+<th>Conversió</th>
+<th>Procediment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decimal → binari</td>
+<td>Dividir entre 2 i llegir els residus de baix a dalt.</td>
+</tr>
+<tr>
+<td>Decimal → octal</td>
+<td>Dividir entre 8 i llegir els residus de baix a dalt.</td>
+</tr>
+<tr>
+<td>Decimal → hexadecimal</td>
+<td>Dividir entre 16, substituir els residus 10–15 per A–F i llegir de baix a dalt.</td>
+</tr>
+<tr>
+<td>Binari, octal o hexadecimal → decimal</td>
+<td>Multiplicar cada dígit pel valor de la seva posició i sumar.</td>
+</tr>
+<tr>
+<td>Binari → hexadecimal</td>
+<td>Agrupar de 4 en 4 des de la dreta.</td>
+</tr>
+<tr>
+<td>Hexadecimal → binari</td>
+<td>Escriure 4 bits per cada dígit.</td>
+</tr>
+<tr>
+<td>Binari → octal</td>
+<td>Agrupar de 3 en 3 des de la dreta.</td>
+</tr>
+<tr>
+<td>Octal → binari</td>
+<td>Escriure 3 bits per cada dígit.</td>
+</tr>
+<tr>
+<td>Octal ↔ hexadecimal</td>
+<td>Passar per binari i reagrupar.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Comprova sempre el resultat</p>
+<p>Fes la conversió inversa o passa les dues representacions a decimal. Per exemple: <strong>D6₁₆ = 13 × 16 + 6 = 214₁₀</strong> i <strong>326₈ = 3 × 64 + 2 × 8 + 6 = 214₁₀</strong>. Representen la mateixa quantitat.</p>
+</div>
+<h2 id="12-per-a-que-ens-serveix-en-sistemes-operatius">12. Per a què ens serveix en sistemes operatius?</h2>
+<ul>
+<li><strong>Binari:</strong> per interpretar bits, indicadors i representacions internes de dades.</li>
+<li><strong>Hexadecimal:</strong> per escriure seqüències de bits de manera més compacta. Un byte es pot representar amb dos dígits hexadecimals: <code>11111111₂ = FF₁₆</code>.</li>
+<li><strong>Octal:</strong> per expressar, entre altres coses, permisos de fitxers en sistemes Unix i Linux. Un grup de tres bits pot indicar lectura, escriptura i execució. Ho treballarem al bloc de permisos.</li>
+</ul>
+<p>Per exemple, el grup <code>101₂</code> val <code>5₈</code>. Interpretat com a permisos en l'ordre lectura, escriptura i execució, indica lectura activada, escriptura desactivada i execució activada. La conversió ens dona el valor; el context ens diu què significa.</p>
+<h2 id="13-practica-pas-a-pas">13. Practica pas a pas</h2>
+<p>Resol els exercicis sense calculadora. Escriu les divisions o els valors de les posicions per justificar la resposta.</p>
+<h3 id="a-decimal-i-binari">A. Decimal i binari</h3>
+<ol>
+<li>Converteix <strong>13₁₀</strong> a binari.</li>
+<li>Converteix <strong>42₁₀</strong> a binari i escriu-lo amb 8 bits.</li>
+<li>Converteix <strong>101101₂</strong> a decimal.</li>
+<li>Converteix <strong>10000000₂</strong> a decimal.</li>
+</ol>
+<details class="success">
+<summary>Solucions A</summary>
+<ol>
+<li>Divisions entre 2: <code>13 → 6 r1</code>, <code>6 → 3 r0</code>, <code>3 → 1 r1</code>, <code>1 → 0 r1</code>. Llegint els residus de baix a dalt: <strong>1101₂</strong>. Comprovació: <code>8 + 4 + 1 = 13</code>.</li>
+<li>Divisions entre 2: <code>42 → 21 r0</code>, <code>21 → 10 r1</code>, <code>10 → 5 r0</code>, <code>5 → 2 r1</code>, <code>2 → 1 r0</code>, <code>1 → 0 r1</code>. Resultat: <code>101010₂</code>; amb 8 bits: <strong>00101010₂</strong>.</li>
+<li><code>32 + 8 + 4 + 1 =</code> <strong>45₁₀</strong>.</li>
+<li>Només hi ha un 1 a la posició que val 128: <strong>128₁₀</strong>.</li>
+</ol>
+</details>
+<h3 id="b-decimal-octal-i-hexadecimal">B. Decimal, octal i hexadecimal</h3>
+<ol>
+<li>Converteix <strong>83₁₀</strong> a octal.</li>
+<li>Converteix <strong>145₈</strong> a decimal.</li>
+<li>Converteix <strong>175₁₀</strong> a hexadecimal.</li>
+<li>Converteix <strong>2B₁₆</strong> a decimal.</li>
+</ol>
+<details class="success">
+<summary>Solucions B</summary>
+<ol>
+<li>Divisions entre 8: <code>83 → 10 r3</code>, <code>10 → 1 r2</code>, <code>1 → 0 r1</code>. Resultat: <strong>123₈</strong>.</li>
+<li><code>1 × 64 + 4 × 8 + 5 =</code> <strong>101₁₀</strong>.</li>
+<li>Divisions entre 16: <code>175 → 10 r15</code>, <code>10 → 0 r10</code>. Els residus són F i A; llegits de baix a dalt: <strong>AF₁₆</strong>.</li>
+<li><code>2 × 16 + 11 =</code> <strong>43₁₀</strong>.</li>
+</ol>
+</details>
+<h3 id="c-agrupacions-de-bits">C. Agrupacions de bits</h3>
+<ol>
+<li>Converteix <strong>11110010₂</strong> a hexadecimal.</li>
+<li>Converteix <strong>3C₁₆</strong> a binari amb 8 bits.</li>
+<li>Converteix <strong>101110₂</strong> a octal.</li>
+<li>Converteix <strong>64₈</strong> a binari.</li>
+<li>Converteix <strong>75₈</strong> a hexadecimal.</li>
+<li>Converteix <strong>B2₁₆</strong> a octal.</li>
+</ol>
+<details class="success">
+<summary>Solucions C</summary>
+<ol>
+<li><code>1111 0010 → F 2</code>: <strong>F2₁₆</strong>.</li>
+<li><code>3 → 0011</code>, <code>C → 1100</code>: <strong>00111100₂</strong>.</li>
+<li><code>101 110 → 5 6</code>: <strong>56₈</strong>.</li>
+<li><code>6 → 110</code>, <code>4 → 100</code>: <strong>110100₂</strong>.</li>
+<li><code>75₈ → 111 101₂ → 0011 1101₂</code>: <strong>3D₁₆</strong>.</li>
+<li><code>B2₁₆ → 1011 0010₂ → 010 110 010₂</code>: <strong>262₈</strong>.</li>
+</ol>
+</details>
+<h3 id="d-detecta-lerror">D. Detecta l'error</h3>
+<ol>
+<li>Un alumne diu que <strong>10201₂</strong> és un nombre binari vàlid. Té raó?</li>
+<li>Una alumna converteix 26₁₀ a binari i escriu <code>01011</code>, llegint els residus de dalt a baix. Què ha de corregir?</li>
+<li>Per convertir <code>10101₂</code> a hexadecimal, algú afegeix zeros a la dreta i obté <code>10101000₂</code>. Per què no és correcte?</li>
+</ol>
+<details class="success">
+<summary>Solucions D</summary>
+<ol>
+<li>No: en binari només podem utilitzar <strong>0 i 1</strong>, i aquest nombre conté un 2.</li>
+<li>Ha de llegir els residus <strong>de baix a dalt</strong>: el resultat és <strong>11010₂</strong>. El nombre que havia escrit, <code>01011₂</code>, val 11₁₀.</li>
+<li>Afegir zeros a la dreta canvia el valor. Cal completar per l'esquerra: <code>0001 0101₂ =</code> <strong>15₁₆</strong>, que continua valent 21₁₀.</li>
+</ol>
+</details>
+<h2 id="14-repte-final-una-quantitat-en-quatre-bases">14. Repte final: una quantitat en quatre bases</h2>
+<p>Representa <strong>202₁₀</strong> en binari, octal i hexadecimal. Fes primer les divisions entre 2 i després utilitza agrupacions de bits per obtenir les altres dues bases. Comprova els resultats passant-los a decimal.</p>
+<details class="success">
+<summary>Solució del repte</summary>
+<p><strong>202₁₀ = 11001010₂ = 312₈ = CA₁₆</strong>.</p>
+<ul>
+<li>Binari: <code>128 + 64 + 8 + 2 = 202</code>.</li>
+<li>Octal: <code>011 001 010 → 312₈</code>; comprovació: <code>3 × 64 + 1 × 8 + 2 = 202</code>.</li>
+<li>Hexadecimal: <code>1100 1010 → CA₁₆</code>; comprovació: <code>12 × 16 + 10 = 202</code>.</li>
+</ul>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sllado1" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/sílvia-lladó-1bb68646" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

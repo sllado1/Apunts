@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloc 4 - Exemples Disseny Visual</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0ea5e9;
+      --accent: #f59e0b;
+      --text-base: 1rem;
+      --text-h1: 2rem;
+      --text-h2: 1.5rem;
+      --text-h3: 1.25rem;
+    }
+    body { margin: 2rem; font-family: Arial, sans-serif; background: var(--bg); color: var(--text); font-size: var(--text-base); line-height: 1.5; }
+    section { margin-bottom: 2.5rem; }
+    .demo { border: 1px solid #cbd5e1; border-radius: 8px; padding: 1rem; background: var(--surface); }
+    h1 { font-size: var(--text-h1); }
+    h2 { font-size: var(--text-h2); }
+    h3 { font-size: var(--text-h3); }
+    .muted { color: var(--muted); }
+
+    .crap-card { max-width: 30rem; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; }
+    .crap-card .cta { display: inline-block; margin-top: 0.75rem; background: var(--primary); color: #fff; padding: 0.5rem 0.75rem; border-radius: 6px; text-decoration: none; }
+
+    .palette { display: grid; grid-template-columns: repeat(5, minmax(100px, 1fr)); gap: 0.75rem; }
+    .swatch { padding: 0.75rem; border-radius: 6px; color: #0f172a; border: 1px solid #cbd5e1; }
+
+    .pattern { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1rem; align-items: center; }
+    .visual { background: linear-gradient(135deg, #0ea5e9, #f59e0b); min-height: 140px; border-radius: 8px; }
+
+    @media (max-width: 800px) {
+      .pattern { grid-template-columns: 1fr; }
+      .palette { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Bloc 4 - Exemples Disseny Visual</h1>
+
+  <section id="crap">
+    <h2>CRAP en una targeta</h2>
+    <div class="demo">
+      <article class="crap-card">
+        <h3>Article destacat</h3>
+        <p class="muted">Contrast, alineacio i proximitat treballant junts per millorar la lectura.</p>
+        <a class="cta" href="#">Llegir més</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="tipografia">
+    <h2>Sistema tipografic</h2>
+    <div class="demo">
+      <h1>Titol principal</h1>
+      <h2>Subtitol de seccio</h2>
+      <h3>Titol secundari</h3>
+      <p>Paragraf amb mida base i line-height de 1.5 per assegurar llegibilitat.</p>
+    </div>
+  </section>
+
+  <section id="colors">
+    <h2>Variables de color</h2>
+    <div class="demo palette">
+      <div class="swatch" style="background:#f8fafc">--bg</div>
+      <div class="swatch" style="background:#ffffff">--surface</div>
+      <div class="swatch" style="background:#0f172a;color:#fff">--text</div>
+      <div class="swatch" style="background:#0ea5e9;color:#fff">--primary</div>
+      <div class="swatch" style="background:#f59e0b">--accent</div>
+    </div>
+  </section>
+
+  <section id="composicio">
+    <h2>Patro de composicio: contingut + visual</h2>
+    <div class="demo pattern">
+      <div>
+        <h3>Missatge principal</h3>
+        <p class="muted">Bloc textual amb jerarquia clara i separacio coherent.</p>
+      </div>
+      <div class="visual" aria-hidden="true"></div>
+    </div>
+  </section>
+</body>
+</html>
