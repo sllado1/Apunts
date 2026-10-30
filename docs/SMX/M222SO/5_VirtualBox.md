@@ -61,14 +61,14 @@ Les **Guest Additions** s'instal·len dins del sistema convidat. Milloren la int
    sudo sh ./VBoxLinuxAdditions.run
    ```
 
-3. **Només si l'instal·lador indica que falten eines o capçaleres del nucli**, instal·la-les i torna a executar l'instal·lador:
+3. **Només si l'instal·lador indica que falten eines o capçaleres del nucli**, instal·la-les:
 
    ```bash
    sudo apt update
    sudo apt install build-essential dkms linux-headers-$(uname -r)
    ```
 
-   Aquest pas no cal fer-lo sempre: prepara Ubuntu per compilar els mòduls quan les eines necessàries no hi són.
+   Aquest pas no cal fer-lo sempre: prepara Ubuntu per compilar els mòduls quan les eines necessàries no hi són. Quan acabi, **torna a executar l'instal·lador de les Guest Additions des del CD** (pas 2).
 
 4. Reinicia Ubuntu perquè els controladors s'activin:
 
