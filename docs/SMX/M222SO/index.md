@@ -10,3 +10,4 @@ Començarem amb una pregunta bàsica: **què són les dades amb què treballa un
 - [Bloc 2. Sistemes de numeració i conversions](2_Sistemes_de_numeracio.md): conversions entre decimal, binari, octal i hexadecimal, amb exemples pas a pas i exercicis resolts.
 - [Bloc 3. Operacions en binari](3_Operacions_en_binari.md): sumes, restes, multiplicacions i divisions, amb imatges, exemples guiats i activitats amb solucions.
 - [Bloc 4. Codificació de caràcters: ASCII i Unicode](4_Codificacio_de_caracters.md): codis de caràcters, ASCII de 7 bits, EBCDIC i diferència entre Unicode i UTF.
+- [Bloc 5. Màquines virtuals amb VirtualBox](5_VirtualBox.md): instal·lació, virtualització a la BIOS/UEFI, Guest Additions a Ubuntu i connexió de dispositius USB.

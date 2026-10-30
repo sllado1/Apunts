@@ -10,6 +10,7 @@ nav:
           - Bloc 2. Sistemes de numeració i conversions: SMX/M222SO/2_Sistemes_de_numeracio.md
           - Bloc 3. Operacions en binari: SMX/M222SO/3_Operacions_en_binari.md
           - "Bloc 4. Codificació de caràcters: ASCII i Unicode": SMX/M222SO/4_Codificacio_de_caracters.md
+          - "Bloc 5. Màquines virtuals amb VirtualBox": SMX/M222SO/5_VirtualBox.md
   - DAW:
       - Visio general: DAW/index.md
       - M614 Desplegament:
@@ -105,4 +106,3 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
-
