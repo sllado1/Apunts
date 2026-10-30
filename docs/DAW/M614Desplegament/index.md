@@ -39,3 +39,14 @@ Aquesta secció treballa el desplegament amb una idea central: entendre el proc�
 - [Bloc 4. Apache mínim: servir una aplicació web](4_Apache_minim.md)
 - [Bloc 5. Diagnòstic i resolució d'errors en un desplegament web](5_Diagnostic_i_Resolucio.md)
 
+## AWS: principis bàsics
+
+Introducció als conceptes necessaris per entendre i començar a desplegar aplicacions al núvol d'Amazon Web Services.
+
+- [Bloc 6. AWS: principis bàsics](6_AWS_Principis_Basics.md)
+
+## AWS Academy
+
+Introducció a l'entorn formatiu d'AWS Academy i als passos inicials per treballar amb els materials i les pràctiques del curs.
+
+- [Bloc 7. Comencem amb AWS Academy](7_AWS_Academy.md)

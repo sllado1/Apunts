@@ -28,6 +28,8 @@ nav:
           - Bloc 3. Permisos Linux: DAW/M614Desplegament/3_Permisos_Linux_Desplegament.md
           - Bloc 4. Apache minim: DAW/M614Desplegament/4_Apache_minim.md
           - Bloc 5. Diagnostic i resolucio: DAW/M614Desplegament/5_Diagnostic_i_Resolucio.md
+          - "Bloc 6. AWS: principis bàsics": DAW/M614Desplegament/6_AWS_Principis_Basics.md
+          - "Bloc 7. Comencem amb AWS Academy": DAW/M614Desplegament/7_AWS_Academy.md
       - M615 Disseny:
           - Presentacio del modul: DAW/M615Disseny/index.md
           - Bloc 1. Fonaments: DAW/M615Disseny/1_Fonaments.md
