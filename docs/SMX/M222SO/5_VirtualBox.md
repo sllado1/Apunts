@@ -122,9 +122,17 @@ Si continua fallant, copia la sortida de `pgrep`, `lsmod` i les línies d'error 
 Per passar un USB de l'ordinador amfitrió a la màquina virtual:
 
 1. Apaga la màquina virtual i obre **Configuració → USB**.
-2. Activa el controlador USB que necessitis. Per a **USB 2.0 o USB 3.0**, instal·la també l'**Extension Pack** oficial de la mateixa versió que VirtualBox. El pots baixar del web oficial i instal·lar des de **Eines → Extension Pack Manager**. Després, torna a obrir la configuració de la màquina virtual.
+2. Activa el controlador USB que necessitis. Per a **USB 2.0 o USB 3.0**. Després, torna a obrir la configuració de la màquina virtual.
 3. Inicia la màquina virtual. Al menú **Dispositius → USB**, selecciona el dispositiu que vols connectar.
 4. Per tornar-lo a l'amfitrió, desmarca'l al mateix menú abans de fer-lo servir fora de la màquina virtual.
+
+### Filtres USB
+
+Un **filtre USB** és una regla que permet a VirtualBox reconèixer un dispositiu i connectar-lo automàticament a una màquina virtual quan l'endolles. Sense filtre, pots connectar-lo manualment des de **Dispositius → USB** cada vegada.
+
+Per crear-ne un, connecta el dispositiu a l'ordinador amfitrió i apaga la màquina virtual. Obre **Configuració → USB**, comprova que el controlador USB adequat està activat i prem la icona d'afegir filtre (un símbol **+**). Tria el dispositiu de la llista i desa els canvis. En iniciar la màquina virtual, VirtualBox l'assignarà automàticament al convidat.
+
+Fes servir un filtre només si connectes sovint el mateix dispositiu a la mateixa màquina virtual. Mentre el dispositiu està connectat al convidat, no es pot fer servir des de l'amfitrió. Si vols tornar-lo a l'amfitrió, desconnecta'l des del menú **Dispositius → USB**.
 
 ```mermaid
 flowchart LR
