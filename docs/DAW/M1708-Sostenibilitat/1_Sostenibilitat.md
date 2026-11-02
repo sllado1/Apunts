@@ -125,7 +125,11 @@ Bones pràctiques inicials:
 
 ## 6. ODS i responsabilitat del sector digital
 
-Els 17 Objectius de Desenvolupament Sostenible (ODS) ofereixen un marc global d'acció.
+Els 17 Objectius de Desenvolupament Sostenible (ODS) formen part de l'Agenda 2030 de les Nacions Unides. Cada ODS es concreta en metes més específiques: en total n'hi ha 169. Els indicadors associats permeten mesurar els avenços.
+
+![Els 17 Objectius de Desenvolupament Sostenible de les Nacions Unides](https://www.pactomundial.org/que-puedes-hacer-tu/ods/)
+
+*Els 17 ODS. Imatge de les Nacions Unides.*
 
 Connexions directes amb DAW:
 
@@ -152,6 +156,22 @@ Exemples concrets:
 Indicador docent simple:
 
 - cada equip ha d'explicar quin ODS prioritza, quina decisió tècnica ha pres i quina evidència aporta.
+
+
+### Metes dels ODS relacionades amb el sector digital
+
+Les metes expliquen què es vol assolir dins de cada objectiu. Aquestes són especialment útils per relacionar els ODS amb projectes DAW:
+
+- **Meta 9.1**: desenvolupar infraestructures fiables, sostenibles i resilients. En un projecte web, això es pot traduir en serveis robustos, accessibles i preparats per créixer.
+- **Meta 9.3**: ampliar l'accés a les tecnologies de la informació i les comunicacions. Cal tenir en compte la connectivitat i els dispositius disponibles per als usuaris.
+- **Meta 12.5**: reduir la generació de residus mitjançant la prevenció, la reducció, el reciclatge i la reutilització. En l'àmbit digital, es pot aplicar allargant la vida dels equips i evitant recursos o dependències innecessaris.
+- **Meta 12.8**: garantir que les persones tinguin informació i sensibilització per a un desenvolupament sostenible. Un lloc web pot oferir informació clara i accessible sobre l'impacte dels productes o serveis.
+- **Meta 13.3**: millorar l'educació i la sensibilització sobre el canvi climàtic. Els projectes digitals poden ajudar a comunicar-ne les causes i les respostes.
+- **Meta 16.6**: crear institucions eficaces, responsables i transparents. En un servei web, això implica explicar com es tracten les dades i qui n'és responsable.
+- **Meta 16.10**: garantir l'accés públic a la informació i protegir les llibertats fonamentals. Cal publicar informació comprensible i respectar la privacitat i els drets digitals.
+
+Les metes es poden consultar amb el detall oficial al [llistat dels ODS i les seves metes de les Nacions Unides](https://sdgs.un.org/goals).
+
 
 ---
 
