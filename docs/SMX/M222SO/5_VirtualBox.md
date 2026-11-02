@@ -157,7 +157,7 @@ Fes servir un filtre només si connectes sovint el mateix dispositiu a la mateix
 ```mermaid
 flowchart TD
     U["Dispositiu USB"] -->|Connectat al menú Dispositius| VM["Ubuntu virtual"]
-    VM -. "Desconnectar per recuperar-lo" .-> H["Ordinador amfitrió"]
+    VM -. "Desconnectar" .-> H["Ordinador amfitrió"]
 ```
 
 Mentre l'USB està connectat al convidat, normalment no està disponible per a l'amfitrió. En un amfitrió Linux, també cal que el compte tingui permisos per utilitzar VirtualBox i els dispositius USB.
