@@ -33,7 +33,7 @@ El **TTL** (*Time To Live*) indica quant de temps els resolutors poden conservar
 
 Suposem que `exemple.cat` ja apunta al servidor actual i volem que `app.exemple.cat` apunti a un servidor nou amb IP pública IPv4 `203.0.113.25`.
 
-1. Obté del proveïdor del servidor nou la seva **IP pública estable**. Si l'adreça pot canviar quan es reinicia o es recrea la màquina, assigna una IP estàtica o configura una solució DNS dinàmica abans de publicar el registre.
+1. Obté del proveïdor del servidor nou la seva **IP pública**. Si l'adreça pot canviar quan es reinicia o es recrea la màquina, assigna una IP estàtica o configura una solució DNS dinàmica abans de publicar el registre.
 2. Entra al panell del proveïdor DNS autoritatiu del domini i obre la zona de `exemple.cat`.
 3. Crea o modifica un registre amb aquests valors orientatius:
 
@@ -66,16 +66,12 @@ El domini principal `exemple.cat` pot continuar apuntant al servidor antic mentr
 Des d'un terminal pots consultar quina adreça resol el subdomini:
 
 ```bash
-dig app.exemple.cat A
+
 dig app.exemple.cat AAAA
 dig app.exemple.cat CNAME
 ```
 
-Una consulta per tipus no configurat pot no retornar cap resposta. També pots consultar els servidors autoritatius amb:
 
-```bash
-dig exemple.cat NS
-```
 
 Quan la resolució DNS ja retorna la IP nova, però la web no funciona, comprova el servidor, el *VirtualHost*, el tallafoc i el certificat TLS. DNS només ha resolt el nom; no confirma que l'aplicació estigui operativa.
 
@@ -87,4 +83,4 @@ Quan la resolució DNS ja retorna la IP nova, però la web no funciona, comprova
 - Per moure un subdomini a un altre servidor, actualitza el seu registre DNS i configura també el servidor nou, el tallafoc i HTTPS.
 - El TTL i les memòries cau fan que els canvis no sempre siguin immediats.
 
-Per ampliar-ho, consulta la documentació de [tipus de registres DNS d'Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html) i els [valors i TTL dels registres](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-values-basic.html).
+Per ampliar-ho, consulta la documentació de [Dominis Dinahosting](https://dinahosting.com/ayuda/tipos-de-registros-dns/).
