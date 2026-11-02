@@ -78,6 +78,45 @@ Les **Guest Additions** s'instal·len dins del sistema convidat. Milloren la int
 
 Les Guest Additions han de correspondre a la versió de VirtualBox instal·lada a l'amfitrió. Si Secure Boot impedeix carregar algun mòdul, segueix l'avís d'Ubuntu per autoritzar-lo o consulta l'administrador de l'equip.
 
+### Si les Guest Additions no funcionen
+
+Obre **Terminal** a Ubuntu (`Ctrl`+`Alt`+`T`) i executa aquestes comprovacions després de reiniciar. Escriu cada ordre i prem `Retorn`:
+
+1. **Comprova si els processos de Guest Additions s'estan executant:**
+
+   ```bash
+   pgrep -a 'VBox(Process|Client|Service)'
+   ```
+
+   Si apareixen processos `VBoxClient` o `VBoxService`, els serveis s'han iniciat. Si no apareix cap resultat, continua amb les comprovacions següents.
+
+2. **Comprova si els mòduls del nucli s'han carregat:**
+
+   ```bash
+   lsmod | grep vbox
+   ```
+
+   Haurien d'aparèixer mòduls com `vboxguest` i, en alguns sistemes, `vboxsf` o `vboxvideo`. Si no apareix res, poden faltar capçaleres durant la instal·lació o Secure Boot pot haver blocat els mòduls.
+
+3. **Comprova que hi ha el registre d'instal·lació i consulta'n les darreres línies:**
+
+   ```bash
+   sudo tail -n 40 /var/log/vboxadd-setup.log
+   ```
+
+   Introdueix la contrasenya d'Ubuntu si la demana. El terminal no mostra els caràcters de la contrasenya mentre l'escrius; prem `Retorn` en acabar. Busca missatges amb `error` o `failed`. Si el fitxer no existeix, l'instal·lador pot no haver-se executat.
+
+4. **Si falten capçaleres o eines**, comprova el nucli actual i instal·la els paquets corresponents; després torna a executar l'instal·lador del CD i reinicia:
+
+   ```bash
+   sudo apt update
+   sudo apt install build-essential dkms linux-headers-$(uname -r)
+   ```
+
+5. **Si els mòduls no es carreguen i Secure Boot està activat**, durant l'arrencada pot aparèixer la pantalla blava MOK per autoritzar-los.  Comprova també que la imatge de Guest Additions sigui de la mateixa versió que VirtualBox.
+
+Si continua fallant, copia la sortida de `pgrep`, `lsmod` i les línies d'error del registre per compartir-les amb el professor.
+
 ## Connectar un dispositiu USB
 
 Per passar un USB de l'ordinador amfitrió a la màquina virtual:
