@@ -58,7 +58,7 @@ Les **Guest Additions** s'instal·len dins del sistema convidat. Milloren la int
 
    ```bash
    cd /media/$USER/VBox_GAs_*/
-   sudo sh ./VBoxLinuxAdditions.run
+   ./autorun.sh
    ```
 
 3. **Només si l'instal·lador indica que falten eines o capçaleres del nucli**, instal·la-les:
