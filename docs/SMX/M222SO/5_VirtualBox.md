@@ -9,7 +9,7 @@ flowchart TB
     H["Ordinador físic · amfitrió"]
     V["VirtualBox"]
     VM["Màquina virtual · convidat"]
-    OS["Ubuntu, Windows o un altre sistema"]
+    OS["Ubuntu/Windows/Altre"]
     H --> V --> VM --> OS
 ```
 
@@ -23,7 +23,7 @@ La màquina virtual té maquinari virtual propi —com ara memòria, processador
 4. A VirtualBox, crea una màquina virtual, selecciona el sistema operatiu i la ISO, i assigna memòria, processadors i espai de disc.
 
 ```mermaid
-flowchart LR
+flowchart TD
     D["Descarregar VirtualBox"] --> I["Instal·lar al host"]
     I --> ISO["Obtenir una ISO"]
     ISO --> VM["Crear la màquina virtual"]
@@ -85,7 +85,9 @@ Obre **Terminal** a Ubuntu (`Ctrl`+`Alt`+`T`) i executa aquestes comprovacions d
 1. **Comprova si els processos de Guest Additions s'estan executant:**
 
    ```bash
-   pgrep -a 'VBox(Process|Client|Service)'
+   pgrep -a 'VBoxProcess'
+   pgrep -a 'VBoxClient'
+   pgrep -a 'VBoxService'
    ```
 
    Si apareixen processos `VBoxClient` o `VBoxService`, els serveis s'han iniciat. Si no apareix cap resultat, continua amb les comprovacions següents.
@@ -122,7 +124,7 @@ Si continua fallant, copia la sortida de `pgrep`, `lsmod` i les línies d'error 
 Per passar un USB de l'ordinador amfitrió a la màquina virtual:
 
 1. Apaga la màquina virtual i obre **Configuració → USB**.
-2. Activa el controlador USB que necessitis. Per a **USB 2.0 o USB 3.0**. Després, torna a obrir la configuració de la màquina virtual.
+2. Activa el controlador USB que necessitis. Per a **USB 2.0 o USB 3.0**. 
 3. Inicia la màquina virtual. Al menú **Dispositius → USB**, selecciona el dispositiu que vols connectar.
 4. Per tornar-lo a l'amfitrió, desmarca'l al mateix menú abans de fer-lo servir fora de la màquina virtual.
 
@@ -135,7 +137,7 @@ Per crear-ne un, connecta el dispositiu a l'ordinador amfitrió i apaga la màqu
 Fes servir un filtre només si connectes sovint el mateix dispositiu a la mateixa màquina virtual. Mentre el dispositiu està connectat al convidat, no es pot fer servir des de l'amfitrió. Si vols tornar-lo a l'amfitrió, desconnecta'l des del menú **Dispositius → USB**.
 
 ```mermaid
-flowchart LR
+flowchart TD
     U["Dispositiu USB"] -->|Connectat al menú Dispositius| VM["Ubuntu virtual"]
     VM -. "Desconnectar per recuperar-lo" .-> H["Ordinador amfitrió"]
 ```
