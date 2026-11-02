@@ -115,7 +115,19 @@ Obre **Terminal** a Ubuntu (`Ctrl`+`Alt`+`T`) i executa aquestes comprovacions d
    sudo apt install build-essential dkms linux-headers-$(uname -r)
    ```
 
-5. **Si els mòduls no es carreguen i Secure Boot està activat**, durant l'arrencada pot aparèixer la pantalla blava MOK per autoritzar-los.  Comprova també que la imatge de Guest Additions sigui de la mateixa versió que VirtualBox.
+5. **Comprova que les versions de VirtualBox i les Guest Additions coincideixin.** Executa la primera ordre a l'amfitrió i la segona a Ubuntu (el convidat):
+
+   ```bash
+   VBoxManage --version
+   ```
+
+   ```bash
+   VBoxControl --version
+   ```
+
+   Les versions que mostren les ordres han de coincidir. Si no coincideixen, instal·la les Guest Additions corresponents a la versió de VirtualBox de l'amfitrió i reinicia Ubuntu.
+
+6. **Si els mòduls no es carreguen i Secure Boot està activat**, durant l'arrencada pot aparèixer la pantalla blava MOK per autoritzar-los.
 
 Si continua fallant, copia la sortida de `pgrep`, `lsmod` i les línies d'error del registre per compartir-les amb el professor.
 
