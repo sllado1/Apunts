@@ -15,20 +15,6 @@ Aplicarem el principi de Pareto com a criteri de priorització: aprendre les poq
 - [Bloc 6. Corregir errors i recuperar-se amb criteri](6_Git_Recuperacio_Errors.md)
 - [Bloc 7. Git Flow i col·laboració entre equips](7_Git_Flow_i_Collaboracio.md)
 
-### Repte final: una millora web revisada i compartida
-
-En parelles, utilitzeu una web senzilla i completeu aquest recorregut:
-
-1. Creeu un repositori amb un `.gitignore` adequat i publiqueu-lo.
-2. Cloneu-lo al segon ordinador.
-3. Desenvolupeu una millora en una branca amb almenys dos commits coherents.
-4. Publiqueu la branca, obriu una petició d'integració i reviseu-la entre companys.
-5. Integreu-la i actualitzeu les dues còpies locals de `main`.
-6. Provoqueu i resoleu un conflicte en branques de pràctica.
-7. Revertiu un commit ordinari i expliqueu què mostra l'historial.
-
-**Criteris d'assoliment:** l'alumne sap explicar on són els seus canvis, revisar què inclourà un commit, excloure secrets, treballar en una branca, compartir una millora, resoldre un conflicte i corregir un error mantenint l'historial compartit.
-
 ## Desplegament d'aplicacions web
 
 Aquesta secció treballa el desplegament amb una idea central: entendre el procés abans de memoritzar eines.
