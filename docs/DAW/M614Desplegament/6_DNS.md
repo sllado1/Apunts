@@ -1,4 +1,4 @@
-# Bloc 8. DNS i dominis
+# Bloc 6. DNS i dominis
 
 ## Què és el DNS?
 

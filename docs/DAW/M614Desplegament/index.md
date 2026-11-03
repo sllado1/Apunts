@@ -38,16 +38,11 @@ Aquesta secció treballa el desplegament amb una idea central: entendre el proc�
 - [Bloc 3. Permisos en Linux aplicats al desplegament](3_Permisos_Linux_Desplegament.md)
 - [Bloc 4. Apache mínim: servir una aplicació web](4_Apache_minim.md)
 - [Bloc 5. Diagnòstic i resolució d'errors en un desplegament web](5_Diagnostic_i_Resolucio.md)
-- [Bloc 8. DNS i dominis](8_DNS.md)
+- [Bloc 8. DNS i dominis](6_DNS.md)
 
-## AWS: principis bàsics
+## AWS
 
-Introducció als conceptes necessaris per entendre i començar a desplegar aplicacions al núvol d'Amazon Web Services.
+Aquesta secció treballa l'ús del serveis d'Amazon Web Services.
 
-- [Bloc 6. AWS: principis bàsics](6_AWS_Principis_Basics.md)
-
-## AWS Academy
-
-Introducció a l'entorn formatiu d'AWS Academy i als passos inicials per treballar amb els materials i les pràctiques del curs.
-
-- [Bloc 7. Comencem amb AWS Academy](7_AWS_Academy.md)
+- [Bloc 1. AWS: principis bàsics](1_AWS_Principis_Basics.md)
+- [Bloc 2. Comencem amb AWS Academy](2_AWS_Academy.md)

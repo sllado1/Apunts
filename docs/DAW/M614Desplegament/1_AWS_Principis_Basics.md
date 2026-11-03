@@ -1,4 +1,4 @@
-# Bloc 6. AWS: principis bàsics
+# Bloc 1. AWS: principis bàsics
 
 ## Què és AWS?
 

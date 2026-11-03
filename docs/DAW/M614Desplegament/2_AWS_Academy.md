@@ -1,4 +1,4 @@
-# Bloc 7. Comencem amb AWS Academy
+# Bloc 2. Comencem amb AWS Academy
 
 ## AWS Academy i el laboratori
 
