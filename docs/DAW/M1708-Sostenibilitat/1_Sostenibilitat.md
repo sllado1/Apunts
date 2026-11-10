@@ -98,7 +98,6 @@ Relació amb projectes digitals:
 
 [Global Risks Report 2026](https://www.weforum.org/reports/global-risks-report-2026/)
 
-
 ---
 
 ## 5. Petjada de carboni en entorns digitals
