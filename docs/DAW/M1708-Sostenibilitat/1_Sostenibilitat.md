@@ -129,7 +129,8 @@ Bones pràctiques inicials:
 
 Els 17 Objectius de Desenvolupament Sostenible (ODS) formen part de l'Agenda 2030 de les Nacions Unides. Cada ODS es concreta en metes més específiques: en total n'hi ha 169. Els indicadors associats permeten mesurar els avenços.
 
-![Els 17 Objectius de Desenvolupament Sostenible de les Nacions Unides](https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/)
+[Els 17 Objectius de Desenvolupament Sostenible de les Nacions Unides](https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/){: target="_blank" rel="noopener"}.
+
 
 *Els 17 ODS. Imatge de les Nacions Unides.*
 
@@ -155,7 +156,7 @@ Les metes expliquen què es vol assolir dins de cada objectiu. Aquestes són esp
 - **Meta 16.6**: crear institucions eficaces, responsables i transparents. En un servei web, això implica explicar com es tracten les dades i qui n'és responsable.
 - **Meta 16.10**: garantir l'accés públic a la informació i protegir les llibertats fonamentals. Cal publicar informació comprensible i respectar la privacitat i els drets digitals.
 
-Les metes es poden consultar amb el detall oficial al [llistat dels ODS i les seves metes de les Nacions Unides](https://sdgs.un.org/goals).
+Les metes es poden consultar amb el detall oficial al [llistat dels ODS i les seves metes de les Nacions Unides](https://sdgs.un.org/goals){: target="_blank" rel="noopener"}.
 
 
 ---
