@@ -130,7 +130,7 @@ Bones pràctiques inicials:
 Els 17 Objectius de Desenvolupament Sostenible (ODS) formen part de l'Agenda 2030 de les Nacions Unides. Cada ODS es concreta en metes més específiques: en total n'hi ha 169. Els indicadors associats permeten mesurar els avenços.
 
 [Els 17 Objectius de Desenvolupament Sostenible de les Nacions Unides](https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/){: target="_blank" rel="noopener"}.
-Hola
+
 ### Com es relacionen els ODS amb un projecte DAW?
 
 Els ODS es poden aplicar a decisions concretes del projecte, no només esmentar-los al document:
