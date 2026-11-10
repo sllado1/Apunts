@@ -72,14 +72,16 @@ Les empreses han de:
 
 10. Treballar contra totes les formes de corrupció, incloses l'extorsió i el suborn.
 
-En projectes tecnològics, cal prendre decisions transparents en la contractació de proveïdors, evitar pagaments o favors indeguts i prevenir conflictes d'interès. També és important mantenir registres fiables de les decisions i establir canals per comunicar irregularitats.
+En una empresa tecnològica, aquest principi es tradueix en relacions honestes amb clients i proveïdors: aplicar criteris clars en les contractacions, declarar possibles conflictes d'interès i rebutjar suborns o favors a canvi d'un tracte preferent. Les decisions importants han de quedar documentades i les irregularitats s'han de poder comunicar amb seguretat.
 
-Aplicació general en empreses TIC:
+### Com es concreta la sostenibilitat en una empresa TIC?
 
-- privacitat i drets digitals,
-- condicions laborals justes,
-- reducció d'impacte ambiental en infraestructures,
-- governança ètica en producte i dades.
+Podem observar-la en quatre àmbits del dia a dia:
+
+- **Persones i drets digitals**: protegir les dades personals, respectar la privacitat i fer que els serveis siguin accessibles per a tothom.
+- **Treball digne**: garantir salaris i horaris justos, igualtat d'oportunitats i un entorn de treball lliure de discriminació i assetjament.
+- **Impacte ambiental**: reduir l'energia que consumeixen els servidors i els programes, allargar la vida dels equips i reciclar correctament els aparells electrònics.
+- **Governança ètica**: establir qui pren les decisions i qui n'és responsable; explicar com es recullen i s'utilitzen les dades; documentar els canvis importants; i revisar que els productes no discriminin ni indueixin a error.
 
 ---
 
@@ -120,7 +122,7 @@ Bones pràctiques inicials:
 !!! information "Calcula la petjada de carboni de la teva web"
 
     - [Website Carbon Calculator](https://www.websitecarbon.com/)
-    - [Website Carbon API](https://www.websitecarbon.com/api/)
+
 ---
 
 ## 6. ODS i responsabilitat del sector digital
