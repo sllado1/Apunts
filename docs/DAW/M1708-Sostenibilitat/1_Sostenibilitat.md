@@ -1,6 +1,6 @@
-# RA1 - Fonaments de la sostenibilitat i desafiaments globals
+# Sostenibilitat i desafiaments globals
 
-## 1. Finalitat del RA1
+## 1. Finalitat del mòdul
 
 Aquest resultat d'aprenentatge estableix la base conceptual perquè l'alumnat de DAW entengui la sostenibilitat com una responsabilitat professional vinculada al desenvolupament digital.
 
