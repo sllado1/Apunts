@@ -263,9 +263,15 @@ En finalitzar el RA1, l'alumnat ha de poder:
 
 ## 12. Recursos recomanats
 
-- [ONU - Objectius de Desenvolupament Sostenible](https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/).
-- [World Economic Forum - Global Risks Report](https://www.weforum.org/reports/global-risks-report-2026/).
-- [Pacte Mundial de les Nacions Unides](https://www.unglobalcompact.org/).
-- [Comissió Europea - Corporate Sustainability Reporting](https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en).
-- [EFRAG - ESRS (European Sustainability Reporting Standards)](https://www.efrag.org/lab6).
-- [Green Web Foundation](https://www.thegreenwebfoundation.org/).
+- [ONU - Objectius de Desenvolupament Sostenible](https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/){: target="_blank" rel="noopener"}.
+
+- [World Economic Forum - Global Risks Report](https://www.weforum.org/reports/global-risks-report-2026/){: target="_blank" rel="noopener"}.
+
+- [Pacte Mundial de les Nacions Unides](https://www.unglobalcompact.org/{: target="_blank" rel="noopener"}.
+
+- [Comissió Europea - Corporate Sustainability Reporting](https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en){: target="_blank" rel="noopener"}.
+
+- [EFRAG - ESRS (European Sustainability Reporting Standards)](https://www.efrag.org/lab6){: target="_blank" rel="noopener"}.
+
+- [Green Web Foundation](https://www.thegreenwebfoundation.org/){: target="_blank" rel="noopener"}.
+
