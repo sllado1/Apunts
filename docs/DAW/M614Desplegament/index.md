@@ -24,7 +24,7 @@ Aquesta secció treballa el desplegament amb una idea central: entendre el proc�
 - [Bloc 3. Permisos en Linux aplicats al desplegament](3_Permisos_Linux_Desplegament.md)
 - [Bloc 4. Apache mínim: servir una aplicació web](4_Apache_minim.md)
 - [Bloc 5. Diagnòstic i resolució d'errors en un desplegament web](5_Diagnostic_i_Resolucio.md)
-- [Bloc 8. DNS i dominis](6_DNS.md)
+- [Bloc 6. DNS i dominis](6_DNS.md)
 
 ## AWS
 
