@@ -117,7 +117,7 @@ Bones pràctiques inicials:
 - optimitzar imatges i codi,
 - reduir peticions i scripts innecessaris,
 - utilitzar allotjaments amb energia renovable quan sigui possible,
-- monitorar rendiment i eficiència.
+- monitoritzar rendiment i eficiència.
 
 !!! information "Calcula la petjada de carboni de la teva web"
 
@@ -129,35 +129,18 @@ Bones pràctiques inicials:
 
 Els 17 Objectius de Desenvolupament Sostenible (ODS) formen part de l'Agenda 2030 de les Nacions Unides. Cada ODS es concreta en metes més específiques: en total n'hi ha 169. Els indicadors associats permeten mesurar els avenços.
 
-![Els 17 Objectius de Desenvolupament Sostenible de les Nacions Unides](https://www.pactomundial.org/que-puedes-hacer-tu/ods/)
+![Els 17 Objectius de Desenvolupament Sostenible de les Nacions Unides](https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/)
 
 *Els 17 ODS. Imatge de les Nacions Unides.*
 
-Connexions directes amb DAW:
+### Com es relacionen els ODS amb un projecte DAW?
 
-- ODS 9: indústria, innovació i infraestructura,
-- ODS 12: producció i consum responsables,
-- ODS 13: acció climàtica,
-- ODS 16: institucions sòlides (dades, transparència, confiança).
+Els ODS es poden aplicar a decisions concretes del projecte, no només esmentar-los al document:
 
-Aplicació didàctica:
-
-- justificar decisions de projecte amb almenys un ODS rellevant.
-
-### Què vol dir "tenir en compte els ODS" en un projecte DAW?
-
-Vol dir que les decisions tècniques no es prenen només per funcionalitat o cost, sinó també per impacte social i ambiental.
-
-Exemples concrets:
-
-- **ODS 9 (innovació i infraestructura)**: dissenyar una arquitectura web robusta, mantenible i escalable.
-- **ODS 12 (producció i consum responsables)**: reduir pes de pàgina, eliminar dependències innecessàries i optimitzar recursos multimèdia.
-- **ODS 13 (acció climàtica)**: triar proveïdors cloud amb energia renovable i monitoritzar el consum de recursos del servei.
-- **ODS 16 (institucions sòlides)**: aplicar bones pràctiques de seguretat, transparència en l'ús de dades i política de privacitat clara.
-
-Indicador docent simple:
-
-- cada equip ha d'explicar quin ODS prioritza, quina decisió tècnica ha pres i quina evidència aporta.
+- **ODS 9 — Indústria, innovació i infraestructura**: construir un servei web fiable i fàcil de mantenir. Per exemple, organitzar el codi perquè es pugui actualitzar sense refer el projecte.
+- **ODS 12 — Producció i consum responsables**: evitar malbaratar recursos digitals. Per exemple, comprimir imatges i eliminar scripts que no s'utilitzen.
+- **ODS 13 — Acció climàtica**: reduir l'energia necessària per oferir el servei. Per exemple, limitar les dades que es transfereixen i optimitzar les consultes al servidor.
+- **ODS 16 — Pau, justícia i institucions sòlides**: generar confiança i protegir els drets de les persones usuàries. Per exemple, demanar només les dades necessàries i explicar clarament per a què s'utilitzen.
 
 
 ### Metes dels ODS relacionades amb el sector digital
@@ -165,9 +148,9 @@ Indicador docent simple:
 Les metes expliquen què es vol assolir dins de cada objectiu. Aquestes són especialment útils per relacionar els ODS amb projectes DAW:
 
 - **Meta 9.1**: desenvolupar infraestructures fiables, sostenibles i resilients. En un projecte web, això es pot traduir en serveis robustos, accessibles i preparats per créixer.
-- **Meta 9.3**: ampliar l'accés a les tecnologies de la informació i les comunicacions. Cal tenir en compte la connectivitat i els dispositius disponibles per als usuaris.
+- **Meta 9.4**: fer que les infraestructures i les indústries siguin més sostenibles, millorant l'ús dels recursos i adoptant tecnologies netes. En un projecte DAW, s'hi pot contribuir digitalitzant processos amb una aplicació web: per exemple, una eina gestionar l'estoc pot ajudar una empresa a evitar compres innecessàries. La tecnologia aporta valor si el procés digitalitzat fa un ús més eficient dels recursos.
 - **Meta 12.5**: reduir la generació de residus mitjançant la prevenció, la reducció, el reciclatge i la reutilització. En l'àmbit digital, es pot aplicar allargant la vida dels equips i evitant recursos o dependències innecessaris.
-- **Meta 12.8**: garantir que les persones tinguin informació i sensibilització per a un desenvolupament sostenible. Un lloc web pot oferir informació clara i accessible sobre l'impacte dels productes o serveis.
+- **Meta 12.8**: ajudar les persones a entendre com les seves decisions de consum afecten el medi ambient i la societat, i facilitar-los informació per triar opcions més sostenibles. Un lloc web hi pot contribuir explicant, amb dades comprensibles i accessibles, d'on provenen els productes, quins materials utilitzen, quin impacte tenen o com es poden reparar i reciclar. La informació ha de ser clara i verificable perquè les persones puguin comparar opcions i prendre decisions amb criteri.
 - **Meta 13.3**: millorar l'educació i la sensibilització sobre el canvi climàtic. Els projectes digitals poden ajudar a comunicar-ne les causes i les respostes.
 - **Meta 16.6**: crear institucions eficaces, responsables i transparents. En un servei web, això implica explicar com es tracten les dades i qui n'és responsable.
 - **Meta 16.10**: garantir l'accés públic a la informació i protegir les llibertats fonamentals. Cal publicar informació comprensible i respectar la privacitat i els drets digitals.
@@ -187,7 +170,7 @@ La sostenibilitat corporativa s'avalua amb tres pilars interdependents:
 
 ### Governança: exemples pràctics en informàtica
 
-En un projecte digital, governança vol dir definir regles clares de com es prenen decisions i com es garanteix responsabilitat.
+En un projecte digital, la **governança** és la manera d'organitzar les decisions i assegurar-se que cadascú compleix les seves responsabilitats. Per exemple: decidir qui pot accedir a les dades personals, qui aprova els canvis abans de publicar-los i qui actua si es detecta un problema de seguretat. Les regles han de ser conegudes per l'equip i les decisions importants s'han de poder revisar.
 
 Exemples aplicats:
 
@@ -199,21 +182,21 @@ Exemples aplicats:
 
 Relació directa amb ODS:
 
-- **ODS 16**: transparència, responsabilitat i confiança institucional.
-- **ODS 10**: decisions que redueixin bretxa digital i discriminació en l'ús del producte.
-- **ODS 5**: criteris d'equitat i no discriminació en processos i experiència d'usuari.
+- **ODS 16 — Pau, justícia i institucions sòlides**: promou decisions transparents i responsables. En un projecte digital, això vol dir explicar quines dades es recullen i per què, registrar qui aprova canvis importants i tenir un canal per comunicar problemes.
+- **ODS 10 — Reducció de les desigualtats**: demana evitar que el servei exclogui o tracti injustament alguns grups. Per exemple, comprovar que el web sigui accessible, funcioni en dispositius diversos i no discrimini persones per les seves característiques.
+- **ODS 5 — Igualtat de gènere**: implica garantir la igualtat i evitar estereotips o discriminacions per raó de gènere. Això es pot aplicar revisant el llenguatge i les imatges del producte, i comprovant que formularis, recomanacions o processos de selecció no afavoreixin injustament unes persones per sobre d'altres.
 
 ### Exemple aplicat a una empresa de desenvolupament web
 
-Aspectes clau que l'alumnat ha de saber identificar:
+Aspectes clau que cal saber identificar en una empresa de desenvolupament web:
 
-- consum energètic de serveis cloud,
-- emissions associades a infraestructura,
-- gestió de residus electrònics,
-- privacitat i protecció de dades,
-- accessibilitat i inclusió digital,
-- criteris ètics en desenvolupament,
-- relació responsable amb proveïdors.
+- **Consum energètic dels serveis cloud**: quins servidors i serveis al núvol s'utilitzen i si se'n revisa el consum. Per exemple, eliminar entorns de proves que ja no calen.
+- **Emissions de la infraestructura**: quines emissions genera l'allotjament del servei i si es poden reduir optimitzant el codi, les dades transferides o l'ús dels servidors.
+- **Residus electrònics**: com es reutilitzen, reparen o reciclen els ordinadors i altres dispositius quan deixen de ser útils.
+- **Privacitat i protecció de dades**: quines dades personals es recullen, amb quina finalitat, qui hi pot accedir i durant quant de temps es conserven.
+- **Accessibilitat i inclusió digital**: si el web es pot utilitzar amb diferents dispositius i tecnologies d'assistència, i si el contingut és comprensible per a persones amb necessitats diverses.
+- **Ètica en el desenvolupament**: si el producte evita discriminar, manipular o confondre les persones usuàries.
+- **Relació amb els proveïdors**: si es tenen en compte criteris ambientals, socials i de transparència en contractar allotjament web, serveis cloud o altres eines.
 
 ---
 
@@ -221,17 +204,17 @@ Aspectes clau que l'alumnat ha de saber identificar:
 
 ### Riscos si no es tenen en compte
 
-- pèrdua reputacional,
-- sancions per incompliment normatiu,
-- pèrdua de confiança de clients i equips,
-- dificultats d'accés a finançament i contractes.
+- **Dany a la reputació**: una empresa pot perdre credibilitat si es descobreix que contamina, discrimina o tracta les dades de manera irresponsable.
+- **Sancions i costos addicionals**: incomplir normes de protecció de dades, accessibilitat o condicions laborals pot comportar multes i obligar a corregir processos o productes.
+- **Pèrdua de confiança**: clients, persones usuàries i treballadors poden deixar de confiar en l'empresa si no actua amb transparència o no protegeix els seus drets.
+- **Menys oportunitats de negoci i finançament**: alguns clients exigeixen criteris de sostenibilitat per adjudicar contractes. Els inversors també poden valorar com l'empresa gestiona els riscos ambientals, socials i de governança abans de decidir si hi aporten capital, ja que aquests riscos poden afectar-ne l'activitat i els resultats a llarg termini. Si l'empresa no pot demostrar una gestió responsable, pot tenir més dificultats per aconseguir contractes o atreure inversors.
 
 ### Oportunitats si es gestionen bé
 
-- avantatge competitiu,
-- innovació amb impacte positiu,
-- millor atracció i retenció de talent,
-- millor posicionament davant clients i inversors.
+- **Serveis millors i més eficients**: reduir dades i consums pot fer que una aplicació sigui més ràpida, econòmica i sostenible.
+- **Innovació útil**: entendre necessitats socials i ambientals pot inspirar solucions digitals que resolguin problemes reals.
+- **Equips més compromesos**: unes condicions de treball justes i un propòsit clar ajuden a atreure i retenir professionals.
+- **Més confiança i possibilitats de negoci**: demostrar bones pràctiques pot reforçar la relació amb clients i inversors i facilitar l'accés a contractes.
 
 ---
 
@@ -240,7 +223,7 @@ Aspectes clau que l'alumnat ha de saber identificar:
 Marc introductori per a l'alumnat:
 
 - **CSRD**: obliga determinades empreses a informar sobre sostenibilitat.
-- **ESRS**: defineix com reportar indicadors ASG de manera coherent i verificable.
+- **ESRS**: defineix com informar indicadors ASG de manera coherent i verificable.
 
 Missatge professional clau:
 
