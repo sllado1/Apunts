@@ -131,9 +131,6 @@ Els 17 Objectius de Desenvolupament Sostenible (ODS) formen part de l'Agenda 203
 
 [Els 17 Objectius de Desenvolupament Sostenible de les Nacions Unides](https://www.un.org/sustainabledevelopment/es/sustainable-development-goals/){: target="_blank" rel="noopener"}.
 
-
-*Els 17 ODS. Imatge de les Nacions Unides.*
-
 ### Com es relacionen els ODS amb un projecte DAW?
 
 Els ODS es poden aplicar a decisions concretes del projecte, no només esmentar-los al document:
