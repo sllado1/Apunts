@@ -1,4 +1,4 @@
-# Sostenibilitat i desafiaments globals
+# RA1. Fonaments de la sostenibilitat i desafiaments globals
 
 ## 1. Finalitat del mòdul
 
@@ -267,7 +267,7 @@ En finalitzar el RA1, l'alumnat ha de poder:
 
 - [World Economic Forum - Global Risks Report](https://www.weforum.org/reports/global-risks-report-2026/){: target="_blank" rel="noopener"}.
 
-- [Pacte Mundial de les Nacions Unides](https://www.unglobalcompact.org/{: target="_blank" rel="noopener"}.
+- [Pacte Mundial de les Nacions Unides](https://www.unglobalcompact.org/){: target="_blank" rel="noopener"}.
 
 - [Comissió Europea - Corporate Sustainability Reporting](https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en){: target="_blank" rel="noopener"}.
 

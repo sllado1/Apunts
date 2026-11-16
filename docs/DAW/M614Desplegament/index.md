@@ -25,6 +25,7 @@ Aquesta secció treballa el desplegament amb una idea central: entendre el proc�
 - [Bloc 4. Apache mínim: servir una aplicació web](4_Apache_minim.md)
 - [Bloc 5. Diagnòstic i resolució d'errors en un desplegament web](5_Diagnostic_i_Resolucio.md)
 - [Bloc 6. DNS i dominis](6_DNS.md)
+- [Bloc 7. Docker: empaquetar i desplegar una aplicació](7_Docker.md)
 
 ## AWS
 
