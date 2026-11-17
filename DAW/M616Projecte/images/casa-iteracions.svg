@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Construir una casa en iteracions</title>
+  <desc id="desc">Tres versions progressives d'una casa: primer una habitació habitable, després s'hi afegeix una cuina a partir del feedback i finalment s'hi incorporen plaques solars i una rampa. Cada iteració conserva el que ja funciona i afegeix valor.</desc>
+  <rect width="1200" height="720" rx="28" fill="#f4f8fc"/>
+  <text x="600" y="58" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="700" fill="#17324d">Construïm la casa amb iteracions</text>
+  <text x="600" y="91" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#475569">Cada versió ja és útil; el feedback ens ajuda a decidir què afegim després.</text>
+
+  <!-- Iteració 1 -->
+  <rect x="35" y="125" width="350" height="450" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="72" cy="165" r="22" fill="#2563eb"/>
+  <text x="72" y="172" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="700" fill="#ffffff">1</text>
+  <text x="108" y="172" font-family="sans-serif" font-size="22" font-weight="700" fill="#17324d">Casa habitable</text>
+  <text x="58" y="205" font-family="sans-serif" font-size="16" fill="#475569">Un espai segur per descansar i aixoplugar-se.</text>
+  <rect x="105" y="350" width="190" height="145" fill="#dbeafe" stroke="#475569" stroke-width="3"/>
+  <polygon points="85,355 200,265 315,355" fill="#475569"/>
+  <rect x="130" y="385" width="48" height="48" fill="#bfdbfe" stroke="#2563eb" stroke-width="3"/>
+  <line x1="154" y1="385" x2="154" y2="433" stroke="#2563eb" stroke-width="2"/>
+  <line x1="130" y1="409" x2="178" y2="409" stroke="#2563eb" stroke-width="2"/>
+  <rect x="215" y="412" width="48" height="83" fill="#9a6b45"/>
+  <circle cx="252" cy="455" r="3" fill="#fef3c7"/>
+  <rect x="80" y="495" width="240" height="12" rx="5" fill="#64748b"/>
+  <text x="210" y="545" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="600" fill="#2563eb">Primer increment usable</text>
+
+  <!-- Fletxa i feedback -->
+  <path d="M395 345 H420 M412 337 L420 345 L412 353" fill="none" stroke="#0f766e" stroke-width="4"/>
+
+  <!-- Iteració 2 -->
+  <rect x="425" y="125" width="350" height="450" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="462" cy="165" r="22" fill="#7c3aed"/>
+  <text x="462" y="172" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="700" fill="#ffffff">2</text>
+  <text x="498" y="172" font-family="sans-serif" font-size="22" font-weight="700" fill="#17324d">Afegim una cuina</text>
+  <text x="448" y="205" font-family="sans-serif" font-size="16" fill="#475569">La família demana poder preparar-hi menjar.</text>
+  <rect x="495" y="350" width="190" height="145" fill="#dbeafe" stroke="#475569" stroke-width="3"/>
+  <polygon points="475,355 590,265 705,355" fill="#475569"/>
+  <rect x="520" y="385" width="48" height="48" fill="#bfdbfe" stroke="#2563eb" stroke-width="3"/>
+  <line x1="544" y1="385" x2="544" y2="433" stroke="#2563eb" stroke-width="2"/>
+  <line x1="520" y1="409" x2="568" y2="409" stroke="#2563eb" stroke-width="2"/>
+  <rect x="605" y="412" width="48" height="83" fill="#9a6b45"/>
+  <circle cx="642" cy="455" r="3" fill="#fef3c7"/>
+  <rect x="685" y="375" width="58" height="120" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <polygon points="675,378 714,343 753,378" fill="#15803d"/>
+  <rect x="698" y="407" width="31" height="27" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+  <rect x="470" y="495" width="280" height="12" rx="5" fill="#64748b"/>
+  <text x="600" y="545" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="600" fill="#7c3aed">La casa continua funcionant</text>
+
+  <!-- Fletxa i feedback -->
+  <path d="M785 345 H810 M802 337 L810 345 L802 353" fill="none" stroke="#0f766e" stroke-width="4"/>
+
+  <!-- Iteració 3 -->
+  <rect x="815" y="125" width="350" height="450" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="852" cy="165" r="22" fill="#ea580c"/>
+  <text x="852" y="172" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="700" fill="#ffffff">3</text>
+  <text x="888" y="172" font-family="sans-serif" font-size="22" font-weight="700" fill="#17324d">Millorem la casa</text>
+  <text x="838" y="205" font-family="sans-serif" font-size="16" fill="#475569">Afegim accessibilitat i energia renovable.</text>
+  <rect x="875" y="350" width="190" height="145" fill="#dbeafe" stroke="#475569" stroke-width="3"/>
+  <polygon points="855,355 970,265 1085,355" fill="#475569"/>
+  <rect x="900" y="385" width="48" height="48" fill="#bfdbfe" stroke="#2563eb" stroke-width="3"/>
+  <line x1="924" y1="385" x2="924" y2="433" stroke="#2563eb" stroke-width="2"/>
+  <line x1="900" y1="409" x2="948" y2="409" stroke="#2563eb" stroke-width="2"/>
+  <rect x="985" y="412" width="48" height="83" fill="#9a6b45"/>
+  <circle cx="1022" cy="455" r="3" fill="#fef3c7"/>
+  <rect x="1065" y="375" width="58" height="120" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <polygon points="1055,378 1094,343 1133,378" fill="#15803d"/>
+  <rect x="1079" y="407" width="31" height="27" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+  <rect x="912" y="320" width="42" height="15" rx="2" fill="#38bdf8" stroke="#0369a1" stroke-width="2"/>
+  <line x1="933" y1="320" x2="933" y2="335" stroke="#0369a1" stroke-width="2"/>
+  <line x1="912" y1="327" x2="954" y2="327" stroke="#0369a1" stroke-width="2"/>
+  <path d="M1038 495 L1070 495 L1070 507 L1038 507 Z" fill="#f97316"/>
+  <rect x="850" y="495" width="280" height="12" rx="5" fill="#64748b"/>
+  <text x="990" y="545" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="600" fill="#ea580c">Més valor i millor qualitat</text>
+
+  <rect x="120" y="615" width="960" height="62" rx="18" fill="#e0f2fe"/>
+  <text x="600" y="653" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="600" fill="#164e63">Provar → escoltar → prioritzar → construir el següent increment</text>
+</svg>
