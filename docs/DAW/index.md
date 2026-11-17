@@ -6,6 +6,7 @@ Aquest espai agrupa els materials del cicle **Desenvolupament d'Aplicacions Web 
 
 - [M614 - Desplegament](M614Desplegament/index.md)
 - [M615 - Disseny](M615Disseny/index.md)
+- [M616 - Projecte](M616Projecte/index.md)
 - [M1708 - Sostenibilitat](M1708-Sostenibilitat/index.md)
 - [MOPT3 - Enginyeria del Desenvolupament Intel·ligent](MOPT3-EnginyeriaDesenvolupamentInteligent/index.md)
 
